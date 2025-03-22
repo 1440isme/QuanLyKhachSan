@@ -7,27 +7,26 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class TANG
+    public class SANPHAM
     {
         Entities db;
-
-        public TANG()
+        public SANPHAM()
         {
             db = Entities.CreateEntities();
         }
-        public List<tb_Tang> getAll()
+        public List<tb_SanPham> getAll()
         {
-            return db.tb_Tang.ToList();
+            return db.tb_SanPham.ToList();
         }
-        public tb_Tang getItem(int idtang)
+        public tb_SanPham getItem(int idsp)
         {
-            return db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
+            return db.tb_SanPham.FirstOrDefault(p => p.IDSP == idsp);
         }
-        public void add(tb_Tang item)
+        public void add(tb_SanPham item)
         {
             try
             {
-                db.tb_Tang.Add(item);
+                db.tb_SanPham.Add(item);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -37,14 +36,14 @@ namespace BusinessLayer
 
             }
         }
-        public void update(tb_Tang item)
+        public void update(tb_SanPham item)
         {
             try
             {
-                tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == item.IDTANG);
-                _tang.IDTANG = item.IDTANG;
-                _tang.TENTANG = item.TENTANG;
-                _tang.DISABLED = item.DISABLED;
+                tb_SanPham _sp = db.tb_SanPham.FirstOrDefault(p => p.IDSP == item.IDSP);
+                _sp.IDSP = item.IDSP;
+                _sp.TENSP = item.TENSP;
+                _sp.DISABLED = item.DISABLED;
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -52,10 +51,10 @@ namespace BusinessLayer
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
             }
         }
-        public void delete(int idtang)
+        public void delete(int idsp)
         {
-            tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
-            _tang.DISABLED = true;
+            tb_SanPham _sp = db.tb_SanPham.FirstOrDefault(p => p.IDSP == idsp);
+            _sp.DISABLED = true;
             try
             {
 

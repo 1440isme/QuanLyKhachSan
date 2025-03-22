@@ -61,6 +61,8 @@ namespace KhachSan
         }
         void showRoom()
         {
+            gControl.Gallery.Groups.Clear(); // Clear existing groups
+
             var lsTang = _tang.getAll();
             gControl.Gallery.ItemImageLayout = ImageLayoutMode.ZoomInside;
             gControl.Gallery.ImageSize = new Size(64, 64);
@@ -68,6 +70,8 @@ namespace KhachSan
             gControl.Gallery.ShowGroupCaption = true;
             foreach (var t in lsTang)
             {
+                if (t.DISABLED == true) continue; // Skip disabled floors
+
                 var galleryItem = new GalleryItemGroup();
                 galleryItem.Caption = t.TENTANG;
                 galleryItem.CaptionAlignment = GalleryItemGroupCaptionAlignment.Stretch;
@@ -89,8 +93,8 @@ namespace KhachSan
                 }
                 gControl.Gallery.Groups.Add(galleryItem);
             }
-
         }
+
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -125,7 +129,36 @@ namespace KhachSan
                         _frm.ShowDialog();
                         break;
                     }
+                case "TANG":
+                    {
+                        frmTang _frm = new frmTang();
+                        _frm.DataChanged += FrmTang_DataChanged;
+                        _frm.ShowDialog();
+                        break;
+                    }
+                case "PHONG":
+                    {
+                        frmPhong _frm = new frmPhong();
+                        _frm.ShowDialog();
+                        break;
+                    }
+                case "SANPHAM":
+                    {
+                        frmSanPham _frm = new frmSanPham();
+                        _frm.ShowDialog();
+                        break;
+                    }
+                case "THIETBI":
+                    {
+                        frmThietBi _frm = new frmThietBi();
+                        _frm.ShowDialog();
+                        break;
+                    }
             }
+        }
+        private void FrmTang_DataChanged(object sender, EventArgs e)
+        {
+            showRoom();
         }
 
         private void popupMenu1_Popup(object sender, EventArgs e)
@@ -143,7 +176,6 @@ namespace KhachSan
             var gc_item = new GalleryItem();
             string id = item.Value.ToString();
             MessageBox.Show(id);
-
         }
     }
 }

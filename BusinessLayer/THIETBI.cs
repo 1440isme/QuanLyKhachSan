@@ -7,27 +7,26 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class TANG
+    public class THIETBI
     {
         Entities db;
-
-        public TANG()
+        public THIETBI()
         {
             db = Entities.CreateEntities();
         }
-        public List<tb_Tang> getAll()
+        public List<tb_ThietBi> getAll()
         {
-            return db.tb_Tang.ToList();
+            return db.tb_ThietBi.ToList();
         }
-        public tb_Tang getItem(int idtang)
+        public tb_ThietBi getItem(int idtb)
         {
-            return db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
+            return db.tb_ThietBi.FirstOrDefault(p => p.IDTB == idtb);
         }
-        public void add(tb_Tang item)
+        public void add(tb_ThietBi item)
         {
             try
             {
-                db.tb_Tang.Add(item);
+                db.tb_ThietBi.Add(item);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -37,14 +36,14 @@ namespace BusinessLayer
 
             }
         }
-        public void update(tb_Tang item)
+        public void update(tb_ThietBi item)
         {
             try
             {
-                tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == item.IDTANG);
-                _tang.IDTANG = item.IDTANG;
-                _tang.TENTANG = item.TENTANG;
-                _tang.DISABLED = item.DISABLED;
+                tb_ThietBi _tb = db.tb_ThietBi.FirstOrDefault(p => p.IDTB == item.IDTB);
+                _tb.IDTB = item.IDTB;
+                _tb.TENTB = item.TENTB;
+                _tb.DISABLED = item.DISABLED;
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -52,10 +51,10 @@ namespace BusinessLayer
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
             }
         }
-        public void delete(int idtang)
+        public void delete(int idtb)
         {
-            tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
-            _tang.DISABLED = true;
+            tb_ThietBi _tb = db.tb_ThietBi.FirstOrDefault(p => p.IDTB == idtb);
+            _tb.DISABLED = true;
             try
             {
 

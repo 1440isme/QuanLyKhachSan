@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d62995f161a48c9a564eff9919ad115" Name="Diagram1">
+        <EntityTypeShape EntityType="KhachSan.tb_DatPhong" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSan.tb_LoaiPhong" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSan.tb_Users" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhachSan.tb_Func" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_CongTy" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_DonVi" Width="1.5" PointX="4.75" PointY="0.875" />
+        <EntityTypeShape EntityType="KhachSan.tb_Phong" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_Phong_ThietBi" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SanPham" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_Tang" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_ThietBi" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_KhachHang" Width="1.5" PointX="14.375" PointY="6.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

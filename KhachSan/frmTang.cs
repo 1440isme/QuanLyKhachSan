@@ -123,38 +123,38 @@ namespace KhachSan
                 }
                 else
                 {
-                    if (_idtang != 0)
+                    if (_idtang == 0)
                     {
-                        tb_Tang tang = _tang.getItem(_idtang);
-                        if (tang != null)
-                        {
-                            tang.TENTANG = txtTen.Text;
-                            tang.DISABLED = chkDisabled.Checked;
-                            _tang.update(tang);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy tầng để cập nhật.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Vui lòng chọn một tầng để sửa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    tb_Tang tang = _tang.getItem(_idtang);
+                    if (tang != null)
+                    {
+                        tang.TENTANG = txtTen.Text;
+                        tang.DISABLED = chkDisabled.Checked;
+                        _tang.update(tang);
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng chọn một tầng để sửa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Không tìm thấy tầng để cập nhật.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
+
                 _them = false;
                 LoadData();
                 _enable(false);
                 showHideControl(true);
-
-                // Raise the DataChanged event
-                DataChanged?.Invoke(this, EventArgs.Empty);
+                DataChanged?.Invoke(this, EventArgs.Empty); // Đảm bảo gọi sự kiện
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {

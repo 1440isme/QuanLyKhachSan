@@ -15,14 +15,17 @@ namespace BusinessLayer
         {
             db = Entities.CreateEntities();
         }
+
         public List<tb_Tang> getAll()
         {
             return db.tb_Tang.ToList();
         }
+
         public tb_Tang getItem(int idtang)
         {
             return db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
         }
+
         public void add(tb_Tang item)
         {
             try
@@ -32,17 +35,19 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
-
             }
         }
+
         public void update(tb_Tang item)
         {
             try
             {
                 tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == item.IDTANG);
-                _tang.IDTANG = item.IDTANG;
+                if (_tang == null)
+                {
+                    throw new Exception("Không tìm thấy tầng để cập nhật.");
+                }
                 _tang.TENTANG = item.TENTANG;
                 _tang.DISABLED = item.DISABLED;
                 db.SaveChanges();
@@ -52,13 +57,17 @@ namespace BusinessLayer
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
             }
         }
+
         public void delete(int idtang)
         {
-            tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
-            _tang.DISABLED = true;
             try
             {
-
+                tb_Tang _tang = db.tb_Tang.FirstOrDefault(p => p.IDTANG == idtang);
+                if (_tang == null)
+                {
+                    throw new Exception("Không tìm thấy tầng để xóa.");
+                }
+                _tang.DISABLED = true;
                 db.SaveChanges();
             }
             catch (Exception ex)

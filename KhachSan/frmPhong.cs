@@ -16,6 +16,8 @@ namespace KhachSan
 {
     public partial class frmPhong : DevExpress.XtraEditors.XtraForm
     {
+        public event EventHandler DataChanged;
+
         public frmPhong()
         {
             InitializeComponent();
@@ -155,9 +157,11 @@ namespace KhachSan
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 _phong.delete(_maphong);
-
             }
             LoadData();
+
+            // Gọi sự kiện DataChanged
+            DataChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -168,38 +172,55 @@ namespace KhachSan
                 return;
             }
 
-            if (_them)
+            try
             {
-                tb_Phong phong = new tb_Phong();
-
-                phong.IDLOAIPHONG = int.Parse(cboLoaiPhong.SelectedValue.ToString());
-                phong.IDTANG = int.Parse(cboTang.SelectedValue.ToString());
-                phong.TENPHONG = txtTen.Text;
-                phong.TRANGTHAI = chkThue.Checked;
-                phong.DISABLED = chkDisabled.Checked;
-                _phong.add(phong);
-            }
-            else
-            {
-                tb_Phong phong = _phong.getItem(_maphong);
-                if (phong == null)
+                if (_them)
                 {
-                    MessageBox.Show("Không tìm thấy phòng để cập nhật.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    tb_Phong phong = new tb_Phong();
+                    phong.IDLOAIPHONG = int.Parse(cboLoaiPhong.SelectedValue.ToString());
+                    phong.IDTANG = int.Parse(cboTang.SelectedValue.ToString());
+                    phong.TENPHONG = txtTen.Text;
+                    phong.TRANGTHAI = chkThue.Checked;
+                    phong.DISABLED = chkDisabled.Checked;
+                    _phong.add(phong);
+                }
+                else
+                {
+                    if (_maphong == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn một phòng để sửa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    tb_Phong phong = _phong.getItem(_maphong);
+                    if (phong != null)
+                    {
+                        phong.IDLOAIPHONG = int.Parse(cboLoaiPhong.SelectedValue.ToString());
+                        phong.IDTANG = int.Parse(cboTang.SelectedValue.ToString());
+                        phong.TENPHONG = txtTen.Text;
+                        phong.TRANGTHAI = chkThue.Checked;
+                        phong.DISABLED = chkDisabled.Checked;
+                        _phong.update(phong);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy phòng để cập nhật.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
 
-                phong.IDLOAIPHONG = int.Parse(cboLoaiPhong.SelectedValue.ToString());
-                phong.IDTANG = int.Parse(cboTang.SelectedValue.ToString());
-                phong.TENPHONG = txtTen.Text;
-                phong.TRANGTHAI = chkThue.Checked;
-                phong.DISABLED = chkDisabled.Checked;
-                _phong.update(phong);
+                _them = false;
+                LoadData();
+                _enable(false);
+                showHideControl(true);
+                DataChanged?.Invoke(this, EventArgs.Empty); // Đảm bảo gọi sự kiện
             }
-            _them = false;
-            LoadData();
-            _enable(false);
-            showHideControl(true);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {

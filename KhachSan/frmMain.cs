@@ -63,6 +63,10 @@ namespace KhachSan
         {
             gControl.Gallery.Groups.Clear(); // Clear existing groups
 
+            // Khởi tạo lại để lấy dữ liệu mới nhất
+            _tang = new TANG();
+            _phong = new PHONG();
+
             var lsTang = _tang.getAll();
             gControl.Gallery.ItemImageLayout = ImageLayoutMode.ZoomInside;
             gControl.Gallery.ImageSize = new Size(64, 64);
@@ -139,6 +143,8 @@ namespace KhachSan
                 case "PHONG":
                     {
                         frmPhong _frm = new frmPhong();
+                        _frm.DataChanged += FrmPhong_DataChanged;
+
                         _frm.ShowDialog();
                         break;
                     }
@@ -157,6 +163,10 @@ namespace KhachSan
             }
         }
         private void FrmTang_DataChanged(object sender, EventArgs e)
+        {
+            showRoom();
+        }
+        private void FrmPhong_DataChanged(object sender, EventArgs e)
         {
             showRoom();
         }

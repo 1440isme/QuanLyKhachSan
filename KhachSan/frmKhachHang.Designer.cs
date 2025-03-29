@@ -165,9 +165,9 @@
             this.DIACHI});
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
-            this.gvDanhSach.OptionsView.ShowGroupPanel = false;
             this.gvDanhSach.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDanhSach_CustomDrawCell);
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
+            this.gvDanhSach.DoubleClick += new System.EventHandler(this.gvDanhSach_DoubleClick);
             // 
             // DISABLED
             // 

@@ -19,6 +19,7 @@ namespace KhachSan
         {
             InitializeComponent();
         }
+        frmDatPhong objDP = (frmDatPhong) Application.OpenForms["frmDatPhong"];
         KHACHHANG _khachhang;
         bool _them;
         int _idkh;
@@ -212,6 +213,16 @@ namespace KhachSan
                 Image img = Properties.Resources._1398917_circle_close_cross_incorrect_invalid_icon1;
                 e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
                 e.Handled = true;
+            }
+        }
+
+        private void gvDanhSach_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvDanhSach.GetFocusedRowCellValue("IDKH") != null)
+            {
+                objDP.loadKH();
+                objDP.setKH(int.Parse(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString()));
+                this.Close();
             }
         }
     }

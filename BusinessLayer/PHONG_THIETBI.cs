@@ -7,50 +7,38 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class PHONG
+    public class PHONG_THIETBI
     {
         Entities db;
-
-        public PHONG()
+        public PHONG_THIETBI()
         {
             db = Entities.CreateEntities();
         }
-
-        public tb_Phong getItem(int maphong)
+        public tb_Phong_ThietBi getItem(int maphong)
         {
-            return db.tb_Phong.FirstOrDefault(p => p.IDPHONG == maphong);
+            return db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == maphong);
         }
 
-        public List<tb_Phong> getAll()
+        public List<tb_Phong_ThietBi> getAll()
         {
-            return db.tb_Phong.ToList();
+            return db.tb_Phong_ThietBi.ToList();
         }
 
-        public List<tb_Phong> getByTang(int idTang)
+        public List<tb_Phong_ThietBi> getByPhong(int idPhong)
         {
-            return db.tb_Phong.Where(p => p.IDTANG == idTang).ToList();
+            return db.tb_Phong_ThietBi.Where(p => p.IDPHONG == idPhong).ToList();
         }
 
-        public List<tb_Phong> getByLoaiPhong(int idLoaiPhong)
+        public List<tb_Phong_ThietBi> getByThietBi(int idThietBi)
         {
-            return db.tb_Phong.Where(p => p.IDLOAIPHONG == idLoaiPhong).ToList();
-        }
-        public void updateStatus(int? maphong, bool status)
-        {
-            tb_Phong _phong = db.tb_Phong.FirstOrDefault(p => p.IDPHONG == maphong);
-            if (_phong == null)
-            {
-                throw new Exception("Không tìm thấy phòng để cập nhật.");
-            }
-            _phong.TRANGTHAI = status;
-            db.SaveChanges();
+            return db.tb_Phong_ThietBi.Where(p => p.IDPHONG == idThietBi).ToList();
         }
 
-        public void add(tb_Phong phong)
+        public void add(tb_Phong_ThietBi phong)
         {
             try
             {
-                db.tb_Phong.Add(phong);
+                db.tb_Phong_ThietBi.Add(phong);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -59,19 +47,17 @@ namespace BusinessLayer
             }
         }
 
-        public void update(tb_Phong phong)
+        public void update(tb_Phong_ThietBi phong)
         {
             try
             {
-                tb_Phong _phong = db.tb_Phong.FirstOrDefault(p => p.IDPHONG == phong.IDPHONG);
+                tb_Phong_ThietBi _phong = db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == phong.IDPHONG);
                 if (_phong == null)
                 {
                     throw new Exception("Không tìm thấy phòng để cập nhật.");
                 }
-                _phong.TENPHONG = phong.TENPHONG;
-                _phong.TRANGTHAI = phong.TRANGTHAI;
-                _phong.IDTANG = phong.IDTANG;
-                _phong.IDLOAIPHONG = phong.IDLOAIPHONG;
+                _phong.SOLUONG = phong.SOLUONG;
+                
                 _phong.DISABLED = phong.DISABLED;
                 db.SaveChanges();
             }
@@ -85,7 +71,7 @@ namespace BusinessLayer
         {
             try
             {
-                tb_Phong _phong = db.tb_Phong.FirstOrDefault(p => p.IDPHONG == maphong);
+                tb_Phong_ThietBi _phong = db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == maphong);
                 if (_phong == null)
                 {
                     throw new Exception("Không tìm thấy phòng để xóa.");

@@ -10,6 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Windows.Forms;
+using CrystalDecisions.Shared;
+
 
 namespace KhachSan
 {
@@ -81,10 +85,10 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có chắc chắn muốn xóa công ty này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa công ty này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 _congty.delete(_macty);
-                
+
             }
             LoadData();
         }
@@ -106,7 +110,7 @@ namespace KhachSan
             else
             {
                 tb_CongTy cty = _congty.getItem(_macty);
-                
+
                 cty.TENCTY = txtTen.Text;
                 cty.DIENTHOAI = txtDienThoai.Text;
                 cty.FAX = txtFax.Text;
@@ -153,11 +157,53 @@ namespace KhachSan
 
         private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if(e.Column.Name == "DISABLE" && bool.Parse(e.CellValue.ToString())==true)
+            if (e.Column.Name == "DISABLE" && bool.Parse(e.CellValue.ToString()) == true)
             {
                 Image img = Properties.Resources._1398917_circle_close_cross_incorrect_invalid_icon1;
                 e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
                 e.Handled = true;
+            }
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            XuatReport("rpCongTy", "DANH MỤC CÔNG TY");
+        }
+
+        private void XuatReport(string _rpName, string _rpTitle)
+        {
+            if (_macty!= null)
+            {
+                Form frm = new Form();
+                CrystalReportViewer crv = new CrystalReportViewer();
+                crv.ShowGroupTreeButton = false;
+                crv.ShowParameterPanelButton = false;
+                crv.ToolPanelView = ToolPanelViewType.None;
+                TableLogOnInfo thongtin;
+                ReportDocument doc = new ReportDocument();
+                doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
+                thongtin = doc.Database.Tables[0].LogOnInfo;
+                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                thongtin.ConnectionInfo.UserID = myFunctions._us;
+                thongtin.ConnectionInfo.Password = myFunctions._pw;
+                doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
+                try
+                {
+                    doc.SetParameterValue("macty", _macty.ToString());
+                    crv.Dock = DockStyle.Fill;
+                    crv.ReportSource = doc;
+                    frm.Controls.Add(crv);
+                    crv.Refresh();
+                    frm.Text = _rpTitle;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
         }
     }

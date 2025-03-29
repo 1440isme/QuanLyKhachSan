@@ -38,19 +38,19 @@ namespace KhachSan
             showHideControl(true);
             _enable(false);
 
-            cboTang.SelectedIndexChanged += cboTang_SelectedIndexChanged;
-            cboLoaiPhong.SelectedIndexChanged += cboLoaiPhong_SelectedIndexChanged;
+            //cboTang.SelectedIndexChanged += cboTang_SelectedIndexChanged;
+            //cboLoaiPhong.SelectedIndexChanged += cboLoaiPhong_SelectedIndexChanged;
 
         }
-        private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadPhongByLoaiPhong();
-        }
+        //private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    loadPhongByLoaiPhong();
+        //}
 
-        private void cboTang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadPhongByTang();
-        }
+        //private void cboTang_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    loadPhongByTang();
+        //}
         void showHideControl(bool t)
         {
             btnThem.Visible = t;
@@ -62,6 +62,8 @@ namespace KhachSan
         }
         void _enable(bool t)
         {
+            cboLoaiPhong.Enabled = t;
+            cboTang.Enabled = t;
             txtTen.Enabled = t;
 
             chkThue.Enabled = t;
@@ -75,19 +77,19 @@ namespace KhachSan
         }
         void LoadTang()
         {
-            cboTang.SelectedIndexChanged -= cboTang_SelectedIndexChanged;
+            //cboTang.SelectedIndexChanged -= cboTang_SelectedIndexChanged;
             cboTang.DataSource = _tang.getAll();
             cboTang.DisplayMember = "TENTANG";
             cboTang.ValueMember = "IDTANG";
-            cboTang.SelectedIndexChanged += cboTang_SelectedIndexChanged;
+            //cboTang.SelectedIndexChanged += cboTang_SelectedIndexChanged;
         }
         void LoadLoaiPhong()
         {
-            cboLoaiPhong.SelectedIndexChanged -= cboLoaiPhong_SelectedIndexChanged;
+            //cboLoaiPhong.SelectedIndexChanged -= cboLoaiPhong_SelectedIndexChanged;
             cboLoaiPhong.DataSource = _loaiphong.getAll();
             cboLoaiPhong.DisplayMember = "TENLOAIPHONG";
             cboLoaiPhong.ValueMember = "IDLOAIPHONG";
-            cboLoaiPhong.SelectedIndexChanged += cboLoaiPhong_SelectedIndexChanged;
+            //cboLoaiPhong.SelectedIndexChanged += cboLoaiPhong_SelectedIndexChanged;
         }
         void LoadData()
         {

@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v22.1" />
     <Reference Include="DevExpress.Data.Desktop.v22.1" />
     <Reference Include="DevExpress.Data.v22.1" />
@@ -73,6 +77,12 @@
     </Compile>
     <Compile Include="frmCongTy.Designer.cs">
       <DependentUpon>frmCongTy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatPhong.Designer.cs">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDonVi.cs">
       <SubType>Form</SubType>
@@ -122,6 +132,13 @@
     <Compile Include="frmThietBi.Designer.cs">
       <DependentUpon>frmThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhongThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhongThietBi.Designer.cs">
+      <DependentUpon>frmPhongThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmTang.cs">
@@ -130,8 +147,17 @@
     <Compile Include="frmTang.Designer.cs">
       <DependentUpon>frmTang.cs</DependentUpon>
     </Compile>
+    <Compile Include="rpCongTy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpCongTy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="frmCongTy.resx">
       <DependentUpon>frmCongTy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatPhong.resx">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonVi.resx">
       <DependentUpon>frmDonVi.cs</DependentUpon>
@@ -160,6 +186,9 @@
     <EmbeddedResource Include="frmThietBi.resx">
       <DependentUpon>frmThietBi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPhongThietBi.resx">
+      <DependentUpon>frmPhongThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,6 +200,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rpCongTy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpCongTy.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -225,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1398917_circle_close_cross_incorrect_invalid_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

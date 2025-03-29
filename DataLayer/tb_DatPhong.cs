@@ -14,15 +14,21 @@ namespace DataLayer
     
     public partial class tb_DatPhong
     {
-        public int ID { get; set; }
-        public Nullable<int> IDKH { get; set; }
-        public Nullable<int> IDPHONG { get; set; }
-        public Nullable<System.DateTime> NGAYDAT { get; set; }
-        public Nullable<System.DateTime> NGAYTRA { get; set; }
-        public Nullable<int> SONGAYTHUCO { get; set; }
-        public Nullable<int> UID { get; set; }
-        public Nullable<int> IDSP { get; set; }
+        public int IDDP { get; set; }
+        public int IDKH { get; set; }
+        public Nullable<System.DateTime> NGAYDATPHONG { get; set; }
+        public Nullable<System.DateTime> NGAYTRAPHONG { get; set; }
+        public Nullable<double> SOTIEN { get; set; }
+        public Nullable<int> SONGUOIO { get; set; }
+        public int IDUSER { get; set; }
         public string MACTY { get; set; }
         public string MADVI { get; set; }
+        public Nullable<bool> STATUS { get; set; }
+        public Nullable<bool> DISABLED { get; set; }
+        public Nullable<bool> THEODOAN { get; set; }
+        public string GHICHU { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        public Nullable<System.DateTime> UPDATE_DATE { get; set; }
+        public Nullable<int> UPDATE_BY { get; set; }
     }
 }

@@ -12,11 +12,11 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Phong_ThietBi
+    public partial class tb_Param
     {
-        public int IDPHONG { get; set; }
-        public int IDTB { get; set; }
-        public Nullable<int> SOLUONG { get; set; }
-        public Nullable<bool> DISABLED { get; set; }
+        public string MACTY { get; set; }
+        public string MADVI { get; set; }
+        public string TENCTY { get; set; }
+        public string TENDVI { get; set; }
     }
 }

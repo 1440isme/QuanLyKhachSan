@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCongTy));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.btnBoQua = new System.Windows.Forms.ToolStripButton();
+            this.btn_Print = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -74,6 +76,7 @@
             this.btnXoa,
             this.btnLuu,
             this.btnBoQua,
+            this.btn_Print,
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -130,6 +133,16 @@
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
+            // 
+            // btn_Print
+            // 
+            this.btn_Print.Image = ((System.Drawing.Image)(resources.GetObject("btn_Print.Image")));
+            this.btn_Print.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(36, 51);
+            this.btn_Print.Text = "Print";
+            this.btn_Print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // btnThoat
             // 
@@ -433,5 +446,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn DIACHI;
         private System.Windows.Forms.TextBox txtMaCTy;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripButton btn_Print;
     }
 }

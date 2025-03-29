@@ -79,6 +79,12 @@
     <Compile Include="tb_DatPhong.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
+    <Compile Include="tb_DatPhong_CT.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_DatPhong_SanPham.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
     <Compile Include="tb_DonVi.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
@@ -89,6 +95,9 @@
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_LoaiPhong.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Param.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_Phong.cs">

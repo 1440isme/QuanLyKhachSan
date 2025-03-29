@@ -3,12 +3,9 @@ using DataLayer;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Ribbon.ViewInfo;
-using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -54,13 +51,14 @@ namespace KhachSan
                     navItem.ImageOptions.SmallImageIndex = 0;
                     navGroup.ItemLinks.Add(navItem);
                 }
+                navGroup.Expanded = true;
             }
         }
-        void showRoom()
+        public void showRoom()
         {
-            gControl.Gallery.Groups.Clear(); // Clear existing groups
+            gControl.Gallery.Groups.Clear(); 
 
-            // Khởi tạo lại để lấy dữ liệu mới nhất
+            
             _tang = new TANG();
             _phong = new PHONG();
 
@@ -71,7 +69,7 @@ namespace KhachSan
             gControl.Gallery.ShowGroupCaption = true;
             foreach (var t in lsTang)
             {
-                if (t.DISABLED == true) continue; // Skip disabled floors
+                if (t.DISABLED == true) continue; 
 
                 var galleryItem = new GalleryItemGroup();
                 galleryItem.Caption = t.TENTANG;
@@ -154,6 +152,18 @@ namespace KhachSan
                 case "THIETBI":
                     {
                         frmThietBi _frm = new frmThietBi();
+                        _frm.ShowDialog();
+                        break;
+                    }
+                case "PHONG_THIETBI":
+                    {
+                        frmPhongThietBi _frm = new frmPhongThietBi();
+                        _frm.ShowDialog();
+                        break;
+                    }
+                case "DATPHONG":
+                    {
+                        frmDatPhong _frm = new frmDatPhong();
                         _frm.ShowDialog();
                         break;
                     }

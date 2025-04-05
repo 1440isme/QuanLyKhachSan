@@ -1,4 +1,7 @@
 ﻿using BusinessLayer;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
 using DataLayer;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
@@ -79,6 +82,7 @@ namespace KhachSan
             cboTrangThai.DataSource = TRANGTHAI.getList();
             cboTrangThai.DisplayMember = "_display";
             cboTrangThai.ValueMember = "_value";
+            cboTrangThai.SelectedValue = 1;
             showHideControl(true);
             _enable(false);
             gvPhong.ExpandAllGroups();
@@ -361,7 +365,43 @@ namespace KhachSan
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+           
+          XuatReport(_idDP.ToString(), "rpDatPhong", "ĐƠN ĐẶT PHÒNG CHI TIẾT");
+        }
+        private void XuatReport(string _khoa, string _rpName, string _rpTitle)
+        {
+            if (_khoa != null)
+            {
+                Form frm = new Form();
+                CrystalReportViewer crv = new CrystalReportViewer();
+                crv.ShowGroupTreeButton = false;
+                crv.ShowParameterPanelButton = false;
+                crv.ToolPanelView = ToolPanelViewType.None;
+                TableLogOnInfo thongtin;
+                ReportDocument doc = new ReportDocument();
+                doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
+                thongtin = doc.Database.Tables[0].LogOnInfo;
+                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                thongtin.ConnectionInfo.UserID = myFunctions._us;
+                thongtin.ConnectionInfo.Password = myFunctions._pw;
+                doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
+                try
+                {
+                    doc.SetParameterValue("@IDDP", _khoa.ToString());
+                    crv.Dock = DockStyle.Fill;
+                    crv.ReportSource = doc;
+                    frm.Controls.Add(crv);
+                    crv.Refresh();
+                    frm.Text = _rpTitle;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -539,6 +579,11 @@ namespace KhachSan
                 MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (bool.Parse(cboTrangThai.SelectedValue.ToString()) == true)
+            {
+                MessageBox.Show("Phiếu đã hoàn tất không được chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (gvSanPham.GetFocusedRowCellValue("IDSP") != null)
             {
                 OBJ_DPSP sp = new OBJ_DPSP();
@@ -579,6 +624,11 @@ namespace KhachSan
 
         private void gvSPDV_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            if (bool.Parse(cboTrangThai.SelectedValue.ToString()) == true)
+            {
+                MessageBox.Show("Phiếu đã hoàn tất không được chỉnh sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (e.Column.FieldName == "SOLUONG")
             {
                 int sl = int.Parse(e.Value.ToString());

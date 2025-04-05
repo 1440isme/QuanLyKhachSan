@@ -1,10 +1,14 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KhachSan
 {
@@ -32,8 +36,9 @@ namespace KhachSan
         {
             con.Close();
         }
-        public static DataTable laydulieu(string qr) { 
-        
+        public static DataTable laydulieu(string qr)
+        {
+
             taoketnoi();
             DataTable databl = new DataTable();
             SqlDataAdapter dap = new SqlDataAdapter();
@@ -42,9 +47,12 @@ namespace KhachSan
             dongketnoi();
             return databl;
         }
-        public static DateTime GetFirstDayInMonth(int year, int month) {
+        public static DateTime GetFirstDayInMonth(int year, int month)
+        {
 
             return new DateTime(year, month, 1);
         }
+        
     }
 }
+

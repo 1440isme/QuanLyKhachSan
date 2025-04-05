@@ -24,7 +24,7 @@ namespace BusinessLayer
             List<TRANGTHAI> _lst = new List<TRANGTHAI>();
             TRANGTHAI[] collect = new TRANGTHAI[2]
             {
-                new TRANGTHAI(true, "Dã hoàn tất"),
+                new TRANGTHAI(true, "Đã hoàn tất"),
                 new TRANGTHAI(false, "Chưa hoàn tất")
             };
             _lst.AddRange(collect);

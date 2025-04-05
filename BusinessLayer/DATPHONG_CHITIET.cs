@@ -15,13 +15,21 @@ namespace BusinessLayer
             db = Entities.CreateEntities();
 
         }
-        public tb_DatPhong_CT getItem(int _id)
+        public tb_DatPhong_CT getItem(int _iddpct)
         {
-            return db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDPCT == _id);
+            return db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDPCT == _iddpct);
+        }
+        public tb_DatPhong_CT getItem(int _idDP, int idPhong)
+        {
+            return db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDP == _idDP && x.IDPHONG == idPhong);
         }
         public List<tb_DatPhong_CT> getAllByDatPhong(int _idDP)
         {
             return db.tb_DatPhong_CT.Where(x => x.IDDP == _idDP).ToList();
+        }
+        public tb_DatPhong_CT getIDDPByPhong(int _idPhong)
+        {
+            return db.tb_DatPhong_CT.OrderByDescending(x=>x.NGAY).FirstOrDefault(x => x.IDPHONG == _idPhong);
         }
         public tb_DatPhong_CT add(tb_DatPhong_CT _dpct)
         {

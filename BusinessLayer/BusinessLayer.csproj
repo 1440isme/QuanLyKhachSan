@@ -62,6 +62,7 @@
     <Compile Include="LOAIPHONG.cs" />
     <Compile Include="OBJ_DATPHONG.cs" />
     <Compile Include="OBJ_DPSP.cs" />
+    <Compile Include="OBJ_PHONG.cs" />
     <Compile Include="PHONG.cs" />
     <Compile Include="PHONG_THIETBI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

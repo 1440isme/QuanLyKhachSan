@@ -190,9 +190,54 @@ namespace KhachSan
 
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var gc_item = new GalleryItem();
-            string id = item.Value.ToString();
-            MessageBox.Show(id);
+            if (_phong.checkExist(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng đã được đặt. Vui lòng chọn phòng khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = true;
+            
+            frm.ShowDialog();
+        }
+
+        private void btnChuyenPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!_phong.checkExist(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng chưa đặt nên không được chuyển. Vui lòng chọn phòng đã đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+                frmChuyenPhong frm = new frmChuyenPhong();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm.ShowDialog();
+        }
+
+        private void btnSPDV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!_phong.checkExist(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng chưa được đặt. Vui lòng chọn phòng đã được đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = false;
+            frm.ShowDialog();
+        }
+
+        private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!_phong.checkExist(int.Parse(item.Value.ToString())))
+            {
+                MessageBox.Show("Phòng chưa được đặt. Vui lòng chọn phòng đã được đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            frmDatPhongDon frm = new frmDatPhongDon();
+            frm._idPhong = int.Parse(item.Value.ToString());
+            frm._them = false;
+            frm.ShowDialog();
         }
     }
 }

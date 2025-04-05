@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhachSan", "KhachSan\KhachSan.csproj", "{CDB01809-DB87-4684-8A74-62F4DE914AD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USERMANAGEMENT", "USERMANAGEMENT\USERMANAGEMENT.csproj", "{391EBEC9-A147-4B9D-AA45-ECCF60652C4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CDB01809-DB87-4684-8A74-62F4DE914AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB01809-DB87-4684-8A74-62F4DE914AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB01809-DB87-4684-8A74-62F4DE914AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391EBEC9-A147-4B9D-AA45-ECCF60652C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391EBEC9-A147-4B9D-AA45-ECCF60652C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391EBEC9-A147-4B9D-AA45-ECCF60652C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391EBEC9-A147-4B9D-AA45-ECCF60652C4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

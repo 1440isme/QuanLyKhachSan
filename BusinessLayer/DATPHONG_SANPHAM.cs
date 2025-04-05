@@ -38,6 +38,27 @@ namespace BusinessLayer
             }
             return lstDPSP;
         }
+        public List<tb_DatPhong_SanPham> getAllByPhong(int idDP, int idDPCT)
+        {
+            return db.tb_DatPhong_SanPham.Where(x => x.IDDP == idDP && x.IDDPCT == idDPCT).ToList();
+            
+        }
+        public void update(tb_DatPhong_SanPham dpsp)
+        {
+            tb_DatPhong_SanPham sp = db.tb_DatPhong_SanPham.FirstOrDefault(x => x.IDDPSP == dpsp.IDDPSP);
+            if (sp != null)
+            {
+                sp.IDDP = dpsp.IDDP;
+               // sp.IDDPCT = dpsp.IDDPCT;
+                sp.IDPHONG = dpsp.IDPHONG;
+              //  sp.IDSP = dpsp.IDSP;
+                sp.NGAY = dpsp.NGAY;
+                sp.SOLUONG = dpsp.SOLUONG;
+                sp.DONGIA = dpsp.DONGIA;
+                sp.THANHTIEN = dpsp.THANHTIEN;
+                db.SaveChanges();
+            }
+        }
         public void add(tb_DatPhong_SanPham _dpsp)
         {
             try

@@ -20,12 +20,36 @@ namespace BusinessLayer
         {
             return db.tb_Phong.FirstOrDefault(p => p.IDPHONG == maphong);
         }
-
+        public OBJ_PHONG getItemFull(int id)
+        {
+            var _p = db.tb_Phong.FirstOrDefault(p => p.IDPHONG == id);
+            OBJ_PHONG phong = new OBJ_PHONG();
+            phong.IDPHONG = _p.IDPHONG;
+            phong.TENPHONG = _p.TENPHONG;
+            phong.STATUS = bool.Parse(_p.TRANGTHAI.ToString());
+            phong.DISABLED = bool.Parse(_p.DISABLED.ToString());
+            phong.IDTANG = _p.IDTANG;
+            phong.IDLOAIPHONG = _p.IDLOAIPHONG;
+            var tang = db.tb_Tang.FirstOrDefault(t => t.IDTANG == _p.IDTANG);
+            phong.TENTANG = tang.TENTANG;
+            var lp = db.tb_LoaiPhong.FirstOrDefault(l => l.IDLOAIPHONG == _p.IDLOAIPHONG);
+            phong.TENLOAIPHONG = lp.TENLOAIPHONG;
+            phong.DONGIA = double.Parse(lp.DONGIA.ToString());
+            return phong;
+        }
         public List<tb_Phong> getAll()
         {
             return db.tb_Phong.ToList();
         }
-
+        public List<tb_Phong> getPhongTrongFull()
+        {
+            var _phong = db.tb_Phong.Where(p => p.TRANGTHAI == false && p.DISABLED == false).ToList();
+            if (_phong == null || !_phong.Any())
+            {
+                throw new Exception("Không tìm thấy phòng trống.");
+            }
+            return _phong;
+        }
         public List<tb_Phong> getByTang(int idTang)
         {
             return db.tb_Phong.Where(p => p.IDTANG == idTang).ToList();
@@ -97,6 +121,15 @@ namespace BusinessLayer
             {
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
             }
+        }
+        public bool checkExist(int idPhong)
+        {
+            var _phong = db.tb_Phong.FirstOrDefault(p => p.IDPHONG == idPhong);
+            if (_phong != null && _phong.TRANGTHAI == true && _phong.DISABLED == false)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

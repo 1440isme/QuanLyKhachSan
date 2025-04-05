@@ -59,6 +59,21 @@ namespace BusinessLayer
             db.SaveChanges();
             return dp;
         }
+        public void updateStatus(int idDP)
+        {
+            tb_DatPhong dp = db.tb_DatPhong.FirstOrDefault(x => x.IDDP == idDP);
+            dp.STATUS = true;
+            try
+            {
+                db.SaveChanges();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
+            }
+        }
 
         public tb_DatPhong update(tb_DatPhong dp)
         {

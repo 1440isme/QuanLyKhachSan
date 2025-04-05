@@ -167,12 +167,13 @@ namespace KhachSan
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
-            XuatReport("rpCongTy", "DANH MỤC CÔNG TY");
+           
+            XuatReport(_macty, "rpCongTy", "DANH MỤC CÔNG TY");
         }
 
-        private void XuatReport(string _rpName, string _rpTitle)
+        private void XuatReport(string _khoa, string _rpName, string _rpTitle)
         {
-            if (_macty!= null)
+            if (_khoa!=null)
             {
                 Form frm = new Form();
                 CrystalReportViewer crv = new CrystalReportViewer();
@@ -190,7 +191,7 @@ namespace KhachSan
                 doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
                 try
                 {
-                    doc.SetParameterValue("macty", _macty.ToString());
+                    doc.SetParameterValue("MACTY", _khoa.ToString());
                     crv.Dock = DockStyle.Fill;
                     crv.ReportSource = doc;
                     frm.Controls.Add(crv);
@@ -201,10 +202,10 @@ namespace KhachSan
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
         }
+
     }
 }

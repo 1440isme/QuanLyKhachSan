@@ -20,9 +20,11 @@ namespace KhachSan
             InitializeComponent();
         }
         frmDatPhong objDP = (frmDatPhong) Application.OpenForms["frmDatPhong"];
+        frmDatPhongDon objDPDon = (frmDatPhongDon)Application.OpenForms["frmDatPhongDon"];
         KHACHHANG _khachhang;
         bool _them;
         int _idkh;
+        public string kh_dp;
 
 
         private void frmKhachHang_Load(object sender, EventArgs e)
@@ -220,8 +222,17 @@ namespace KhachSan
         {
             if (gvDanhSach.GetFocusedRowCellValue("IDKH") != null)
             {
-                objDP.loadKH();
-                objDP.setKH(int.Parse(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString()));
+                if (kh_dp == "DatPhongDon")
+                {
+                    objDPDon.loadKH();
+                    objDPDon.setKH(int.Parse(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString()));
+                }
+                else
+                {
+                    objDP.loadKH();
+                    objDP.setKH(int.Parse(gvDanhSach.GetFocusedRowCellValue("IDKH").ToString()));
+                }    
+                
                 this.Close();
             }
         }

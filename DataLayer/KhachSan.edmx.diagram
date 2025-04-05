@@ -5,21 +5,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2d62995f161a48c9a564eff9919ad115" Name="Diagram1">
-        <EntityTypeShape EntityType="KhachSan.tb_LoaiPhong" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KhachSan.tb_Users" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KhachSan.tb_Func" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_CongTy" Width="1.5" PointX="9.375" PointY="4.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_DonVi" Width="1.5" PointX="4.75" PointY="0.875" />
-        <EntityTypeShape EntityType="KhachSan.tb_Phong" Width="1.5" PointX="5.375" PointY="4.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_SanPham" Width="1.5" PointX="7.375" PointY="8.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_Tang" Width="1.5" PointX="9.375" PointY="8.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_ThietBi" Width="1.5" PointX="11.375" PointY="0.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_KhachHang" Width="1.5" PointX="14.375" PointY="6.125" />
-        <EntityTypeShape EntityType="KhachSan.tb_Phong_ThietBi" Width="1.5" PointX="5.125" PointY="8.25" />
-        <EntityTypeShape EntityType="KhachSan.tb_DatPhong" Width="1.5" PointX="0.75" PointY="1" />
-        <EntityTypeShape EntityType="KhachSan.tb_Param" Width="1.5" PointX="11.375" PointY="4.375" />
-        <EntityTypeShape EntityType="KhachSan.tb_DatPhong_SanPham" Width="2.375" PointX="16.875" PointY="2.25" />
-        <EntityTypeShape EntityType="KhachSan.tb_DatPhong_CT" Width="1.5" PointX="13.875" PointY="2.375" />
+        <EntityTypeShape EntityType="KhachSan.tb_CongTy" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_DatPhong" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_DatPhong_CT" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_DatPhong_SanPham" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_DonVi" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_KhachHang" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_LoaiPhong" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_Param" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_Phong" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_Phong_ThietBi" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SanPham" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_FUNC" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_GROUP" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_REPORT" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_RIGHT" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_RIGHT_REP" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_USER" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_Tang" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="KhachSan.tb_ThietBi" Width="1.5" PointX="8.75" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

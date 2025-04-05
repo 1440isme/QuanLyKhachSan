@@ -18,13 +18,13 @@ namespace KhachSan
             InitializeComponent();
         }
         TANG _tang = new TANG();
-        FUNC _func = new FUNC();
+        SYS_FUNC _func = new SYS_FUNC();
         PHONG _phong = new PHONG();
         GalleryItem item = null;
         private void frmMain_Load(object sender, EventArgs e)
         {
             _tang = new TANG();
-            _func = new FUNC();
+            _func = new SYS_FUNC();
             _phong = new PHONG();
             leftMenu();
             showRoom();

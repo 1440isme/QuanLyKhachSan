@@ -88,9 +88,6 @@
     <Compile Include="tb_DonVi.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
-    <Compile Include="tb_Func.cs">
-      <DependentUpon>KhachSan.tt</DependentUpon>
-    </Compile>
     <Compile Include="tb_KhachHang.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
@@ -109,13 +106,28 @@
     <Compile Include="tb_SanPham.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
+    <Compile Include="tb_SYS_FUNC.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_SYS_GROUP.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_SYS_REPORT.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_SYS_RIGHT.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_SYS_RIGHT_REP.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_SYS_USER.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
     <Compile Include="tb_Tang.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_ThietBi.cs">
-      <DependentUpon>KhachSan.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_Users.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
   </ItemGroup>

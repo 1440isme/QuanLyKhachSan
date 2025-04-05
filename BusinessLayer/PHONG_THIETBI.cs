@@ -14,9 +14,10 @@ namespace BusinessLayer
         {
             db = Entities.CreateEntities();
         }
-        public tb_Phong_ThietBi getItem(int maphong)
+
+        public tb_Phong_ThietBi getItem(int idPhong, int idTB)
         {
-            return db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == maphong);
+            return db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == idPhong && p.IDTB == idTB);
         }
 
         public List<tb_Phong_ThietBi> getAll()
@@ -51,13 +52,12 @@ namespace BusinessLayer
         {
             try
             {
-                tb_Phong_ThietBi _phong = db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == phong.IDPHONG);
+                tb_Phong_ThietBi _phong = db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == phong.IDPHONG && p.IDTB == phong.IDTB);
                 if (_phong == null)
                 {
-                    throw new Exception("Không tìm thấy phòng để cập nhật.");
+                    throw new Exception("Không tìm thấy phòng thiết bị để cập nhật.");
                 }
                 _phong.SOLUONG = phong.SOLUONG;
-                
                 _phong.DISABLED = phong.DISABLED;
                 db.SaveChanges();
             }
@@ -67,14 +67,14 @@ namespace BusinessLayer
             }
         }
 
-        public void delete(int maphong)
+        public void delete(int idPhong, int idTB)
         {
             try
             {
-                tb_Phong_ThietBi _phong = db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == maphong);
+                tb_Phong_ThietBi _phong = db.tb_Phong_ThietBi.FirstOrDefault(p => p.IDPHONG == idPhong && p.IDTB == idTB);
                 if (_phong == null)
                 {
-                    throw new Exception("Không tìm thấy phòng để xóa.");
+                    throw new Exception("Không tìm thấy phòng thiết bị để xóa.");
                 }
                 _phong.DISABLED = true;
                 db.SaveChanges();

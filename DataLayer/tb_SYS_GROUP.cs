@@ -12,14 +12,9 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Func
+    public partial class tb_SYS_GROUP
     {
-        public string FUNC_CODE { get; set; }
-        public int SORT { get; set; }
-        public string DESCRIPTION { get; set; }
-        public Nullable<bool> ISGROUP { get; set; }
-        public string PARENT { get; set; }
-        public Nullable<bool> MENU { get; set; }
-        public string TIPS { get; set; }
+        public int GROUP { get; set; }
+        public int MEMBER { get; set; }
     }
 }

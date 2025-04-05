@@ -78,7 +78,13 @@ namespace KhachSan
                 var dp = _datphong.getItem(_idDP);
                 searchKH.EditValue = dp.IDKH;
                 dtNgayDat.Value = dp.NGAYDATPHONG.Value;
-                dtNgayTra.Value = DateTime.Now;
+                if (dp.NGAYDATPHONG.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
+                    dtNgayTra.Value = dp.NGAYDATPHONG.Value.AddDays(1);
+                else
+               
+                    dtNgayTra.Value = DateTime.Now;
+                
+                
                 cboTrangThai.SelectedValue = dp.STATUS;
                 numSoNguoi.Value = dp.SONGUOIO.Value;
                 txtGhiChu.Text = dp.GHICHU;

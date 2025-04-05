@@ -125,7 +125,7 @@ namespace KhachSan
             {
                 try
                 {
-                    tb_Phong_ThietBi phong = _phongtb.getItem(_idPhongSelected);
+                    tb_Phong_ThietBi phong = _phongtb.getItem(_idPhongSelected, _idTBSelected);
                     if (phong != null && phong.IDTB == _idTBSelected)
                     {
                         phong.SOLUONG = 0;
@@ -171,11 +171,9 @@ namespace KhachSan
                         return;
                     }
 
-                    tb_Phong_ThietBi phong = _phongtb.getItem(_idPhongSelected);
-                    if (phong != null && phong.IDTB == _idTBSelected)
+                    tb_Phong_ThietBi phong = _phongtb.getItem(_idPhongSelected, _idTBSelected);
+                    if (phong != null)
                     {
-                        phong.IDPHONG = int.Parse(cboPhong.SelectedValue.ToString());
-                        phong.IDTB = int.Parse(cboThietBi.SelectedValue.ToString());
                         phong.SOLUONG = (int)numSoLuong.Value;
                         _phongtb.update(phong);
                     }

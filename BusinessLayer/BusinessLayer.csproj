@@ -57,7 +57,7 @@
     <Compile Include="DATPHONG_CHITIET.cs" />
     <Compile Include="DATPHONG_SANPHAM.cs" />
     <Compile Include="DONVI.cs" />
-    <Compile Include="FUNC.cs" />
+    <Compile Include="SYS_FUNC.cs" />
     <Compile Include="KHACHHANG.cs" />
     <Compile Include="LOAIPHONG.cs" />
     <Compile Include="OBJ_DATPHONG.cs" />
@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SANPHAM.cs" />
     <Compile Include="SYS_PARAM.cs" />
+    <Compile Include="SYS_USER.cs" />
     <Compile Include="TANG.cs" />
     <Compile Include="THIETBI.cs" />
     <Compile Include="TRANGTHAI.cs" />

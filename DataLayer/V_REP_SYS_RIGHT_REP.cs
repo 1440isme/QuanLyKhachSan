@@ -12,10 +12,13 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_SYS_RIGHT_REP
+    public partial class V_REP_SYS_RIGHT_REP
     {
         public int REP_CODE { get; set; }
+        public string DESCRIPTION { get; set; }
+        public string REP_NAME { get; set; }
+        public Nullable<bool> VISIBLE { get; set; }
         public int IDUSER { get; set; }
-        public Nullable<bool> USER_RIGHT { get; set; }
+        public string QUYEN { get; set; }
     }
 }

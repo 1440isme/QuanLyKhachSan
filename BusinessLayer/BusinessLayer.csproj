@@ -67,11 +67,18 @@
     <Compile Include="PHONG_THIETBI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SANPHAM.cs" />
+    <Compile Include="SYS_GROUP.cs" />
     <Compile Include="SYS_PARAM.cs" />
+    <Compile Include="SYS_RIGHT.cs" />
+    <Compile Include="SYS_RIGHT_REP.cs" />
     <Compile Include="SYS_USER.cs" />
     <Compile Include="TANG.cs" />
     <Compile Include="THIETBI.cs" />
     <Compile Include="TRANGTHAI.cs" />
+    <Compile Include="VIEW_FUNC_SYS_RIGHT.cs" />
+    <Compile Include="VIEW_REP_SYS_RIGHT_REP.cs" />
+    <Compile Include="VIEW_USER_IN_GROUP.cs" />
+    <Compile Include="VIEW_USER_NOTIN_GROUP.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

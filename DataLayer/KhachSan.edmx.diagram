@@ -20,10 +20,14 @@
         <EntityTypeShape EntityType="KhachSan.tb_SYS_GROUP" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="KhachSan.tb_SYS_REPORT" Width="1.5" PointX="10.75" PointY="3.75" />
         <EntityTypeShape EntityType="KhachSan.tb_SYS_RIGHT" Width="1.5" PointX="4.75" PointY="10.75" />
-        <EntityTypeShape EntityType="KhachSan.tb_SYS_RIGHT_REP" Width="1.5" PointX="6.75" PointY="10.75" />
         <EntityTypeShape EntityType="KhachSan.tb_SYS_USER" Width="1.5" PointX="10.75" PointY="7.75" />
         <EntityTypeShape EntityType="KhachSan.tb_Tang" Width="1.5" PointX="0.75" PointY="11.75" />
         <EntityTypeShape EntityType="KhachSan.tb_ThietBi" Width="1.5" PointX="8.75" PointY="11.75" />
+        <EntityTypeShape EntityType="KhachSan.V_USER_NOTIN_GROUP" Width="1.5" PointX="14.5" PointY="3.625" />
+        <EntityTypeShape EntityType="KhachSan.V_USER_IN_GROUP" Width="1.5" PointX="16.875" PointY="5.125" />
+        <EntityTypeShape EntityType="KhachSan.V_FUNC_SYS_RIGHT" Width="1.5" PointX="19" PointY="3.875" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_RIGHT_REP" Width="1.5" PointX="12.625" PointY="9.25" />
+        <EntityTypeShape EntityType="KhachSan.V_REP_SYS_RIGHT_REP" Width="1.5" PointX="16.625" PointY="10.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

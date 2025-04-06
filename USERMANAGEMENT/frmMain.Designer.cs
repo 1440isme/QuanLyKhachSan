@@ -81,8 +81,8 @@
             // 
             this.btnGroup.Caption = "Nhóm người dùng";
             this.btnGroup.Id = 1;
-            this.btnGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGroup.ImageOptions.Image")));
-            this.btnGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGroup.ImageOptions.LargeImage")));
+            this.btnGroup.ImageOptions.Image = global::USERMANAGEMENT.Properties.Resources.usergroup_16x16;
+            this.btnGroup.ImageOptions.LargeImage = global::USERMANAGEMENT.Properties.Resources.usergroup_32x32;
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGroup_ItemClick);
@@ -91,8 +91,8 @@
             // 
             this.btnUser.Caption = "Người dùng";
             this.btnUser.Id = 2;
-            this.btnUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.ImageOptions.Image")));
-            this.btnUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUser.ImageOptions.LargeImage")));
+            this.btnUser.ImageOptions.Image = global::USERMANAGEMENT.Properties.Resources.employee_16x16;
+            this.btnUser.ImageOptions.LargeImage = global::USERMANAGEMENT.Properties.Resources.employee_32x32;
             this.btnUser.Name = "btnUser";
             this.btnUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUser_ItemClick);
             // 
@@ -127,8 +127,8 @@
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 6;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.ImageOptions.Image = global::USERMANAGEMENT.Properties.Resources.cancel_16x16;
+            this.btnThoat.ImageOptions.LargeImage = global::USERMANAGEMENT.Properties.Resources.cancel_32x32;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
@@ -214,6 +214,8 @@
             this.ISGROUP});
             this.gvUser.GridControl = this.gcUser;
             this.gvUser.Name = "gvUser";
+            this.gvUser.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvUser_CustomDrawCell);
+            this.gvUser.DoubleClick += new System.EventHandler(this.gvUser_DoubleClick);
             // 
             // DISABLED
             // 

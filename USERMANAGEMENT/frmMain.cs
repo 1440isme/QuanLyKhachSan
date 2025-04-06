@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,8 +33,9 @@ namespace USERMANAGEMENT
             loadTreeView();
             loadUser("CTME", "~");
         }
-        void loadUser(string macty, string madvi)
+        public void loadUser(string macty, string madvi)
         {
+            _sysuser = new SYS_USER();
             gcUser.DataSource = _sysuser.getUserByDVI(macty, madvi);
             gvUser.OptionsBehavior.Editable = false;
         }
@@ -94,32 +96,114 @@ namespace USERMANAGEMENT
 
         private void btnGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_treeView.Text== "")
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                return;
 
+            }
+            frmGroup frm = new frmGroup();
+            frm._them = true;
+            frm._macty = _macty;
+            frm._madvi = _madvi;
+            frm.ShowDialog();
         }
 
         private void btnUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_treeView.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            frmUser frm = new frmUser();
+            frm._them = true;
+            frm._macty = _macty;
+            frm._madvi = _madvi;
+            frm.ShowDialog();
         }
 
         private void btnCapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (gvUser.RowCount > 0 && gvUser.GetFocusedRowCellValue("ISGROUP").Equals(true))
+            {
+                frmGroup frm = new frmGroup();
+                frm._them = false;
+                frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+                frm.ShowDialog();
+            }
+            else
+            {
+                frmUser frm = new frmUser();
+                frm._them = false;
+                frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+                frm.ShowDialog();
+            }
         }
 
         private void btnChucNang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmPhanQuyenChucNang frm = new frmPhanQuyenChucNang();
+            frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+            frm._macty = _macty;
+            frm._madvi = _madvi;
+            frm.ShowDialog();
         }
 
         private void btnBaoCao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmPhanQuyenBaoCao frm = new frmPhanQuyenBaoCao();
+            frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+            frm._macty = _macty;
+            frm._madvi = _madvi;
+            frm.ShowDialog();
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void gvUser_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvUser.RowCount > 0 && gvUser.GetFocusedRowCellValue("ISGROUP").Equals(true)  )
+            {
+                frmGroup frm = new frmGroup();
+                frm._them = false;
+                frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+                frm.ShowDialog();
+            }
+            else
+            {
+                frmUser frm = new frmUser();
+                frm._them = false;
+                frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+                frm.ShowDialog();
+            }
+        }
+
+        private void gvUser_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "ISGROUP")
+            {
+                if (e.CellValue != null && bool.TryParse(e.CellValue.ToString(), out bool isGroup))
+                {
+                    Image img = isGroup ? Properties.Resources.usergroup_16x16 : Properties.Resources.employee_16x16;
+                    e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                    e.Handled = true;
+                }
+            }
+            if (e.Column.Name == "DISABLED")
+            {
+                if (e.CellValue != null && bool.Parse(e.CellValue.ToString()))
+                {
+                    Image img = Properties.Resources.cancel_16x16;
+                    e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

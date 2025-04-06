@@ -187,9 +187,10 @@
         <EntityType Name="tb_SYS_RIGHT_REP">
           <Key>
             <PropertyRef Name="REP_CODE" />
+            <PropertyRef Name="IDUSER" />
           </Key>
-          <Property Name="REP_CODE" Type="bit" Nullable="false" />
-          <Property Name="IDUSER" Type="int" />
+          <Property Name="REP_CODE" Type="int" Nullable="false" />
+          <Property Name="IDUSER" Type="int" Nullable="false" />
           <Property Name="USER_RIGHT" Type="bit" />
         </EntityType>
         <EntityType Name="tb_SYS_USER">
@@ -223,6 +224,73 @@
           <Property Name="DONGIA" Type="float" />
           <Property Name="DISABLED" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KhachSan.dbo.V_FUNC_SYS_RIGHT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_FUNC_SYS_RIGHT">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+            <PropertyRef Name="SORT" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="200" />
+          <Property Name="ISGROUP" Type="bit" />
+          <Property Name="PARENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="SORT" Type="int" Nullable="false" />
+          <Property Name="IDUSER" Type="int" Nullable="false" />
+          <Property Name="QUYEN" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KhachSan.dbo.V_REP_SYS_RIGHT_REP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_REP_SYS_RIGHT_REP">
+          <Key>
+            <PropertyRef Name="REP_CODE" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="REP_CODE" Type="int" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="REP_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="VISIBLE" Type="bit" />
+          <Property Name="IDUSER" Type="int" Nullable="false" />
+          <Property Name="QUYEN" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KhachSan.dbo.V_USER_IN_GROUP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_USER_IN_GROUP">
+          <Key>
+            <PropertyRef Name="GROUP" />
+            <PropertyRef Name="MEMBER" />
+          </Key>
+          <Property Name="IDUSER" Type="int" />
+          <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWD" Type="nvarchar" MaxLength="50" />
+          <Property Name="MACTY" Type="nvarchar" MaxLength="10" />
+          <Property Name="MADVI" Type="nvarchar" MaxLength="10" />
+          <Property Name="LAST_PWD_CHANGED" Type="datetime" />
+          <Property Name="ISGROUP" Type="bit" />
+          <Property Name="DISABLED" Type="bit" />
+          <Property Name="GROUP" Type="int" Nullable="false" />
+          <Property Name="MEMBER" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_USER_NOTIN_GROUP">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+            <PropertyRef Name="MACTY" />
+            <PropertyRef Name="MADVI" />
+          </Key>
+          <Property Name="IDUSER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWD" Type="nvarchar" MaxLength="50" />
+          <Property Name="MACTY" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MADVI" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="LAST_PWD_CHANGED" Type="datetime" />
+          <Property Name="ISGROUP" Type="bit" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
         <EntityContainer Name="KhachSanStoreContainer">
           <EntitySet Name="tb_CongTy" EntityType="Self.tb_CongTy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_DatPhong" EntityType="Self.tb_DatPhong" Schema="dbo" store:Type="Tables" />
@@ -243,6 +311,55 @@
           <EntitySet Name="tb_SYS_USER" EntityType="Self.tb_SYS_USER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Tang" EntityType="Self.tb_Tang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ThietBi" EntityType="Self.tb_ThietBi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_FUNC_SYS_RIGHT" EntityType="Self.V_FUNC_SYS_RIGHT" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_FUNC_SYS_RIGHT].[FUNC_CODE] AS [FUNC_CODE], 
+    [V_FUNC_SYS_RIGHT].[DESCRIPTION] AS [DESCRIPTION], 
+    [V_FUNC_SYS_RIGHT].[ISGROUP] AS [ISGROUP], 
+    [V_FUNC_SYS_RIGHT].[PARENT] AS [PARENT], 
+    [V_FUNC_SYS_RIGHT].[SORT] AS [SORT], 
+    [V_FUNC_SYS_RIGHT].[IDUSER] AS [IDUSER], 
+    [V_FUNC_SYS_RIGHT].[QUYEN] AS [QUYEN]
+    FROM [dbo].[V_FUNC_SYS_RIGHT] AS [V_FUNC_SYS_RIGHT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="Self.V_REP_SYS_RIGHT_REP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_REP_SYS_RIGHT_REP].[REP_CODE] AS [REP_CODE], 
+    [V_REP_SYS_RIGHT_REP].[DESCRIPTION] AS [DESCRIPTION], 
+    [V_REP_SYS_RIGHT_REP].[REP_NAME] AS [REP_NAME], 
+    [V_REP_SYS_RIGHT_REP].[VISIBLE] AS [VISIBLE], 
+    [V_REP_SYS_RIGHT_REP].[IDUSER] AS [IDUSER], 
+    [V_REP_SYS_RIGHT_REP].[QUYEN] AS [QUYEN]
+    FROM [dbo].[V_REP_SYS_RIGHT_REP] AS [V_REP_SYS_RIGHT_REP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_USER_IN_GROUP" EntityType="Self.V_USER_IN_GROUP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_USER_IN_GROUP].[IDUSER] AS [IDUSER], 
+    [V_USER_IN_GROUP].[FULLNAME] AS [FULLNAME], 
+    [V_USER_IN_GROUP].[USERNAME] AS [USERNAME], 
+    [V_USER_IN_GROUP].[PASSWD] AS [PASSWD], 
+    [V_USER_IN_GROUP].[MACTY] AS [MACTY], 
+    [V_USER_IN_GROUP].[MADVI] AS [MADVI], 
+    [V_USER_IN_GROUP].[LAST_PWD_CHANGED] AS [LAST_PWD_CHANGED], 
+    [V_USER_IN_GROUP].[ISGROUP] AS [ISGROUP], 
+    [V_USER_IN_GROUP].[DISABLED] AS [DISABLED], 
+    [V_USER_IN_GROUP].[GROUP] AS [GROUP], 
+    [V_USER_IN_GROUP].[MEMBER] AS [MEMBER]
+    FROM [dbo].[V_USER_IN_GROUP] AS [V_USER_IN_GROUP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_USER_NOTIN_GROUP" EntityType="Self.V_USER_NOTIN_GROUP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_USER_NOTIN_GROUP].[IDUSER] AS [IDUSER], 
+    [V_USER_NOTIN_GROUP].[FULLNAME] AS [FULLNAME], 
+    [V_USER_NOTIN_GROUP].[USERNAME] AS [USERNAME], 
+    [V_USER_NOTIN_GROUP].[PASSWD] AS [PASSWD], 
+    [V_USER_NOTIN_GROUP].[MACTY] AS [MACTY], 
+    [V_USER_NOTIN_GROUP].[MADVI] AS [MADVI], 
+    [V_USER_NOTIN_GROUP].[LAST_PWD_CHANGED] AS [LAST_PWD_CHANGED], 
+    [V_USER_NOTIN_GROUP].[ISGROUP] AS [ISGROUP], 
+    [V_USER_NOTIN_GROUP].[DISABLED] AS [DISABLED]
+    FROM [dbo].[V_USER_NOTIN_GROUP] AS [V_USER_NOTIN_GROUP]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -264,10 +381,14 @@
           <EntitySet Name="tb_SYS_GROUP" EntityType="KhachSan.tb_SYS_GROUP" />
           <EntitySet Name="tb_SYS_REPORT" EntityType="KhachSan.tb_SYS_REPORT" />
           <EntitySet Name="tb_SYS_RIGHT" EntityType="KhachSan.tb_SYS_RIGHT" />
-          <EntitySet Name="tb_SYS_RIGHT_REP" EntityType="KhachSan.tb_SYS_RIGHT_REP" />
           <EntitySet Name="tb_SYS_USER" EntityType="KhachSan.tb_SYS_USER" />
           <EntitySet Name="tb_Tang" EntityType="KhachSan.tb_Tang" />
           <EntitySet Name="tb_ThietBi" EntityType="KhachSan.tb_ThietBi" />
+          <EntitySet Name="V_USER_NOTIN_GROUP" EntityType="KhachSan.V_USER_NOTIN_GROUP" />
+          <EntitySet Name="V_USER_IN_GROUP" EntityType="KhachSan.V_USER_IN_GROUP" />
+          <EntitySet Name="V_FUNC_SYS_RIGHT" EntityType="KhachSan.V_FUNC_SYS_RIGHT" />
+          <EntitySet Name="tb_SYS_RIGHT_REP" EntityType="KhachSan.tb_SYS_RIGHT_REP" />
+          <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="KhachSan.V_REP_SYS_RIGHT_REP" />
         </EntityContainer>
         <EntityType Name="tb_CongTy">
           <Key>
@@ -448,14 +569,6 @@
           <Property Name="IDUSER" Type="Int32" Nullable="false" />
           <Property Name="USER_RIGHT" Type="Int32" />
         </EntityType>
-        <EntityType Name="tb_SYS_RIGHT_REP">
-          <Key>
-            <PropertyRef Name="REP_CODE" />
-          </Key>
-          <Property Name="REP_CODE" Type="Boolean" Nullable="false" />
-          <Property Name="IDUSER" Type="Int32" />
-          <Property Name="USER_RIGHT" Type="Boolean" />
-        </EntityType>
         <EntityType Name="tb_SYS_USER">
           <Key>
             <PropertyRef Name="IDUSER" />
@@ -486,6 +599,74 @@
           <Property Name="TENTB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DONGIA" Type="Double" />
           <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="V_USER_NOTIN_GROUP">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+            <PropertyRef Name="MACTY" />
+            <PropertyRef Name="MADVI" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACTY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MADVI" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_PWD_CHANGED" Type="DateTime" Precision="3" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="V_USER_IN_GROUP">
+          <Key>
+            <PropertyRef Name="GROUP" />
+            <PropertyRef Name="MEMBER" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" />
+          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACTY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MADVI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_PWD_CHANGED" Type="DateTime" Precision="3" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="DISABLED" Type="Boolean" />
+          <Property Name="GROUP" Type="Int32" Nullable="false" />
+          <Property Name="MEMBER" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_FUNC_SYS_RIGHT">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+            <PropertyRef Name="SORT" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="PARENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SORT" Type="Int32" Nullable="false" />
+          <Property Name="IDUSER" Type="Int32" Nullable="false" />
+          <Property Name="QUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_SYS_RIGHT_REP">
+          <Key>
+            <PropertyRef Name="REP_CODE" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="REP_CODE" Type="Int32" Nullable="false" />
+          <Property Name="IDUSER" Type="Int32" Nullable="false" />
+          <Property Name="USER_RIGHT" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="V_REP_SYS_RIGHT_REP">
+          <Key>
+            <PropertyRef Name="REP_CODE" />
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="REP_CODE" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VISIBLE" Type="Boolean" />
+          <Property Name="IDUSER" Type="Int32" Nullable="false" />
+          <Property Name="QUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -682,15 +863,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_SYS_RIGHT_REP">
-            <EntityTypeMapping TypeName="KhachSan.tb_SYS_RIGHT_REP">
-              <MappingFragment StoreEntitySet="tb_SYS_RIGHT_REP">
-                <ScalarProperty Name="USER_RIGHT" ColumnName="USER_RIGHT" />
-                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
-                <ScalarProperty Name="REP_CODE" ColumnName="REP_CODE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_SYS_USER">
             <EntityTypeMapping TypeName="KhachSan.tb_SYS_USER">
               <MappingFragment StoreEntitySet="tb_SYS_USER">
@@ -722,6 +894,72 @@
                 <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
                 <ScalarProperty Name="TENTB" ColumnName="TENTB" />
                 <ScalarProperty Name="IDTB" ColumnName="IDTB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_USER_NOTIN_GROUP">
+            <EntityTypeMapping TypeName="KhachSan.V_USER_NOTIN_GROUP">
+              <MappingFragment StoreEntitySet="V_USER_NOTIN_GROUP">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="LAST_PWD_CHANGED" ColumnName="LAST_PWD_CHANGED" />
+                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
+                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_USER_IN_GROUP">
+            <EntityTypeMapping TypeName="KhachSan.V_USER_IN_GROUP">
+              <MappingFragment StoreEntitySet="V_USER_IN_GROUP">
+                <ScalarProperty Name="MEMBER" ColumnName="MEMBER" />
+                <ScalarProperty Name="GROUP" ColumnName="GROUP" />
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="LAST_PWD_CHANGED" ColumnName="LAST_PWD_CHANGED" />
+                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
+                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_FUNC_SYS_RIGHT">
+            <EntityTypeMapping TypeName="KhachSan.V_FUNC_SYS_RIGHT">
+              <MappingFragment StoreEntitySet="V_FUNC_SYS_RIGHT">
+                <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_SYS_RIGHT_REP">
+            <EntityTypeMapping TypeName="KhachSan.tb_SYS_RIGHT_REP">
+              <MappingFragment StoreEntitySet="tb_SYS_RIGHT_REP">
+                <ScalarProperty Name="USER_RIGHT" ColumnName="USER_RIGHT" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+                <ScalarProperty Name="REP_CODE" ColumnName="REP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_REP_SYS_RIGHT_REP">
+            <EntityTypeMapping TypeName="KhachSan.V_REP_SYS_RIGHT_REP">
+              <MappingFragment StoreEntitySet="V_REP_SYS_RIGHT_REP">
+                <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+                <ScalarProperty Name="VISIBLE" ColumnName="VISIBLE" />
+                <ScalarProperty Name="REP_NAME" ColumnName="REP_NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="REP_CODE" ColumnName="REP_CODE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

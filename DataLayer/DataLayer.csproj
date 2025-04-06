@@ -130,6 +130,18 @@
     <Compile Include="tb_ThietBi.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
+    <Compile Include="V_FUNC_SYS_RIGHT.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_REP_SYS_RIGHT_REP.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_USER_IN_GROUP.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_USER_NOTIN_GROUP.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

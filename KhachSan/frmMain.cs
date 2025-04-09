@@ -3,6 +3,7 @@ using DataLayer;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Ribbon.ViewInfo;
+using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,17 @@ namespace KhachSan
         {
             InitializeComponent();
         }
+        public frmMain(tb_SYS_USER user)
+        {
+            InitializeComponent();
+            this._user = user;
+            this.Text = "PHẦN MỀM QUẢN LÝ KHÁCH SẠN - " + user.FULLNAME;
+        }
+        tb_SYS_USER _user;
         TANG _tang = new TANG();
         SYS_FUNC _func = new SYS_FUNC();
+        SYS_GROUP _sysGroup;
+        SYS_RIGHT _sysRight;
         PHONG _phong = new PHONG();
         GalleryItem item = null;
         private void frmMain_Load(object sender, EventArgs e)
@@ -26,6 +36,8 @@ namespace KhachSan
             _tang = new TANG();
             _func = new SYS_FUNC();
             _phong = new PHONG();
+            _sysGroup = new SYS_GROUP();
+            _sysRight = new SYS_RIGHT();
             leftMenu();
             showRoom();
         }
@@ -102,72 +114,90 @@ namespace KhachSan
         private void navMain_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
             string _funcCode = e.Link.Item.Tag.ToString();
-            switch (_funcCode)
-            {
-                case "CONGTY":
-                    {
-                        frmCongTy _frm = new frmCongTy();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "DONVI":
-                    {
-                        frmDonVi _frm = new frmDonVi();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "LOAIPHONG":
-                    {
-                        frmLoaiPhong _frm = new frmLoaiPhong();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "KHACHHANG":
-                    {
-                        frmKhachHang _frm = new frmKhachHang();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "TANG":
-                    {
-                        frmTang _frm = new frmTang();
-                        _frm.DataChanged += FrmTang_DataChanged;
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "PHONG":
-                    {
-                        frmPhong _frm = new frmPhong();
-                        _frm.DataChanged += FrmPhong_DataChanged;
 
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "SANPHAM":
-                    {
-                        frmSanPham _frm = new frmSanPham();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "THIETBI":
-                    {
-                        frmThietBi _frm = new frmThietBi();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "PHONG_THIETBI":
-                    {
-                        frmPhongThietBi _frm = new frmPhongThietBi();
-                        _frm.ShowDialog();
-                        break;
-                    }
-                case "DATPHONG":
-                    {
-                        frmDatPhong _frm = new frmDatPhong();
-                        _frm.ShowDialog();
-                        break;
-                    }
+            var _group = _sysGroup.getGroupByMember(_user.IDUSER);
+            var _uRight = _sysRight.getRight(_user.IDUSER, _funcCode);
+            if (_group!=null)
+            {
+                var _groupRight = _sysRight.getRight(_group.GROUP, _funcCode);
+                if (_uRight.USER_RIGHT < _groupRight.USER_RIGHT)
+                    _uRight.USER_RIGHT = _groupRight.USER_RIGHT;
             }
+            if (_uRight.USER_RIGHT == 0)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                switch (_funcCode)
+                {
+                    case "CONGTY":
+                        {
+                            frmCongTy _frm = new frmCongTy(_user, _uRight.USER_RIGHT.Value);
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "DONVI":
+                        {
+                            frmDonVi _frm = new frmDonVi();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "LOAIPHONG":
+                        {
+                            frmLoaiPhong _frm = new frmLoaiPhong();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "KHACHHANG":
+                        {
+                            frmKhachHang _frm = new frmKhachHang();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "TANG":
+                        {
+                            frmTang _frm = new frmTang();
+                            _frm.DataChanged += FrmTang_DataChanged;
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "PHONG":
+                        {
+                            frmPhong _frm = new frmPhong();
+                            _frm.DataChanged += FrmPhong_DataChanged;
+
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "SANPHAM":
+                        {
+                            frmSanPham _frm = new frmSanPham();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "THIETBI":
+                        {
+                            frmThietBi _frm = new frmThietBi();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "PHONG_THIETBI":
+                        {
+                            frmPhongThietBi _frm = new frmPhongThietBi();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "DATPHONG":
+                        {
+                            frmDatPhong _frm = new frmDatPhong();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                }
+            }
+            
         }
         private void FrmTang_DataChanged(object sender, EventArgs e)
         {
@@ -237,6 +267,12 @@ namespace KhachSan
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
+            frm.ShowDialog();
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            frmBaoCao frm = new frmBaoCao(_user);
             frm.ShowDialog();
         }
     }

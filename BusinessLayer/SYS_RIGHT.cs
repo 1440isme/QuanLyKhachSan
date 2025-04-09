@@ -14,6 +14,10 @@ namespace BusinessLayer
         {
             db = Entities.CreateEntities();
         }
+        public tb_SYS_RIGHT getRight(int idUser, string idFunc)
+        {
+            return db.tb_SYS_RIGHT.FirstOrDefault(x => x.IDUSER == idUser && x.FUNC_CODE == idFunc);
+        }
         public void update (int idUser, string idFunc, int Right)
         {
             tb_SYS_RIGHT sRight = db.tb_SYS_RIGHT.FirstOrDefault(x => x.IDUSER == idUser && x.FUNC_CODE == idFunc);

@@ -45,7 +45,7 @@ namespace KhachSan
             _phong = new PHONG();
             _sanpham = new SANPHAM();
             lstDPSP = new List<OBJ_DPSP>();
-            _sysparam = new SYS_PARAM();
+          
 
             _phongHienTai = _phong.getItemFull(_idPhong);
             lblPhong.Text = _phongHienTai.TENPHONG + " - Đơn giá: "+_phongHienTai.DONGIA.ToString("N0")+ " VNĐ";
@@ -58,17 +58,9 @@ namespace KhachSan
             cboTrangThai.ValueMember = "_value";
             cboTrangThai.SelectedIndex = 1;
             numSoNguoi.Value = 1;
-            var _pr = _sysparam.GetParam();
-            if (_pr != null)
-            {
-                _macty = _pr.MACTY;
-                _madvi = _pr.MADVI;
-            }
-            else
-            {
-                MessageBox.Show("Failed to retrieve system parameters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+
+            _macty = myFunctions._macty;
+            _madvi = myFunctions._madvi;
             loadKH();
             loadSP();
             var dpct = _datphongct.getIDDPByPhong(_idPhong);

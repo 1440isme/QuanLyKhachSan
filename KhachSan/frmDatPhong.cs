@@ -61,20 +61,12 @@ namespace KhachSan
             _datphongsp = new DATPHONG_SANPHAM();
             _phong = new PHONG();
             lstDPSP = new List<OBJ_DPSP>();
-            _sysparam = new SYS_PARAM();
+
             dtTuNgay.Value = myFunctions.GetFirstDayInMonth(DateTime.Now.Year, DateTime.Now.Month);
             dtDenNgay.Value = DateTime.Now;
-            var _pr = _sysparam.GetParam();
-            if (_pr != null)
-            {
-                _macty = _pr.MACTY;
-                _madvi = _pr.MADVI;
-            }
-            else
-            {
-                MessageBox.Show("Failed to retrieve system parameters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+
+            _macty = myFunctions._macty;
+            _madvi = myFunctions._madvi;
 
             loadKH();
             loadSP();

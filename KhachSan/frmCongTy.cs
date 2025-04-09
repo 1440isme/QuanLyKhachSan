@@ -23,6 +23,14 @@ namespace KhachSan
         {
             InitializeComponent();
         }
+        public frmCongTy(tb_SYS_USER user, int right)
+        {
+            InitializeComponent();
+            this._user = user;
+            this._right = right;
+        }
+        tb_SYS_USER _user;
+        int _right;
         CONGTY _congty;
         bool _them;
         string _macty;
@@ -68,6 +76,12 @@ namespace KhachSan
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             _them = true;
             txtMaCTy.Enabled = true;
             showHideControl(false);
@@ -77,6 +91,12 @@ namespace KhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             _them = false;
             _enable(true);
             txtMaCTy.Enabled = false;
@@ -85,6 +105,12 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa công ty này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 _congty.delete(_macty);

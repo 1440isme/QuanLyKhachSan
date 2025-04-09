@@ -18,6 +18,10 @@ namespace BusinessLayer
         {
             return db.tb_SYS_USER.FirstOrDefault(x => x.IDUSER == idUser);
         }
+        public tb_SYS_USER getItem(string username, string macty, string madvi)
+        {
+            return db.tb_SYS_USER.FirstOrDefault(x => x.USERNAME == username && x.MACTY == macty && x.MADVI == madvi);
+        }
         public List<tb_SYS_USER> getAll()
         {
             return db.tb_SYS_USER.ToList();

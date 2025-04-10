@@ -291,7 +291,6 @@
             this.dtDenNgay.Size = new System.Drawing.Size(190, 21);
             this.dtDenNgay.TabIndex = 3;
             this.dtDenNgay.ValueChanged += new System.EventHandler(this.dtDenNgay_ValueChanged);
-            this.dtDenNgay.Leave += new System.EventHandler(this.dtDenNgay_Leave);
             // 
             // label2
             // 
@@ -312,7 +311,6 @@
             this.dtTuNgay.Size = new System.Drawing.Size(190, 21);
             this.dtTuNgay.TabIndex = 1;
             this.dtTuNgay.ValueChanged += new System.EventHandler(this.dtTuNgay_ValueChanged);
-            this.dtTuNgay.Leave += new System.EventHandler(this.dtTuNgay_Leave);
             // 
             // label1
             // 
@@ -648,7 +646,6 @@
             this.gcSanPham.UseDisabledStatePainter = false;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
-            this.gcSanPham.DoubleClick += new System.EventHandler(this.gcSanPham_DoubleClick);
             // 
             // gvSanPham
             // 
@@ -659,6 +656,7 @@
             this.gvSanPham.GridControl = this.gcSanPham;
             this.gvSanPham.Name = "gvSanPham";
             this.gvSanPham.OptionsView.ShowGroupPanel = false;
+            this.gvSanPham.DoubleClick += new System.EventHandler(this.gvSanPham_DoubleClick);
             // 
             // IDSP
             // 

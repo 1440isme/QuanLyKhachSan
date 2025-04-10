@@ -147,6 +147,7 @@ namespace KhachSan
             searchKH.Properties.DisplayMember = "HOTEN";
             searchKH.Properties.ValueMember = "IDKH";
         }
+
         public void setKH(int idKH)
         {
             KHACHHANG _khachhang = new KHACHHANG();

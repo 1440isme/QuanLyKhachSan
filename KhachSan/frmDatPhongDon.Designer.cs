@@ -247,7 +247,7 @@
             this.gvSPDV.GridControl = this.gcSPDV;
             this.gvSPDV.Name = "gvSPDV";
             this.gvSPDV.OptionsView.ShowFooter = true;
-            this.gvSPDV.HiddenEditor += new System.EventHandler(this.gvSPDV_HiddenEditor);
+           // this.gvSPDV.HiddenEditor += new System.EventHandler(this.gvSPDV_HiddenEditor);
             this.gvSPDV.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvSPDV_CellValueChanged);
             // 
             // spIDSP

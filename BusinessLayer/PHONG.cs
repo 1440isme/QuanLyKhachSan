@@ -26,15 +26,36 @@ namespace BusinessLayer
             OBJ_PHONG phong = new OBJ_PHONG();
             phong.IDPHONG = _p.IDPHONG;
             phong.TENPHONG = _p.TENPHONG;
-            phong.STATUS = bool.Parse(_p.TRANGTHAI.ToString());
-            phong.DISABLED = bool.Parse(_p.DISABLED.ToString());
+
+            bool status;
+            if (Boolean.TryParse(_p.TRANGTHAI.ToString(), out status))
+            {
+                phong.STATUS = status;
+            }
+            else
+            {
+                // Handle the parsing error
+                phong.STATUS = false; // or some default value
+            }
+
+            bool disabled;
+            if (Boolean.TryParse(_p.DISABLED.ToString(), out disabled))
+            {
+                phong.DISABLED = disabled;
+            }
+            else
+            {
+                // Handle the parsing error
+                phong.DISABLED = false; // or some default value
+            }
+
             phong.IDTANG = _p.IDTANG;
             phong.IDLOAIPHONG = _p.IDLOAIPHONG;
             var tang = db.tb_Tang.FirstOrDefault(t => t.IDTANG == _p.IDTANG);
-            phong.TENTANG = tang.TENTANG;
+            phong.TENTANG = tang?.TENTANG;
             var lp = db.tb_LoaiPhong.FirstOrDefault(l => l.IDLOAIPHONG == _p.IDLOAIPHONG);
-            phong.TENLOAIPHONG = lp.TENLOAIPHONG;
-            phong.DONGIA = double.Parse(lp.DONGIA.ToString());
+            phong.TENLOAIPHONG = lp?.TENLOAIPHONG;
+            phong.DONGIA = double.Parse(lp?.DONGIA.ToString() ?? "0");
             return phong;
         }
         public List<tb_Phong> getAll()

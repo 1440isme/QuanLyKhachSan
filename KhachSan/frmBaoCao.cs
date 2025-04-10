@@ -122,55 +122,55 @@ namespace KhachSan
 
         private void btnThucHien_Click(object sender, EventArgs e)
         {
-            tb_SYS_REPORT rp = _sysReport.getItem(int.Parse(lstDanhSach.SelectedValue.ToString()));
-            Form frm = new Form();
-            CrystalReportViewer crv = new CrystalReportViewer();
-            crv.ShowGroupTreeButton = false;
-            crv.ShowParameterPanelButton = false;
-            crv.ToolPanelView = ToolPanelViewType.None;
-            TableLogOnInfo thongtin;
-            ReportDocument doc = new ReportDocument();
-            doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + rp.REP_NAME + ".rpt"));
-            thongtin = doc.Database.Tables[0].LogOnInfo;
-            thongtin.ConnectionInfo.ServerName = myFunctions._srv;
-            thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
-            thongtin.ConnectionInfo.UserID = myFunctions._us;
-            thongtin.ConnectionInfo.Password = myFunctions._pw;
-            doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
-            if (rp.TUNGAY == true)
+            try
             {
-                if (_uTuNgay == null || _uTuNgay.dtTuNgay == null || _uTuNgay.dtDenNgay == null)
+                tb_SYS_REPORT rp = _sysReport.getItem(int.Parse(lstDanhSach.SelectedValue.ToString()));
+                Form frm = new Form();
+                CrystalReportViewer crv = new CrystalReportViewer();
+                crv.ShowGroupTreeButton = false;
+                crv.ShowParameterPanelButton = false;
+                crv.ToolPanelView = ToolPanelViewType.None;
+                TableLogOnInfo thongtin;
+                ReportDocument doc = new ReportDocument();
+                doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + rp.REP_NAME + ".rpt"));
+                thongtin = doc.Database.Tables[0].LogOnInfo;
+                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                thongtin.ConnectionInfo.UserID = myFunctions._us;
+                thongtin.ConnectionInfo.Password = myFunctions._pw;
+                doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
+                if (rp.TUNGAY == true)
                 {
-                    MessageBox.Show("Vui lòng chọn ngày hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (_uTuNgay == null || _uTuNgay.dtTuNgay == null || _uTuNgay.dtDenNgay == null)
+                    {
+                        MessageBox.Show("Vui lòng chọn ngày hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    doc.SetParameterValue("NGAYD", _uTuNgay.dtTuNgay.Value);
+                    doc.SetParameterValue("NGAYC", _uTuNgay.dtDenNgay.Value);
                 }
-                doc.SetParameterValue("@NGAYD", _uTuNgay.dtTuNgay.Value); // Bỏ @
-                doc.SetParameterValue("@NGAYC", _uTuNgay.dtDenNgay.Value); // Bỏ @
-            }
-            if (rp.MACTY == true)
-            {
-                if (_uCongTy == null || _uCongTy.cboCongTy == null || _uCongTy.cboCongTy.SelectedValue == null)
+                if (rp.MACTY == true)
                 {
-                    MessageBox.Show("Vui lòng chọn công ty.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (_uCongTy == null || _uCongTy.cboCongTy == null || _uCongTy.cboCongTy.SelectedValue == null)
+                    {
+                        MessageBox.Show("Vui lòng chọn công ty.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    doc.SetParameterValue("MACTY", _uCongTy.cboCongTy.SelectedValue.ToString());
                 }
-                doc.SetParameterValue("@MACTY", _uCongTy.cboCongTy.SelectedValue.ToString()); // Bỏ @
-            }
-            // Xóa phần gán MADVI vì báo cáo và stored procedure không sử dụng tham số này
-            // if (rp.MADVI == true)
-            // {
-            //     doc.SetParameterValue("MACTY", _uCongTy.cboCongTy.SelectedValue.ToString());
-            //     doc.SetParameterValue("MADVI", _uDonVi.cboDonVi.SelectedValue.ToString());
-            // }
 
-            crv.Dock = DockStyle.Fill;
-            crv.ReportSource = doc;
-            frm.Controls.Add(crv);
-            crv.Refresh();
-            frm.Text = rp.DESCRIPTION;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.ShowDialog();
-           
+                crv.Dock = DockStyle.Fill;
+                crv.ReportSource = doc;
+                frm.Controls.Add(crv);
+                crv.Refresh();
+                frm.Text = rp.DESCRIPTION;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace KhachSan
 {
     public partial class frmChuyenPhong : DevExpress.XtraEditors.XtraForm
     {
+        public int IDUSER { get; set; }
         public frmChuyenPhong()
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace KhachSan
             _phong.updateStatus(phongchuyenden.IDPHONG, true);
             var dp = _datphong.getItem(phonghientai.IDDP);
             dp.SOTIEN = tongtien1 + tongtien2;
-            _datphong.update(dp);
+            _datphong.update(dp, IDUSER);
             objMain.showRoom();
         }
 

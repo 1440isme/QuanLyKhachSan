@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using USERMANAGEMENT.MyComponents;
 
+
 namespace USERMANAGEMENT
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
@@ -31,7 +32,7 @@ namespace USERMANAGEMENT
             _donvi = new DONVI();
             _sysuser = new SYS_USER();
             loadTreeView();
-            loadUser("CTME", "~");
+            loadUser("CTME", "KSCB");
         }
         public void loadUser(string macty, string madvi)
         {

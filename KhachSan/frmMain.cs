@@ -192,6 +192,7 @@ namespace KhachSan
                     case "DATPHONG":
                         {
                             frmDatPhong _frm = new frmDatPhong();
+                            _frm.IDUSER = _user.IDUSER; // Truyền IDUSER
                             _frm.ShowDialog();
                             break;
                         }
@@ -220,16 +221,23 @@ namespace KhachSan
 
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (_phong.checkExist(int.Parse(item.Value.ToString())))
+            try
             {
-                MessageBox.Show("Phòng đã được đặt. Vui lòng chọn phòng khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                if (_phong.checkExist(int.Parse(item.Value.ToString())))
+                {
+                    MessageBox.Show("Phòng đã được đặt. Vui lòng chọn phòng khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                frmDatPhongDon frm = new frmDatPhongDon();
+                frm._idPhong = int.Parse(item.Value.ToString());
+                frm._them = true;
+                frm.IDUSER = _user.IDUSER; // Truyền IDUSER
+                frm.ShowDialog();
             }
-            frmDatPhongDon frm = new frmDatPhongDon();
-            frm._idPhong = int.Parse(item.Value.ToString());
-            frm._them = true;
-            
-            frm.ShowDialog();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnChuyenPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -241,6 +249,7 @@ namespace KhachSan
             }
                 frmChuyenPhong frm = new frmChuyenPhong();
             frm._idPhong = int.Parse(item.Value.ToString());
+            frm.IDUSER = _user.IDUSER; 
             frm.ShowDialog();
         }
 
@@ -254,6 +263,7 @@ namespace KhachSan
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
+            frm.IDUSER = _user.IDUSER; // Truyền IDUSER
             frm.ShowDialog();
         }
 
@@ -267,6 +277,7 @@ namespace KhachSan
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
+            frm.IDUSER = _user.IDUSER; // Truyền IDUSER
             frm.ShowDialog();
         }
 

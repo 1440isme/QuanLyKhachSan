@@ -91,29 +91,36 @@ namespace KhachSan
             cboLoaiPhong.ValueMember = "IDLOAIPHONG";
             //cboLoaiPhong.SelectedIndexChanged += cboLoaiPhong_SelectedIndexChanged;
         }
-        void LoadData()
+        private void LoadData()
         {
-            gcDanhSach.DataSource = _phong.getAll();
-            gvDanhSach.OptionsBehavior.Editable = false;
-
-            // Add unbound columns for displaying names
-            if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENTANG"]))
+            try
             {
-                var colTenTang = gvDanhSach.Columns.AddField("TENTANG");
-                colTenTang.UnboundType = DevExpress.Data.UnboundColumnType.String;
-                colTenTang.Caption = "TẦNG";
-                colTenTang.Visible = true;
-            }
+                gcDanhSach.DataSource = _phong.getAll();
+                gvDanhSach.OptionsBehavior.Editable = false;
 
-            if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENLOAIPHONG"]))
+                // Add unbound columns for displaying names
+                if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENTANG"]))
+                {
+                    var colTenTang = gvDanhSach.Columns.AddField("TENTANG");
+                    colTenTang.UnboundType = DevExpress.Data.UnboundColumnType.String;
+                    colTenTang.Caption = "TẦNG";
+                    colTenTang.Visible = true;
+                }
+
+                if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENLOAIPHONG"]))
+                {
+                    var colTenLoaiPhong = gvDanhSach.Columns.AddField("TENLOAIPHONG");
+                    colTenLoaiPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
+                    colTenLoaiPhong.Caption = "LOẠI PHÒNG";
+                    colTenLoaiPhong.Visible = true;
+                }
+
+                gvDanhSach.CustomUnboundColumnData += gvDanhSach_CustomUnboundColumnData;
+            }
+            catch (Exception ex)
             {
-                var colTenLoaiPhong = gvDanhSach.Columns.AddField("TENLOAIPHONG");
-                colTenLoaiPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
-                colTenLoaiPhong.Caption = "LOẠI PHÒNG";
-                colTenLoaiPhong.Visible = true;
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            gvDanhSach.CustomUnboundColumnData += gvDanhSach_CustomUnboundColumnData;
         }
         void loadPhongByTang()
         {
@@ -156,14 +163,21 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                _phong.delete(_maphong);
-            }
-            LoadData();
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    _phong.delete(_maphong);
+                    LoadData();
 
-            // Gọi sự kiện DataChanged
-            DataChanged?.Invoke(this, EventArgs.Empty);
+                    // Gọi sự kiện DataChanged
+                    DataChanged?.Invoke(this, EventArgs.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -178,12 +192,14 @@ namespace KhachSan
             {
                 if (_them)
                 {
-                    tb_Phong phong = new tb_Phong();
-                    phong.IDLOAIPHONG = int.Parse(cboLoaiPhong.SelectedValue.ToString());
-                    phong.IDTANG = int.Parse(cboTang.SelectedValue.ToString());
-                    phong.TENPHONG = txtTen.Text;
-                    phong.TRANGTHAI = chkThue.Checked;
-                    phong.DISABLED = chkDisabled.Checked;
+                    tb_Phong phong = new tb_Phong
+                    {
+                        IDLOAIPHONG = int.Parse(cboLoaiPhong.SelectedValue.ToString()),
+                        IDTANG = int.Parse(cboTang.SelectedValue.ToString()),
+                        TENPHONG = txtTen.Text,
+                        TRANGTHAI = chkThue.Checked,
+                        DISABLED = chkDisabled.Checked
+                    };
                     _phong.add(phong);
                 }
                 else

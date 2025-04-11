@@ -167,7 +167,7 @@ namespace BusinessLayer
             var lstDPCT = db.tb_DatPhong_CT.Where(x => x.IDDP == _idDP).ToList();
             if (!lstDPCT.Any())
             {
-                return; 
+                return;
             }
 
             try

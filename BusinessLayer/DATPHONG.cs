@@ -215,5 +215,32 @@ namespace BusinessLayer
 
             return conflictingBooking != null;
         }
+        public class GroupBookingInfo
+        {
+            public bool IsGroupBooking { get; set; }
+            public int? IDDP { get; set; }
+            public string GroupName { get; set; }
+        }
+
+        public GroupBookingInfo GetRoomGroupBookingInfo(int idPhong)
+        {
+            var result = db.tb_DatPhong_CT
+                .Join(db.tb_DatPhong,
+                    ct => ct.IDDP,
+                    dp => dp.IDDP,
+                    (ct, dp) => new { ct, dp })
+                .Where(x => x.ct.IDPHONG == idPhong
+                    && x.dp.STATUS == false
+                    && x.dp.DISABLED == false)
+                .Select(x => new GroupBookingInfo
+                {
+                    IsGroupBooking = x.dp.THEODOAN == true,
+                    IDDP = x.dp.IDDP,
+                    GroupName = x.dp.GHICHU 
+                })
+                .FirstOrDefault();
+
+            return result ?? new GroupBookingInfo { IsGroupBooking = false };
+        }
     }
 }

@@ -8,6 +8,7 @@ using DevExpress.XtraNavBar;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace KhachSan
@@ -30,7 +31,9 @@ namespace KhachSan
         SYS_GROUP _sysGroup;
         SYS_RIGHT _sysRight;
         PHONG _phong = new PHONG();
+        DATPHONG _datphong = new DATPHONG();
         GalleryItem item = null;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             _tang = new TANG();
@@ -215,9 +218,10 @@ namespace KhachSan
             if (hitInfo.InGalleryItem || hitInfo.HitTest == RibbonHitTest.GalleryImage)
             {
                 item = hitInfo.GalleryItem;
+
             }
         }
-
+        
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
@@ -246,7 +250,13 @@ namespace KhachSan
                 MessageBox.Show("Phòng chưa đặt nên không được chuyển. Vui lòng chọn phòng đã đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-                frmChuyenPhong frm = new frmChuyenPhong();
+            var groupInfo = _datphong.GetRoomGroupBookingInfo(int.Parse(item.Value.ToString()));
+            if (groupInfo.IsGroupBooking)
+            {
+                MessageBox.Show($"Đơn hàng này đặt theo đoàn (Đoàn: {groupInfo.GroupName}).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            frmChuyenPhong frm = new frmChuyenPhong();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm.IDUSER = _user.IDUSER; 
             frm.ShowDialog();
@@ -257,6 +267,12 @@ namespace KhachSan
             if (!_phong.checkExist(int.Parse(item.Value.ToString())))
             {
                 MessageBox.Show("Phòng chưa được đặt. Vui lòng chọn phòng đã được đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var groupInfo = _datphong.GetRoomGroupBookingInfo(int.Parse(item.Value.ToString()));
+            if (groupInfo.IsGroupBooking)
+            {
+                MessageBox.Show($"Đơn hàng này đặt theo đoàn (Mã đơn: {groupInfo.IDDP}).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             frmDatPhongDon frm = new frmDatPhongDon();
@@ -271,6 +287,12 @@ namespace KhachSan
             if (!_phong.checkExist(int.Parse(item.Value.ToString())))
             {
                 MessageBox.Show("Phòng chưa được đặt. Vui lòng chọn phòng đã được đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var groupInfo = _datphong.GetRoomGroupBookingInfo(int.Parse(item.Value.ToString()));
+            if (groupInfo.IsGroupBooking)
+            {
+                MessageBox.Show($"Đơn hàng này đặt theo đoàn (Mã đơn: {groupInfo.IDDP}).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             frmDatPhongDon frm = new frmDatPhongDon();

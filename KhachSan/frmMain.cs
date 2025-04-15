@@ -68,9 +68,8 @@ namespace KhachSan
         }
         public void showRoom()
         {
-            gControl.Gallery.Groups.Clear(); 
+            gControl.Gallery.Groups.Clear();
 
-            
             _tang = new TANG();
             _phong = new PHONG();
 
@@ -81,7 +80,7 @@ namespace KhachSan
             gControl.Gallery.ShowGroupCaption = true;
             foreach (var t in lsTang)
             {
-                if (t.DISABLED == true) continue; 
+                if (t.DISABLED == true) continue;
 
                 var galleryItem = new GalleryItemGroup();
                 galleryItem.Caption = t.TENTANG;

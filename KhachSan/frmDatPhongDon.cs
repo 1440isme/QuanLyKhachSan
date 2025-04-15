@@ -66,6 +66,7 @@ namespace KhachSan
             // Xử lý dữ liệu khi chỉnh sửa hoặc thêm mới
             if (_them)
             {
+                dtNgayDat.Enabled = false;
                 ClearProductList();
             }
             else
@@ -196,15 +197,29 @@ namespace KhachSan
                 crv.ShowGroupTreeButton = false;
                 crv.ShowParameterPanelButton = false;
                 crv.ToolPanelView = ToolPanelViewType.None;
-                TableLogOnInfo thongtin;
+                //TableLogOnInfo thongtin;
                 ReportDocument doc = new ReportDocument();
                 doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
-                thongtin = doc.Database.Tables[0].LogOnInfo;
-                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
-                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
-                thongtin.ConnectionInfo.UserID = myFunctions._us;
-                thongtin.ConnectionInfo.Password = myFunctions._pw;
-               
+                //thongtin = doc.Database.Tables[0].LogOnInfo;
+                //thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                //thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                //thongtin.ConnectionInfo.UserID = myFunctions._us;
+                //thongtin.ConnectionInfo.Password = myFunctions._pw;
+                ConnectionInfo connInfo = new ConnectionInfo()
+                {
+                    ServerName = myFunctions._srv,
+                    DatabaseName = myFunctions._db,
+                    UserID = myFunctions._us,
+                    Password = myFunctions._pw
+                };
+
+                foreach (Table table in doc.Database.Tables)
+                {
+                    TableLogOnInfo logonInfo = table.LogOnInfo;
+                    logonInfo.ConnectionInfo = connInfo;
+                    table.ApplyLogOnInfo(logonInfo);
+                }
+
                 try
                 {
                     doc.SetParameterValue("@IDDP", _khoa);

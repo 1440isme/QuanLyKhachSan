@@ -271,7 +271,17 @@ namespace KhachSan
             var dp = _datphong.getItem(_idDP);
             dp.SOTIEN = double.Parse(txtThanhTien.Text);
             _datphong.update(dp, IDUSER);
+            _datphong.updateStatus(_idDP, IDUSER);
+
+            var lstDPCT = _datphongchitiet.getAllByDatPhong(_idDP);
+            foreach (var item in lstDPCT)
+            {
+                _phong.updateStatus(item.IDPHONG, false);
+            }
+
             XuatReport(_idDP.ToString(), "rpDatPhong", "ĐƠN ĐẶT PHÒNG CHI TIẾT");
+            cboTrangThai.SelectedValue = true;
+            objMain.showRoom();
         }
 
         private void XuatReport(string _khoa, string _rpName, string _rpTitle)
@@ -283,14 +293,30 @@ namespace KhachSan
                 crv.ShowGroupTreeButton = false;
                 crv.ShowParameterPanelButton = false;
                 crv.ToolPanelView = ToolPanelViewType.None;
+                //TableLogOnInfo thongtin;
                 ReportDocument doc = new ReportDocument();
                 doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
-                TableLogOnInfo thongtin = doc.Database.Tables[0].LogOnInfo;
-                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
-                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
-                thongtin.ConnectionInfo.UserID = myFunctions._us;
-                thongtin.ConnectionInfo.Password = myFunctions._pw;
-                doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
+                //thongtin = doc.Database.Tables[0].LogOnInfo;
+                //thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                //thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                //thongtin.ConnectionInfo.UserID = myFunctions._us;
+                //thongtin.ConnectionInfo.Password = myFunctions._pw;
+                ConnectionInfo connInfo = new ConnectionInfo()
+                {
+                    ServerName = myFunctions._srv,
+                    DatabaseName = myFunctions._db,
+                    UserID = myFunctions._us,
+                    Password = myFunctions._pw
+                };
+
+                // Áp dụng cho tất cả các bảng trong report chính
+                foreach (Table table in doc.Database.Tables)
+                {
+                    TableLogOnInfo logonInfo = table.LogOnInfo;
+                    logonInfo.ConnectionInfo = connInfo;
+                    table.ApplyLogOnInfo(logonInfo);
+                }
+
                 try
                 {
                     doc.SetParameterValue("@IDDP", _khoa);
@@ -316,145 +342,145 @@ namespace KhachSan
 
         private void SaveData()
         {
-            try
-            {
-                if (_them) // Thêm mới
+                try
                 {
-                    tb_DatPhong dp = new tb_DatPhong
+                    if (_them) // Thêm mới
                     {
-                        NGAYDATPHONG = dtNgayDat.Value,
-                        NGAYTRAPHONG = dtNgayTra.Value,
-                        SONGUOIO = (int)numSoNguoi.Value,
-                        STATUS = bool.Parse(cboTrangThai.SelectedValue.ToString()),
-                        THEODOAN = chkTheoDoan.Checked,
-                        IDKH = int.Parse(cboKhachHang.SelectedValue.ToString()),
-                        GHICHU = txtGhiChu.Text,
-                        DISABLED = false,
-                        IDUSER = IDUSER,
-                        MACTY = _macty,
-                        MADVI = _madvi,
-                        CREATED_DATE = DateTime.Now
-                    };
+                        tb_DatPhong dp = new tb_DatPhong
+                        {
+                            NGAYDATPHONG = dtNgayDat.Value,
+                            NGAYTRAPHONG = dtNgayTra.Value,
+                            SONGUOIO = (int)numSoNguoi.Value,
+                            STATUS = bool.Parse(cboTrangThai.SelectedValue.ToString()),
+                            THEODOAN = chkTheoDoan.Checked,
+                            IDKH = int.Parse(cboKhachHang.SelectedValue.ToString()),
+                            GHICHU = txtGhiChu.Text,
+                            DISABLED = false,
+                            IDUSER = IDUSER,
+                            MACTY = _macty,
+                            MADVI = _madvi,
+                            CREATED_DATE = DateTime.Now
+                        };
                     var addedDP = _datphong.add(dp);
                     _idDP = addedDP.IDDP;
 
                     for (int i = 0; i < gvDatPhong.RowCount; i++)
-                    {
-                        int idPhong = int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString());
-                        int soNgayO = Math.Max((dtNgayTra.Value.Date - dtNgayDat.Value.Date).Days, 1);
-                        double donGia = double.Parse(gvDatPhong.GetRowCellValue(i, "DONGIA").ToString());
-
-                        tb_DatPhong_CT dpct = new tb_DatPhong_CT
                         {
-                            IDDP = _idDP,
-                            IDPHONG = idPhong,
-                            SONGAYO = soNgayO,
-                            DONGIA = (int)donGia,
-                            THANHTIEN = (int)(donGia * soNgayO),
-                            NGAY = DateTime.Now
-                        };
-                        var addedDPCT = _datphongchitiet.add(dpct);
-                        _phong.updateStatus(idPhong, true);
+                            int idPhong = int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString());
+                            int soNgayO = Math.Max((dtNgayTra.Value.Date - dtNgayDat.Value.Date).Days, 1);
+                            double donGia = double.Parse(gvDatPhong.GetRowCellValue(i, "DONGIA").ToString());
 
-                        foreach (var sp in lstDPSP.Where(x => x.IDPHONG == idPhong && x.SOLUONG > 0))
-                        {
-                            tb_DatPhong_SanPham dpsp = new tb_DatPhong_SanPham
+                            tb_DatPhong_CT dpct = new tb_DatPhong_CT
                             {
                                 IDDP = _idDP,
-                                IDDPCT = addedDPCT.IDDPCT,
-                                IDPHONG = sp.IDPHONG,
-                                IDSP = sp.IDSP,
-                                SOLUONG = sp.SOLUONG,
-                                DONGIA = sp.DONGIA,
-                                THANHTIEN = sp.THANHTIEN,
+                                IDPHONG = idPhong,
+                                SONGAYO = soNgayO,
+                                DONGIA = (int)donGia,
+                                THANHTIEN = (int)(donGia * soNgayO),
                                 NGAY = DateTime.Now
                             };
-                            _datphongsp.add(dpsp);
-                        }
-                    }
+                            var addedDPCT = _datphongchitiet.add(dpct); 
+                            _phong.updateStatus(idPhong, true);
 
-                    UpdateTotalAmount();
+                            foreach (var sp in lstDPSP.Where(x => x.IDPHONG == idPhong && x.SOLUONG > 0))
+                            {
+                                tb_DatPhong_SanPham dpsp = new tb_DatPhong_SanPham
+                                {
+                                    IDDP = _idDP,
+                                    IDDPCT = addedDPCT.IDDPCT,
+                                    IDPHONG = sp.IDPHONG,
+                                    IDSP = sp.IDSP,
+                                    SOLUONG = sp.SOLUONG,
+                                    DONGIA = sp.DONGIA,
+                                    THANHTIEN = sp.THANHTIEN,
+                                    NGAY = DateTime.Now
+                                };
+                                _datphongsp.add(dpsp);
+                            }
+                        }
+
+                        UpdateTotalAmount();
                     addedDP.SOTIEN = double.Parse(txtThanhTien.Text);
                     _datphong.update(addedDP, IDUSER);
                 }
-                else // Chỉnh sửa
-                {
-                    var dp = _datphong.getItem(_idDP);
-                    if (dp == null)
+                    else // Chỉnh sửa
                     {
-                        throw new Exception("Không tìm thấy thông tin đặt phòng để cập nhật.");
-                    }
+                        var dp = _datphong.getItem(_idDP);
+                        if (dp == null)
+                        {
+                            throw new Exception("Không tìm thấy thông tin đặt phòng để cập nhật.");
+                        }
 
-                    var originalRooms = _datphongchitiet.getAllByDatPhong(_idDP).Select(x => x.IDPHONG).ToList();
-                    var currentRooms = Enumerable.Range(0, gvDatPhong.RowCount)
-                        .Select(i => int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString())).ToList();
+                        var originalRooms = _datphongchitiet.getAllByDatPhong(_idDP).Select(x => x.IDPHONG).ToList();
+                        var currentRooms = Enumerable.Range(0, gvDatPhong.RowCount)
+                            .Select(i => int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString())).ToList();
 
-                    dp.NGAYDATPHONG = dtNgayDat.Value;
-                    dp.NGAYTRAPHONG = dtNgayTra.Value;
-                    dp.SONGUOIO = (int)numSoNguoi.Value;
-                    dp.STATUS = bool.Parse(cboTrangThai.SelectedValue.ToString());
-                    dp.THEODOAN = chkTheoDoan.Checked;
-                    dp.IDKH = int.Parse(cboKhachHang.SelectedValue.ToString());
-                    dp.GHICHU = txtGhiChu.Text;
-                    dp.UPDATE_BY = IDUSER;
-                    dp.UPDATE_DATE = DateTime.Now;
+                        dp.NGAYDATPHONG = dtNgayDat.Value;
+                        dp.NGAYTRAPHONG = dtNgayTra.Value;
+                        dp.SONGUOIO = (int)numSoNguoi.Value;
+                        dp.STATUS = bool.Parse(cboTrangThai.SelectedValue.ToString());
+                        dp.THEODOAN = chkTheoDoan.Checked;
+                        dp.IDKH = int.Parse(cboKhachHang.SelectedValue.ToString());
+                        dp.GHICHU = txtGhiChu.Text;
+                        dp.UPDATE_BY = IDUSER;
+                        dp.UPDATE_DATE = DateTime.Now;
                     _datphong.update(dp, IDUSER);
 
                     _datphongchitiet.deleteAll(_idDP);
-                    _datphongsp.deleteAll(_idDP);
+                        _datphongsp.deleteAll(_idDP);
 
-                    for (int i = 0; i < gvDatPhong.RowCount; i++)
-                    {
-                        int idPhong = int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString());
-                        int soNgayO = Math.Max((dtNgayTra.Value.Date - dtNgayDat.Value.Date).Days, 1);
-                        double donGia = double.Parse(gvDatPhong.GetRowCellValue(i, "DONGIA").ToString());
-
-                        tb_DatPhong_CT dpct = new tb_DatPhong_CT
+                        for (int i = 0; i < gvDatPhong.RowCount; i++)
                         {
-                            IDDP = _idDP,
-                            IDPHONG = idPhong,
-                            SONGAYO = soNgayO,
-                            DONGIA = (int)donGia,
-                            THANHTIEN = (int)(donGia * soNgayO),
-                            NGAY = DateTime.Now
-                        };
-                        var addedDPCT = _datphongchitiet.add(dpct);
-                        _phong.updateStatus(idPhong, true);
+                            int idPhong = int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString());
+                            int soNgayO = Math.Max((dtNgayTra.Value.Date - dtNgayDat.Value.Date).Days, 1);
+                            double donGia = double.Parse(gvDatPhong.GetRowCellValue(i, "DONGIA").ToString());
 
-                        foreach (var sp in lstDPSP.Where(x => x.IDPHONG == idPhong && x.SOLUONG > 0))
-                        {
-                            tb_DatPhong_SanPham dpsp = new tb_DatPhong_SanPham
+                            tb_DatPhong_CT dpct = new tb_DatPhong_CT
                             {
                                 IDDP = _idDP,
-                                IDDPCT = addedDPCT.IDDPCT,
-                                IDPHONG = sp.IDPHONG,
-                                IDSP = sp.IDSP,
-                                SOLUONG = sp.SOLUONG,
-                                DONGIA = sp.DONGIA,
-                                THANHTIEN = sp.THANHTIEN,
+                                IDPHONG = idPhong,
+                                SONGAYO = soNgayO,
+                                DONGIA = (int)donGia,
+                                THANHTIEN = (int)(donGia * soNgayO),
                                 NGAY = DateTime.Now
                             };
-                            _datphongsp.add(dpsp);
+                            var addedDPCT = _datphongchitiet.add(dpct);
+                            _phong.updateStatus(idPhong, true);
+
+                            foreach (var sp in lstDPSP.Where(x => x.IDPHONG == idPhong && x.SOLUONG > 0))
+                            {
+                                tb_DatPhong_SanPham dpsp = new tb_DatPhong_SanPham
+                                {
+                                    IDDP = _idDP,
+                                    IDDPCT = addedDPCT.IDDPCT,
+                                    IDPHONG = sp.IDPHONG,
+                                    IDSP = sp.IDSP,
+                                    SOLUONG = sp.SOLUONG,
+                                    DONGIA = sp.DONGIA,
+                                    THANHTIEN = sp.THANHTIEN,
+                                    NGAY = DateTime.Now
+                                };
+                                _datphongsp.add(dpsp);
+                            }
                         }
-                    }
 
-                    var removedRooms = originalRooms.Where(x => !currentRooms.Contains(x)).ToList();
-                    foreach (var roomId in removedRooms)
-                    {
-                        _phong.updateStatus(roomId, false);
-                    }
+                        var removedRooms = originalRooms.Where(x => !currentRooms.Contains(x)).ToList();
+                        foreach (var roomId in removedRooms)
+                        {
+                            _phong.updateStatus(roomId, false);
+                        }
 
-                    UpdateTotalAmount();
-                    dp.SOTIEN = double.Parse(txtThanhTien.Text);
-                    _datphong.update(dp, IDUSER);
+                        UpdateTotalAmount();
+                        dp.SOTIEN = double.Parse(txtThanhTien.Text);
+                        _datphong.update(dp, IDUSER);
                 }
-            }
-            catch (Exception ex)
-            {
+                }
+                catch (Exception ex)
+                {
                 MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                }
         }
-
+        
         private void LoadBookingDetails()
         {
             var dp = _datphong.getItem(_idDP);

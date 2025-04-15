@@ -64,15 +64,15 @@ namespace BusinessLayer
                 }
             }
 
-            // Kiểm tra MADVI
-            if (!string.IsNullOrEmpty(user.MADVI))
-            {
-                var donVi = db.tb_DonVi.FirstOrDefault(x => x.MADVI == user.MADVI && (x.DISABLE == false || x.DISABLE == null));
-                if (donVi == null)
-                {
-                    throw new Exception($"Đơn vị với mã {user.MADVI} không tồn tại hoặc đã bị vô hiệu hóa.");
-                }
-            }
+            //// Kiểm tra MADVI
+            //if (!string.IsNullOrEmpty(user.MADVI))
+            //{
+            //    var donVi = db.tb_DonVi.FirstOrDefault(x => x.MADVI == user.MADVI && (x.DISABLE == false || x.DISABLE == null));
+            //    if (donVi == null)
+            //    {
+            //        throw new Exception($"Đơn vị với mã {user.MADVI} không tồn tại hoặc đã bị vô hiệu hóa.");
+            //    }
+            //}
 
             try
             {

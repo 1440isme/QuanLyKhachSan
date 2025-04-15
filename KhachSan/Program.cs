@@ -13,7 +13,7 @@ namespace KhachSan
 {
     static class Program
     {
-        public static string connoi; // Biến kết nối toàn cục
+        public static string connoi; 
 
         [STAThread]
         static void Main()
@@ -25,6 +25,8 @@ namespace KhachSan
             UserLookAndFeel.Default.SetSkinStyle("Office 2019 Colorful");
             DevExpress.XtraEditors.WindowsFormsSettings.DefaultSettingsCompatibilityMode = DevExpress.XtraEditors.SettingsCompatibilityMode.Latest;
             DevExpress.XtraEditors.WindowsFormsSettings.AllowRoundedWindowCorners = DevExpress.Utils.DefaultBoolean.True; // Bo góc toàn bộ
+
+            // Kiểm tra và lấy chuỗi kết nối từ file connectdb.dba
             if (File.Exists("connectdb.dba"))
             {
                 string conStr = "";
@@ -32,7 +34,6 @@ namespace KhachSan
 
                 FileStream fs = new FileStream("connectdb.dba", FileMode.Open, FileAccess.Read, FileShare.Read);
                 connect cp = (connect)bf.Deserialize(fs);
-                
 
                 string servername = Encryptor.Decrypt(cp.servername, "qwertyuiop", true);
                 string username = Encryptor.Decrypt(cp.username, "qwertyuiop", true);
@@ -46,19 +47,24 @@ namespace KhachSan
                 myFunctions._us = username;
                 myFunctions._pw = pass;
                 myFunctions._db = database;
+
                 SqlConnection con = new SqlConnection(conStr);
                 try
                 {
                     con.Open();
-                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Thoát nếu không kết nối được
                 }
-                con.Close();
-                fs.Close();
+                finally
+                {
+                    con.Close();
+                    fs.Close();
+                }
 
+                // Chạy form đầu tiên
                 if (File.Exists("sysparam.ini"))
                 {
                     Application.Run(new frmLogin());
@@ -67,12 +73,10 @@ namespace KhachSan
                 {
                     Application.Run(new frmSetParam());
                 }
-                //Application.Run(new frmMain()); // Chạy chương trình chính
             }
             else
             {
                 Application.Run(new frmKetNoiDB());
-                //MessageBox.Show("File kết nối cơ sở dữ liệu không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

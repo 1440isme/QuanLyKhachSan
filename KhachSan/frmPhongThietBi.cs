@@ -19,6 +19,7 @@ namespace KhachSan
         public frmPhongThietBi()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         PHONG_THIETBI _phongtb;
         THIETBI _thietbi;

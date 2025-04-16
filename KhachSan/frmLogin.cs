@@ -20,6 +20,7 @@ namespace KhachSan
         public frmLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         SYS_PARAM _sysParam;
         SYS_USER _sysUser;

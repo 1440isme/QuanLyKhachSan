@@ -18,6 +18,7 @@ namespace KhachSan
         public frmKhachHang()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         frmDatPhong objDP = (frmDatPhong) Application.OpenForms["frmDatPhong"];
         frmDatPhongDon objDPDon = (frmDatPhongDon)Application.OpenForms["frmDatPhongDon"];
@@ -212,8 +213,8 @@ namespace KhachSan
         {
             if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
             {
-                Image img = Properties.Resources._1398917_circle_close_cross_incorrect_invalid_icon1;
-                e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                Image img = Properties.Resources.del_icon_32px;
+                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
                 e.Handled = true;
             }
         }
@@ -235,6 +236,11 @@ namespace KhachSan
                 
                 this.Close();
             }
+        }
+
+        private void gcDanhSach_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

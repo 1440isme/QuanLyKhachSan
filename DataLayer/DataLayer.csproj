@@ -145,6 +145,9 @@
     <Compile Include="tb_ThietBi.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
+    <Compile Include="tb_ThongTinNganHang.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
     <Compile Include="V_FUNC_SYS_RIGHT.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>

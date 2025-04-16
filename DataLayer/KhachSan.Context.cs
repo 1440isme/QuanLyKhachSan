@@ -48,5 +48,6 @@ namespace DataLayer
         public virtual DbSet<V_FUNC_SYS_RIGHT> V_FUNC_SYS_RIGHT { get; set; }
         public virtual DbSet<tb_SYS_RIGHT_REP> tb_SYS_RIGHT_REP { get; set; }
         public virtual DbSet<V_REP_SYS_RIGHT_REP> V_REP_SYS_RIGHT_REP { get; set; }
+        public virtual DbSet<tb_ThongTinNganHang> tb_ThongTinNganHang { get; set; }
     }
 }

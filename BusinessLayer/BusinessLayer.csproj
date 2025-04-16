@@ -72,6 +72,7 @@
     <Compile Include="DATPHONG_CHITIET.cs" />
     <Compile Include="DATPHONG_SANPHAM.cs" />
     <Compile Include="DONVI.cs" />
+    <Compile Include="NGANHANG.cs" />
     <Compile Include="SYS_FUNC.cs" />
     <Compile Include="KHACHHANG.cs" />
     <Compile Include="LOAIPHONG.cs" />

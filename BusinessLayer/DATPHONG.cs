@@ -1,6 +1,8 @@
 ﻿using DataLayer;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 
 namespace BusinessLayer
@@ -214,6 +216,24 @@ namespace BusinessLayer
                 .FirstOrDefault();
 
             return conflictingBooking != null;
+        }
+        public DataTable getDataTable(int iddp)
+        {
+            string sql = @"SELECT dp.*, kh.HOTEN, kh.DIACHI, kh.DIENTHOAI
+                   FROM tb_DatPhong dp
+                   JOIN tb_KhachHang kh ON dp.IDKH = kh.IDKH
+                   WHERE dp.IDDP = @iddp";
+
+            using (SqlConnection conn = new SqlConnection(DataLayer.connect.connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@iddp", iddp);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
     }
 }

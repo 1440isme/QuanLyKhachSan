@@ -224,6 +224,16 @@
           <Property Name="DONGIA" Type="float" />
           <Property Name="DISABLED" Type="bit" />
         </EntityType>
+        <EntityType Name="tb_ThongTinNganHang">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenNganHang" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SoTaiKhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenTaiKhoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KhachSan.dbo.V_FUNC_SYS_RIGHT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_FUNC_SYS_RIGHT">
@@ -311,6 +321,7 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <EntitySet Name="tb_SYS_USER" EntityType="Self.tb_SYS_USER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Tang" EntityType="Self.tb_Tang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ThietBi" EntityType="Self.tb_ThietBi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_ThongTinNganHang" EntityType="Self.tb_ThongTinNganHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="V_FUNC_SYS_RIGHT" EntityType="Self.V_FUNC_SYS_RIGHT" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [V_FUNC_SYS_RIGHT].[FUNC_CODE] AS [FUNC_CODE], 
@@ -389,6 +400,7 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <EntitySet Name="V_FUNC_SYS_RIGHT" EntityType="KhachSan.V_FUNC_SYS_RIGHT" />
           <EntitySet Name="tb_SYS_RIGHT_REP" EntityType="KhachSan.tb_SYS_RIGHT_REP" />
           <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="KhachSan.V_REP_SYS_RIGHT_REP" />
+          <EntitySet Name="tb_ThongTinNganHang" EntityType="KhachSan.tb_ThongTinNganHang" />
         </EntityContainer>
         <EntityType Name="tb_CongTy">
           <Key>
@@ -667,6 +679,16 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="VISIBLE" Type="Boolean" />
           <Property Name="IDUSER" Type="Int32" Nullable="false" />
           <Property Name="QUYEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_ThongTinNganHang">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNganHang" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SoTaiKhoan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenTaiKhoan" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -960,6 +982,17 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
                 <ScalarProperty Name="REP_NAME" ColumnName="REP_NAME" />
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
                 <ScalarProperty Name="REP_CODE" ColumnName="REP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ThongTinNganHang">
+            <EntityTypeMapping TypeName="KhachSan.tb_ThongTinNganHang">
+              <MappingFragment StoreEntitySet="tb_ThongTinNganHang">
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+                <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
+                <ScalarProperty Name="TenNganHang" ColumnName="TenNganHang" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

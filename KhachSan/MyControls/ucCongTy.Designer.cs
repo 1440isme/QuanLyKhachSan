@@ -42,7 +42,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(616, 82);
+            this.groupControl1.Size = new System.Drawing.Size(480, 82);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Công ty/Chi nhánh";
             // 
@@ -51,7 +51,7 @@
             this.cboCongTy.FormattingEnabled = true;
             this.cboCongTy.Location = new System.Drawing.Point(37, 40);
             this.cboCongTy.Name = "cboCongTy";
-            this.cboCongTy.Size = new System.Drawing.Size(551, 21);
+            this.cboCongTy.Size = new System.Drawing.Size(393, 21);
             this.cboCongTy.TabIndex = 0;
             // 
             // ucCongTy
@@ -60,7 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl1);
             this.Name = "ucCongTy";
-            this.Size = new System.Drawing.Size(616, 102);
+            this.Size = new System.Drawing.Size(480, 102);
             this.Load += new System.EventHandler(this.ucCongTy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

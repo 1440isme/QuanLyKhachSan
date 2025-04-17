@@ -16,7 +16,7 @@ namespace BusinessLayer
         }
         public List<tb_SanPham> getAll()
         {
-            return db.tb_SanPham.ToList();
+            return db.tb_SanPham.Where(s => s.DISABLED == false).ToList();
         }
         public tb_SanPham getItem(int idsp)
         {
@@ -64,6 +64,10 @@ namespace BusinessLayer
             {
                 throw new Exception("Có lỗi xảy ra trong quá trình xử lý dữ liệu. " + ex.Message);
             }
+        }
+        public List<tb_SanPham> getAllWithDisabled()
+        {
+            return db.tb_SanPham.ToList(); 
         }
     }
 }

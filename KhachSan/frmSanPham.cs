@@ -59,7 +59,7 @@ namespace KhachSan
         {
             try
             {
-                gcDanhSach.DataSource = _sanpham.getAll();
+                gcDanhSach.DataSource = _sanpham.getAllWithDisabled(); 
                 gvDanhSach.OptionsBehavior.Editable = false;
             }
             catch (Exception ex)

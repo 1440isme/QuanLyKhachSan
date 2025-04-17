@@ -19,7 +19,7 @@ namespace USERMANAGEMENT
         {
             InitializeComponent();
         }
-        formMain objMain = (formMain)Application.OpenForms["frmMain"];
+        formMain objMain = (formMain)Application.OpenForms["formMain"];
         public string _macty;
         public string _madvi;
         public int _idUser;

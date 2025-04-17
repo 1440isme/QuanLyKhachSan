@@ -82,7 +82,7 @@ namespace BusinessLayer
         }
         public List<tb_Phong> getByTang(int idTang)
         {
-            return db.tb_Phong.Where(p => p.IDTANG == idTang).ToList();
+            return db.tb_Phong.Where(p => p.IDTANG == idTang && p.DISABLED == false).ToList();
         }
 
         public List<tb_Phong> getByLoaiPhong(int idLoaiPhong)

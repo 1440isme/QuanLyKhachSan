@@ -125,14 +125,12 @@ namespace KhachSan
         {
             try
             {
-                // Kiểm tra nếu không có mục nào được chọn
                 if (lstDanhSach.SelectedValue == null)
                 {
                     MessageBox.Show("Vui lòng chọn một báo cáo từ danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Lấy thông tin báo cáo
                 if (!int.TryParse(lstDanhSach.SelectedValue.ToString(), out int repCode))
                 {
                     MessageBox.Show("Mã báo cáo không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

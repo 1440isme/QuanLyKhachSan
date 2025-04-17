@@ -13,7 +13,7 @@ namespace DataLayer
     {
         public string servername;
 
-        public static string connectionString = @"Data Source=.;Initial Catalog=KhachSan;Persist Security Info=True;User ID=sa;Password=T@vqt0901;Encrypt=False;";
+        //public static string connectionString = @"Data Source=.;Initial Catalog=KhachSan;Persist Security Info=True;User ID=sa;Password=T@vqt0901;Encrypt=False;";
 
         public string Servername
         {

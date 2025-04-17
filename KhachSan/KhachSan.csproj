@@ -223,6 +223,12 @@
       <DependentUpon>REP_DOANHTHU_CONGTY_NGAY.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="REP_DOANHTHU_DONVI_NGAY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP_DOANHTHU_DONVI_NGAY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rpDatPhongDon.cs">
       <DependentUpon>rpDatPhongDon.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -312,6 +318,10 @@
     <EmbeddedResource Include="REP_DOANHTHU_CONGTY_NGAY.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>REP_DOANHTHU_CONGTY_NGAY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP_DOANHTHU_DONVI_NGAY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>REP_DOANHTHU_DONVI_NGAY.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rpDatPhongDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

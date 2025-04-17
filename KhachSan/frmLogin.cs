@@ -32,6 +32,7 @@ namespace KhachSan
             fs.Close();
             myFunctions._macty = _sysParam.macty;
             myFunctions._madvi = _sysParam.madvi;
+
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {

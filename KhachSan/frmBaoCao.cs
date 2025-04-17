@@ -37,6 +37,7 @@ namespace KhachSan
         ucTuNgay _uTuNgay;
         ucCongTy _uCongTy;
         ucDonVi _uDonVi;
+        frmMain _frmMain;
         private void frmBaoCao_Load(object sender, EventArgs e)
         {
             _sysReport = new SYS_REPORT();
@@ -124,52 +125,100 @@ namespace KhachSan
         {
             try
             {
-                tb_SYS_REPORT rp = _sysReport.getItem(int.Parse(lstDanhSach.SelectedValue.ToString()));
+                // Kiểm tra nếu không có mục nào được chọn
+                if (lstDanhSach.SelectedValue == null)
+                {
+                    MessageBox.Show("Vui lòng chọn một báo cáo từ danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Lấy thông tin báo cáo
+                if (!int.TryParse(lstDanhSach.SelectedValue.ToString(), out int repCode))
+                {
+                    MessageBox.Show("Mã báo cáo không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                tb_SYS_REPORT rp = _sysReport.getItem(repCode);
+                if (rp == null)
+                {
+                    MessageBox.Show("Không tìm thấy báo cáo được chọn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Tạo form hiển thị báo cáo
                 Form frm = new Form();
-                CrystalReportViewer crv = new CrystalReportViewer();
-                crv.ShowGroupTreeButton = false;
-                crv.ShowParameterPanelButton = false;
-                crv.ToolPanelView = ToolPanelViewType.None;
-                TableLogOnInfo thongtin;
+                CrystalReportViewer crv = new CrystalReportViewer
+                {
+                    ShowGroupTreeButton = false,
+                    ShowParameterPanelButton = false,
+                    ToolPanelView = ToolPanelViewType.None,
+                    Dock = DockStyle.Fill
+                };
+
+                // Tải tệp báo cáo
                 ReportDocument doc = new ReportDocument();
-                doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + rp.REP_NAME + ".rpt"));
-                thongtin = doc.Database.Tables[0].LogOnInfo;
-                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
-                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
-                thongtin.ConnectionInfo.UserID = myFunctions._us;
-                thongtin.ConnectionInfo.Password = myFunctions._pw;
-                doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
+                string reportPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + rp.REP_NAME + ".rpt");
+                if (!System.IO.File.Exists(reportPath))
+                {
+                    MessageBox.Show("Không tìm thấy tệp báo cáo: " + rp.REP_NAME, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                doc.Load(reportPath);
+
+                // Cấu hình thông tin kết nối
+                foreach (Table table in doc.Database.Tables)
+                {
+                    TableLogOnInfo thongtin = table.LogOnInfo;
+                    thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+                    thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+                    thongtin.ConnectionInfo.UserID = myFunctions._us;
+                    thongtin.ConnectionInfo.Password = myFunctions._pw;
+                    table.ApplyLogOnInfo(thongtin);
+                }
+
+                // Thiết lập tham số báo cáo
                 if (rp.TUNGAY == true)
                 {
-                    if (_uTuNgay == null || _uTuNgay.dtTuNgay == null || _uTuNgay.dtDenNgay == null)
+                    if (_uTuNgay?.dtTuNgay == null || _uTuNgay?.dtDenNgay == null)
                     {
                         MessageBox.Show("Vui lòng chọn ngày hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    doc.SetParameterValue("NGAYD", _uTuNgay.dtTuNgay.Value);
-                    doc.SetParameterValue("NGAYC", _uTuNgay.dtDenNgay.Value);
+                    doc.SetParameterValue("@NGAYD", _uTuNgay.dtTuNgay.Value);
+                    doc.SetParameterValue("@NGAYC", _uTuNgay.dtDenNgay.Value);
                 }
                 if (rp.MACTY == true)
                 {
-                    if (_uCongTy == null || _uCongTy.cboCongTy == null || _uCongTy.cboCongTy.SelectedValue == null)
+                    if (_uCongTy?.cboCongTy?.SelectedValue == null)
                     {
                         MessageBox.Show("Vui lòng chọn công ty.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    doc.SetParameterValue("MACTY", _uCongTy.cboCongTy.SelectedValue.ToString());
+                    doc.SetParameterValue("@MACTY", _uCongTy.cboCongTy.SelectedValue.ToString());
                 }
+                if (rp.MADVI == true)
+                {
+                    if (_uDonVi?.cboDonVi?.SelectedValue == null)
+                    {
+                        MessageBox.Show("Vui lòng chọn đơn vị.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    doc.SetParameterValue("@MADVI", _uDonVi.cboDonVi.SelectedValue.ToString());
+                }
+                doc.SetParameterValue("@IDUSER", _user.IDUSER);
 
-                crv.Dock = DockStyle.Fill;
+                // Hiển thị báo cáo
                 crv.ReportSource = doc;
-                frm.Controls.Add(crv);
                 crv.Refresh();
+                frm.Controls.Add(crv);
                 frm.Text = rp.DESCRIPTION;
                 frm.WindowState = FormWindowState.Maximized;
                 frm.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message + "\nStackTrace: " + ex.StackTrace, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -18,6 +18,7 @@ namespace KhachSan
         public frmDonVi()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         DONVI _donvi;
         CONGTY _congty;
@@ -183,8 +184,8 @@ namespace KhachSan
         {
             if (e.Column.Name == "DISABLE" && bool.Parse(e.CellValue.ToString()) == true)
             {
-                Image img = Properties.Resources._1398917_circle_close_cross_incorrect_invalid_icon1;
-                e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                Image img = Properties.Resources.del_icon_32px;
+                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
                 e.Handled = true;
             }
         }

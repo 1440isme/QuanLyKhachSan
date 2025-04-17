@@ -33,7 +33,10 @@ namespace KhachSan
             _datphongsp = new DATPHONG_SANPHAM();
             _datphong = new DATPHONG();
             var p = _phong.getItemFull(_idPhong);
-            lblPhong.Text = p.TENPHONG + " - Đơn giá: " + p.DONGIA.ToString("N0") + " VNĐ";
+            //lblPhong.Text = p.TENPHONG + " - Đơn giá: " + p.DONGIA.ToString("N0") + " VNĐ";
+            lblPhong.Text = p.TENPHONG + " – Đơn giá: " + p.DONGIA.GetValueOrDefault().ToString("N0") + " VNĐ";
+
+
             loadPhongTrong();
         }
         void loadPhongTrong()
@@ -76,6 +79,6 @@ namespace KhachSan
             objMain.showRoom();
         }
 
-        
+
     }
 }

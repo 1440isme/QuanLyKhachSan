@@ -1,6 +1,8 @@
 ﻿using DataLayer;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 
 namespace BusinessLayer
@@ -215,32 +217,23 @@ namespace BusinessLayer
 
             return conflictingBooking != null;
         }
-        public class GroupBookingInfo
+        public DataTable getDataTable(int iddp)
         {
-            public bool IsGroupBooking { get; set; }
-            public int? IDDP { get; set; }
-            public string GroupName { get; set; }
-        }
+            string sql = @"SELECT dp.*, kh.HOTEN, kh.DIACHI, kh.DIENTHOAI
+                   FROM tb_DatPhong dp
+                   JOIN tb_KhachHang kh ON dp.IDKH = kh.IDKH
+                   WHERE dp.IDDP = @iddp";
 
-        public GroupBookingInfo GetRoomGroupBookingInfo(int idPhong)
-        {
-            var result = db.tb_DatPhong_CT
-                .Join(db.tb_DatPhong,
-                    ct => ct.IDDP,
-                    dp => dp.IDDP,
-                    (ct, dp) => new { ct, dp })
-                .Where(x => x.ct.IDPHONG == idPhong
-                    && x.dp.STATUS == false
-                    && x.dp.DISABLED == false)
-                .Select(x => new GroupBookingInfo
-                {
-                    IsGroupBooking = x.dp.THEODOAN == true,
-                    IDDP = x.dp.IDDP,
-                    GroupName = x.dp.GHICHU 
-                })
-                .FirstOrDefault();
+            using (SqlConnection conn = new SqlConnection(DataLayer.connect.connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@iddp", iddp);
 
-            return result ?? new GroupBookingInfo { IsGroupBooking = false };
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
     }
 }

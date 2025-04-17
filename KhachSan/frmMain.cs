@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using USERMANAGEMENT;
 
 namespace KhachSan
 {
@@ -18,6 +19,7 @@ namespace KhachSan
         public frmMain()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public frmMain(tb_SYS_USER user)
         {
@@ -195,6 +197,18 @@ namespace KhachSan
                         {
                             frmDatPhong _frm = new frmDatPhong();
                             _frm.IDUSER = _user.IDUSER; // Truyền IDUSER
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "NGUOIDUNG":
+                        {
+                            USERMANAGEMENT.formMain _frm = new USERMANAGEMENT.formMain();
+                            _frm.ShowDialog();
+                            break;
+                        }
+                    case "NGANHANG":
+                        {
+                            frmThongTinNganHang _frm = new frmThongTinNganHang();
                             _frm.ShowDialog();
                             break;
                         }

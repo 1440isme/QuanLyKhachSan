@@ -13,6 +13,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using VietQRHelper;
+using QRCoder;
+using System.IO;
 
 namespace KhachSan
 {
@@ -34,6 +37,8 @@ namespace KhachSan
             gvPhong.CustomDrawRowIndicator += gvPhong_CustomDrawRowIndicator; // Thêm lại sự kiện
             gvDatPhong.RowCountChanged += gvDatPhong_RowCountChanged; // Thêm lại sự kiện
             gvDanhSach.CustomDrawCell += gvDanhSach_CustomDrawCell; // Thêm lại sự kiện
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         frmMain objMain = (frmMain)Application.OpenForms["frmMain"];
@@ -269,6 +274,7 @@ namespace KhachSan
             SaveData();
             UpdateTotalAmount();
             var dp = _datphong.getItem(_idDP);
+            decimal _tongtien = decimal.Parse(txtThanhTien.Text);
             dp.SOTIEN = double.Parse(txtThanhTien.Text);
             _datphong.update(dp, IDUSER);
             _datphong.updateStatus(_idDP, IDUSER);
@@ -279,15 +285,17 @@ namespace KhachSan
                 _phong.updateStatus(item.IDPHONG, false);
             }
 
-            XuatReport(_idDP.ToString(), "rpDatPhong", "ĐƠN ĐẶT PHÒNG CHI TIẾT");
+            XuatReport(_idDP.ToString(), "rpDatPhong", "ĐƠN ĐẶT PHÒNG CHI TIẾT", (decimal)_tongtien);
             cboTrangThai.SelectedValue = true;
             objMain.showRoom();
         }
 
-        private void XuatReport(string _khoa, string _rpName, string _rpTitle)
+        private void XuatReport(string _khoa, string _rpName, string _rpTitle, decimal _tongtien)
         {
+
             if (_khoa != null)
             {
+                string qrImagePath = CreateQRCodeNganHang(_tongtien);
                 Form frm = new Form();
                 CrystalReportViewer crv = new CrystalReportViewer();
                 crv.ShowGroupTreeButton = false;
@@ -296,6 +304,8 @@ namespace KhachSan
                 //TableLogOnInfo thongtin;
                 ReportDocument doc = new ReportDocument();
                 doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
+                doc.SetParameterValue("DuongDanQR", qrImagePath);
+
                 //thongtin = doc.Database.Tables[0].LogOnInfo;
                 //thongtin.ConnectionInfo.ServerName = myFunctions._srv;
                 //thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
@@ -333,6 +343,42 @@ namespace KhachSan
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
+        }
+
+        public string CreateQRCodeNganHang(decimal _tongtien)
+        {
+            NGANHANG nganhang = new NGANHANG();
+            var bank = nganhang.getAll().FirstOrDefault();
+            if (bank == null) return null;
+
+            string bin = "";
+            switch (bank.TenNganHang?.Trim())
+            {
+                case "VietinBank": bin = "970415"; break;
+                case "Vietcombank": bin = "970436"; break;
+                case "BIDV": bin = "970418"; break;
+                case "Agribank": bin = "970405"; break;
+                default: return null;
+            }
+
+            var qrPay = QRPay.InitVietQR(
+                bankBin: bin,
+                bankNumber: bank.SoTaiKhoan,
+                amount: _tongtien.ToString("0"),
+                purpose: string.IsNullOrWhiteSpace(bank.NoiDung) ? "Thanh Toán Hóa Đơn" : bank.NoiDung
+            );
+
+            var content = qrPay.Build();
+            var qrGenerator = new QRCoder.QRCodeGenerator();
+            var qrData = qrGenerator.CreateQrCode(content, QRCoder.QRCodeGenerator.ECCLevel.Q);
+            var qrCode = new QRCoder.QRCode(qrData);
+            Bitmap qrImage = qrCode.GetGraphic(16, Color.Black, Color.White, true);
+
+            // Lưu vào file tạm (Temp folder)
+            string tempPath = Path.Combine(Path.GetTempPath(), "QRCode_" + Guid.NewGuid() + ".png");
+            qrImage.Save(tempPath, System.Drawing.Imaging.ImageFormat.Png);
+
+            return tempPath; // Trả về đường dẫn ảnh QR
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -813,8 +859,8 @@ namespace KhachSan
         {
             if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()))
             {
-                Image img = Properties.Resources._1398917_circle_close_cross_incorrect_invalid_icon1;
-                e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
+                Image img = Properties.Resources.del_icon_32px;
+                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
                 e.Handled = true;
             }
         }
@@ -831,6 +877,22 @@ namespace KhachSan
         {
             _View.IndicatorWidth = _View.IndicatorWidth < _Width ? _Width : _View.IndicatorWidth;
             return true;
+        }
+
+        private void gvDanhSach_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "STATUS")
+            {
+                bool trangThai = Convert.ToBoolean(gvDanhSach.GetRowCellValue(e.RowHandle, "STATUS"));
+                if (trangThai)
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.MistyRose;
+                }
+            }
         }
     }
 }

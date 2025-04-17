@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hotel_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.1" />
     <Reference Include="DevExpress.Data.Desktop.v22.1" />
@@ -72,11 +75,11 @@
     <Compile Include="frmGroup.Designer.cs">
       <DependentUpon>frmGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="formMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="formMain.Designer.cs">
+      <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhanQuyenBaoCao.cs">
       <SubType>Form</SubType>
@@ -119,8 +122,8 @@
     <EmbeddedResource Include="frmGroup.resx">
       <DependentUpon>frmGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="formMain.resx">
+      <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhanQuyenBaoCao.resx">
       <DependentUpon>frmPhanQuyenBaoCao.cs</DependentUpon>
@@ -190,6 +193,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del_icon_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del_icon_28px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hotel_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

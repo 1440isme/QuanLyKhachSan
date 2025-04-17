@@ -1,6 +1,6 @@
 ﻿namespace USERMANAGEMENT
 {
-    partial class frmMain
+    partial class formMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnGroup = new DevExpress.XtraBars.BarButtonItem();
             this.btnUser = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +43,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnNhom = new System.Windows.Forms.Panel();
-            this.gcUser = new DevExpress.XtraGrid.GridControl();
             this.gvUser = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DISABLED = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDUSER = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,14 +51,16 @@
             this.MACTY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MADVI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ISGROUP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUser = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcUser)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 44, 45, 44);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -71,11 +72,13 @@
             this.btnBaoCao,
             this.btnThoat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1168, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1752, 219);
             // 
             // btnGroup
             // 
@@ -118,7 +121,6 @@
             // 
             this.btnBaoCao.Caption = "Phân quyền báo cáo";
             this.btnBaoCao.Id = 5;
-            this.btnBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCao.ImageOptions.Image")));
             this.btnBaoCao.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBaoCao.ImageOptions.LargeImage")));
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCao_ItemClick);
@@ -167,40 +169,31 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pnNhom);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 150);
+            this.panel1.Location = new System.Drawing.Point(0, 219);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1168, 28);
+            this.panel1.Size = new System.Drawing.Size(1752, 41);
             this.panel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(657, 4);
+            this.label1.Location = new System.Drawing.Point(986, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 19);
+            this.label1.Size = new System.Drawing.Size(106, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "ĐƠN VỊ";
             // 
             // pnNhom
             // 
             this.pnNhom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnNhom.Location = new System.Drawing.Point(732, 0);
+            this.pnNhom.Location = new System.Drawing.Point(1098, 0);
+            this.pnNhom.Margin = new System.Windows.Forms.Padding(4);
             this.pnNhom.Name = "pnNhom";
-            this.pnNhom.Size = new System.Drawing.Size(436, 28);
+            this.pnNhom.Size = new System.Drawing.Size(654, 41);
             this.pnNhom.TabIndex = 0;
-            // 
-            // gcUser
-            // 
-            this.gcUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcUser.Location = new System.Drawing.Point(0, 178);
-            this.gcUser.MainView = this.gvUser;
-            this.gcUser.MenuManager = this.ribbonControl1;
-            this.gcUser.Name = "gcUser";
-            this.gcUser.Size = new System.Drawing.Size(1168, 606);
-            this.gcUser.TabIndex = 2;
-            this.gcUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvUser});
             // 
             // gvUser
             // 
@@ -212,8 +205,10 @@
             this.MACTY,
             this.MADVI,
             this.ISGROUP});
+            this.gvUser.DetailHeight = 512;
             this.gvUser.GridControl = this.gcUser;
             this.gvUser.Name = "gvUser";
+            this.gvUser.OptionsView.ShowGroupPanel = false;
             this.gvUser.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvUser_CustomDrawCell);
             this.gvUser.DoubleClick += new System.EventHandler(this.gvUser_DoubleClick);
             // 
@@ -223,18 +218,20 @@
             this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
-            this.DISABLED.MaxWidth = 35;
-            this.DISABLED.MinWidth = 30;
+            this.DISABLED.MaxWidth = 52;
+            this.DISABLED.MinWidth = 45;
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 30;
+            this.DISABLED.Width = 45;
             // 
             // IDUSER
             // 
             this.IDUSER.Caption = "ID";
             this.IDUSER.FieldName = "IDUSER";
+            this.IDUSER.MinWidth = 30;
             this.IDUSER.Name = "IDUSER";
+            this.IDUSER.Width = 112;
             // 
             // USERNAME
             // 
@@ -242,12 +239,12 @@
             this.USERNAME.AppearanceHeader.Options.UseFont = true;
             this.USERNAME.Caption = "USERNAME";
             this.USERNAME.FieldName = "USERNAME";
-            this.USERNAME.MaxWidth = 120;
-            this.USERNAME.MinWidth = 80;
+            this.USERNAME.MaxWidth = 180;
+            this.USERNAME.MinWidth = 120;
             this.USERNAME.Name = "USERNAME";
             this.USERNAME.Visible = true;
             this.USERNAME.VisibleIndex = 1;
-            this.USERNAME.Width = 80;
+            this.USERNAME.Width = 120;
             // 
             // FULLNAME
             // 
@@ -255,24 +252,28 @@
             this.FULLNAME.AppearanceHeader.Options.UseFont = true;
             this.FULLNAME.Caption = "FULLNAME";
             this.FULLNAME.FieldName = "FULLNAME";
-            this.FULLNAME.MaxWidth = 150;
-            this.FULLNAME.MinWidth = 100;
+            this.FULLNAME.MaxWidth = 225;
+            this.FULLNAME.MinWidth = 150;
             this.FULLNAME.Name = "FULLNAME";
             this.FULLNAME.Visible = true;
             this.FULLNAME.VisibleIndex = 2;
-            this.FULLNAME.Width = 100;
+            this.FULLNAME.Width = 150;
             // 
             // MACTY
             // 
             this.MACTY.Caption = "MACTY";
             this.MACTY.FieldName = "MACTY";
+            this.MACTY.MinWidth = 30;
             this.MACTY.Name = "MACTY";
+            this.MACTY.Width = 112;
             // 
             // MADVI
             // 
             this.MADVI.Caption = "MADVI";
             this.MADVI.FieldName = "MADVI";
+            this.MADVI.MinWidth = 30;
             this.MADVI.Name = "MADVI";
+            this.MADVI.Width = 112;
             // 
             // ISGROUP
             // 
@@ -280,20 +281,36 @@
             this.ISGROUP.AppearanceHeader.Options.UseFont = true;
             this.ISGROUP.Caption = "GROUP";
             this.ISGROUP.FieldName = "ISGROUP";
-            this.ISGROUP.MaxWidth = 70;
+            this.ISGROUP.MaxWidth = 105;
+            this.ISGROUP.MinWidth = 30;
             this.ISGROUP.Name = "ISGROUP";
             this.ISGROUP.Visible = true;
             this.ISGROUP.VisibleIndex = 3;
-            this.ISGROUP.Width = 40;
+            this.ISGROUP.Width = 60;
+            // 
+            // gcUser
+            // 
+            this.gcUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcUser.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcUser.Location = new System.Drawing.Point(0, 260);
+            this.gcUser.MainView = this.gvUser;
+            this.gcUser.Margin = new System.Windows.Forms.Padding(4);
+            this.gcUser.MenuManager = this.ribbonControl1;
+            this.gcUser.Name = "gcUser";
+            this.gcUser.Size = new System.Drawing.Size(1752, 886);
+            this.gcUser.TabIndex = 2;
+            this.gcUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvUser});
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 784);
+            this.ClientSize = new System.Drawing.Size(1752, 1146);
             this.Controls.Add(this.gcUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý người dùng";
@@ -301,8 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +339,8 @@
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraGrid.GridControl gcUser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnNhom;
         private DevExpress.XtraGrid.Views.Grid.GridView gvUser;
         private DevExpress.XtraGrid.Columns.GridColumn DISABLED;
         private DevExpress.XtraGrid.Columns.GridColumn IDUSER;
@@ -331,8 +349,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn MACTY;
         private DevExpress.XtraGrid.Columns.GridColumn MADVI;
         private DevExpress.XtraGrid.Columns.GridColumn ISGROUP;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnNhom;
+        private DevExpress.XtraGrid.GridControl gcUser;
     }
 }
 

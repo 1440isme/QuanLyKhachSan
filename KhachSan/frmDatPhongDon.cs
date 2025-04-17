@@ -4,10 +4,17 @@ using CrystalDecisions.Shared;
 using CrystalDecisions.Windows.Forms;
 using DataLayer;
 using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting.BarCode;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using VietQRHelper;
+using QRCoder;
+using System.Data.SqlClient;
 
 namespace KhachSan
 {
@@ -32,6 +39,7 @@ namespace KhachSan
         public frmDatPhongDon()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void frmDatPhongDon_Load(object sender, EventArgs e)
@@ -131,7 +139,7 @@ namespace KhachSan
         {
             int soNgayO = Math.Max((dtNgayTra.Value.Date - dtNgayDat.Value.Date).Days, 1);
             double tongDV = (double)lstDPSP.Sum(sp => sp.THANHTIEN);
-            _tongtien = tongDV + _phongHienTai.DONGIA * soNgayO;
+            _tongtien = tongDV + (double)_phongHienTai.DONGIA * soNgayO;
             txtThanhTien.Text = _tongtien.ToString("N0");
         }
 
@@ -183,15 +191,17 @@ namespace KhachSan
             _datphong.update(dp, IDUSER);
             _datphong.updateStatus(_idDP, IDUSER);
             _phong.updateStatus(_idPhong, false);
-            XuatReport(_idDP.ToString(), "rpDatPhong", "Đơn đặt phòng");
+            XuatReport(_idDP.ToString(), "rpDatPhong", "Đơn đặt phòng", (decimal)_tongtien);
             cboTrangThai.SelectedValue = true;
             objMain.showRoom();
         }
 
-        private void XuatReport(string _khoa, string _rpName, string _rpTitle)
+        private void XuatReport(string _khoa, string _rpName, string _rpTitle, decimal _tongtien)
         {
+           
             if (_khoa != null)
             {
+                string qrImagePath = CreateQRCodeNganHang(_tongtien);
                 Form frm = new Form();
                 CrystalReportViewer crv = new CrystalReportViewer();
                 crv.ShowGroupTreeButton = false;
@@ -200,6 +210,8 @@ namespace KhachSan
                 //TableLogOnInfo thongtin;
                 ReportDocument doc = new ReportDocument();
                 doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
+                doc.SetParameterValue("DuongDanQR", qrImagePath);
+
                 //thongtin = doc.Database.Tables[0].LogOnInfo;
                 //thongtin.ConnectionInfo.ServerName = myFunctions._srv;
                 //thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
@@ -213,6 +225,7 @@ namespace KhachSan
                     Password = myFunctions._pw
                 };
 
+                // Áp dụng cho tất cả các bảng trong report chính
                 foreach (Table table in doc.Database.Tables)
                 {
                     TableLogOnInfo logonInfo = table.LogOnInfo;
@@ -236,6 +249,42 @@ namespace KhachSan
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
+        }
+
+        public string CreateQRCodeNganHang(decimal _tongtien)
+        {
+            NGANHANG nganhang = new NGANHANG();
+            var bank = nganhang.getAll().FirstOrDefault();
+            if (bank == null) return null;
+
+            string bin = "";
+            switch (bank.TenNganHang?.Trim())
+            {
+                case "VietinBank": bin = "970415"; break;
+                case "Vietcombank": bin = "970436"; break;
+                case "BIDV": bin = "970418"; break;
+                case "Agribank": bin = "970405"; break;
+                default: return null;
+            }
+
+            var qrPay = QRPay.InitVietQR(
+                bankBin: bin,
+                bankNumber: bank.SoTaiKhoan,
+                amount: _tongtien.ToString("0"),
+                purpose: string.IsNullOrWhiteSpace(bank.NoiDung) ? "Thanh Toán Hóa Đơn" : bank.NoiDung
+            );
+
+            var content = qrPay.Build();
+            var qrGenerator = new QRCoder.QRCodeGenerator();
+            var qrData = qrGenerator.CreateQrCode(content, QRCoder.QRCodeGenerator.ECCLevel.Q);
+            var qrCode = new QRCoder.QRCode(qrData);
+            Bitmap qrImage = qrCode.GetGraphic(12, Color.Black, Color.White, true);
+
+            // Lưu vào file tạm (Temp folder)
+            string tempPath = Path.Combine(Path.GetTempPath(), "QRCode_" + Guid.NewGuid() + ".png");
+            qrImage.Save(tempPath, System.Drawing.Imaging.ImageFormat.Png);
+
+            return tempPath; // Trả về đường dẫn ảnh QR
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

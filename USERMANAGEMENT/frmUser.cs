@@ -20,7 +20,7 @@ namespace USERMANAGEMENT
             InitializeComponent();
         }
 
-        frmMain objMain = (frmMain)Application.OpenForms["frmMain"];
+        formMain objMain = (formMain)Application.OpenForms["formMain"];
         public string _macty;
         public string _madvi;
         public int _idUser;

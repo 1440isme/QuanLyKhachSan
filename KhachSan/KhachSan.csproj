@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hotel_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -469,6 +472,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\printer_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hotel_logo.ico" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\holtel_logo.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

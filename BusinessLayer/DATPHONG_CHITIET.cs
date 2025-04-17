@@ -52,7 +52,7 @@ namespace BusinessLayer
 
         public void update(tb_DatPhong_CT _dpct)
         {
-            var dpct = db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDP == _dpct.IDDP && x.IDPHONG == _dpct.IDPHONG);
+            tb_DatPhong_CT dpct = db.tb_DatPhong_CT.FirstOrDefault(x => x.IDDPCT == _dpct.IDDPCT);
             if (dpct == null)
             {
                 throw new Exception("Không tìm thấy chi tiết đặt phòng để cập nhật.");

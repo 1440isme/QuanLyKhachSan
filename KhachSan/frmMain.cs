@@ -199,7 +199,7 @@ namespace KhachSan
                         }
                     case "NGUOIDUNG":
                         {
-                            USERMANAGEMENT.frmMain _frm = new USERMANAGEMENT.frmMain();
+                            USERMANAGEMENT.formMain _frm = new USERMANAGEMENT.formMain();
                             _frm.ShowDialog();
                             break;
                         }

@@ -139,7 +139,7 @@ namespace KhachSan
         {
             int soNgayO = Math.Max((dtNgayTra.Value.Date - dtNgayDat.Value.Date).Days, 1);
             double tongDV = (double)lstDPSP.Sum(sp => sp.THANHTIEN);
-            _tongtien = tongDV + _phongHienTai.DONGIA * soNgayO;
+            _tongtien = tongDV + (double)_phongHienTai.DONGIA * soNgayO;
             txtThanhTien.Text = _tongtien.ToString("N0");
         }
 

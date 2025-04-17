@@ -75,32 +75,30 @@ namespace KhachSan
         }
         void LoadData()
         {
-            gcDanhSach.DataSource = _phongtb.getAll();
+            var list = _phongtb.getAll();
+            gcDanhSach.DataSource = list;
             gvDanhSach.OptionsBehavior.Editable = false;
 
-            if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENPHONG"]))
-            {
-                var colTenPhong = gvDanhSach.Columns.AddField("TENPHONG");
-                colTenPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
-                colTenPhong.Caption = "PHÒNG";
-                colTenPhong.Visible = true;
-                colTenPhong.VisibleIndex = 0; 
-            }
+            gvDanhSach.Columns.Clear(); // Xóa sạch cột cũ để tránh lỗi
 
-            if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENTB"]))
-            {
-                var colTenTB = gvDanhSach.Columns.AddField("TENTB");
-                colTenTB.UnboundType = DevExpress.Data.UnboundColumnType.String;
-                colTenTB.Caption = "THIẾT BỊ";
-                colTenTB.Visible = true;
-                colTenTB.VisibleIndex = 1; 
-            }         
+            gvDanhSach.Columns.AddField("IDPHONG").Visible = false; // Phải có IDPHONG để xử lý
+            gvDanhSach.Columns.AddField("IDTB").Visible = false;    // Phải có IDTB để xử lý
+            gvDanhSach.Columns.AddField("SOLUONG").Caption = "SỐ LƯỢNG";
+            gvDanhSach.Columns["SOLUONG"].VisibleIndex = 2;
 
-            if (gvDanhSach.Columns.Contains(gvDanhSach.Columns["SOLUONG"]))
-            {
-                gvDanhSach.Columns["SOLUONG"].VisibleIndex = 2; 
-            }
+            var colTenPhong = gvDanhSach.Columns.AddField("TENPHONG");
+            colTenPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            colTenPhong.Caption = "PHÒNG";
+            colTenPhong.Visible = true;
+            colTenPhong.VisibleIndex = 0;
 
+            var colTenTB = gvDanhSach.Columns.AddField("TENTB");
+            colTenTB.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            colTenTB.Caption = "THIẾT BỊ";
+            colTenTB.Visible = true;
+            colTenTB.VisibleIndex = 1;
+
+            gvDanhSach.CustomUnboundColumnData -= gvDanhSach_CustomUnboundColumnData_1;
             gvDanhSach.CustomUnboundColumnData += gvDanhSach_CustomUnboundColumnData_1;
         }
 

@@ -372,7 +372,7 @@ namespace KhachSan
             var qrGenerator = new QRCoder.QRCodeGenerator();
             var qrData = qrGenerator.CreateQrCode(content, QRCoder.QRCodeGenerator.ECCLevel.Q);
             var qrCode = new QRCoder.QRCode(qrData);
-            Bitmap qrImage = qrCode.GetGraphic(12, Color.Black, Color.White, true);
+            Bitmap qrImage = qrCode.GetGraphic(16, Color.Black, Color.White, true);
 
             // Lưu vào file tạm (Temp folder)
             string tempPath = Path.Combine(Path.GetTempPath(), "QRCode_" + Guid.NewGuid() + ".png");
@@ -877,6 +877,22 @@ namespace KhachSan
         {
             _View.IndicatorWidth = _View.IndicatorWidth < _Width ? _Width : _View.IndicatorWidth;
             return true;
+        }
+
+        private void gvDanhSach_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "STATUS")
+            {
+                bool trangThai = Convert.ToBoolean(gvDanhSach.GetRowCellValue(e.RowHandle, "STATUS"));
+                if (trangThai)
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.MistyRose;
+                }
+            }
         }
     }
 }

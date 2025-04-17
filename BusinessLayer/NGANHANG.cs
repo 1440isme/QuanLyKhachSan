@@ -31,6 +31,7 @@ namespace BusinessLayer
                 {
                     existing.TenNganHang = item.TenNganHang;
                     existing.SoTaiKhoan = item.SoTaiKhoan;
+                    existing.TenTaiKhoan = item.TenTaiKhoan;
                     existing.NoiDung = item.NoiDung;
                 }
                 else

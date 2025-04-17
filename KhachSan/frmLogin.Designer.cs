@@ -62,9 +62,10 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsername.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txtUsername.Location = new System.Drawing.Point(304, 148);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(404, 34);
             this.txtUsername.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txtPassword.Location = new System.Drawing.Point(304, 219);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(404, 34);
             this.txtPassword.TabIndex = 4;
@@ -97,7 +98,7 @@
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.ImageOptions.Image = global::KhachSan.Properties.Resources.cancel_32x32;
             this.btnThoat.Location = new System.Drawing.Point(423, 307);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(178, 63);
             this.btnThoat.TabIndex = 6;
@@ -110,7 +111,7 @@
             this.btnLogin.Appearance.Options.UseFont = true;
             this.btnLogin.ImageOptions.Image = global::KhachSan.Properties.Resources.apply_32x32;
             this.btnLogin.Location = new System.Drawing.Point(220, 307);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(178, 63);
             this.btnLogin.TabIndex = 5;
@@ -133,7 +134,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";

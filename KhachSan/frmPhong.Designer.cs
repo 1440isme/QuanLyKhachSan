@@ -167,6 +167,8 @@
             // 
             // DISABLED
             // 
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
             this.DISABLED.MaxWidth = 60;
@@ -178,6 +180,8 @@
             // 
             // IDPHONG
             // 
+            this.IDPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDPHONG.AppearanceHeader.Options.UseFont = true;
             this.IDPHONG.Caption = "MÃ PHÒNG";
             this.IDPHONG.FieldName = "IDPHONG";
             this.IDPHONG.MaxWidth = 105;
@@ -187,6 +191,8 @@
             // 
             // TENPHONG
             // 
+            this.TENPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.TENPHONG.AppearanceHeader.Options.UseFont = true;
             this.TENPHONG.Caption = "TÊM PHÒNG";
             this.TENPHONG.FieldName = "TENPHONG";
             this.TENPHONG.MaxWidth = 450;
@@ -198,6 +204,8 @@
             // 
             // TRANGTHAI
             // 
+            this.TRANGTHAI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.TRANGTHAI.AppearanceHeader.Options.UseFont = true;
             this.TRANGTHAI.Caption = "TRẠNG THÁI";
             this.TRANGTHAI.FieldName = "TRANGTHAI";
             this.TRANGTHAI.MaxWidth = 180;
@@ -209,6 +217,8 @@
             // 
             // IDTANG
             // 
+            this.IDTANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDTANG.AppearanceHeader.Options.UseFont = true;
             this.IDTANG.Caption = "TẦNG";
             this.IDTANG.FieldName = "IDTANG";
             this.IDTANG.MaxWidth = 150;
@@ -218,6 +228,8 @@
             // 
             // IDLOAIPHONG
             // 
+            this.IDLOAIPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDLOAIPHONG.AppearanceHeader.Options.UseFont = true;
             this.IDLOAIPHONG.Caption = "LOẠI PHÒNG";
             this.IDLOAIPHONG.FieldName = "IDLOAIPHONG";
             this.IDLOAIPHONG.MaxWidth = 450;

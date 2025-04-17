@@ -131,10 +131,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1228, 557);
             this.gcDanhSach.TabIndex = 3;
@@ -156,6 +156,8 @@
             // 
             // DISABLED
             // 
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
             this.DISABLED.MaxWidth = 60;
@@ -167,6 +169,8 @@
             // 
             // IDTANG
             // 
+            this.IDTANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDTANG.AppearanceHeader.Options.UseFont = true;
             this.IDTANG.Caption = "IDTANG";
             this.IDTANG.FieldName = "IDTANG";
             this.IDTANG.MaxWidth = 150;
@@ -176,6 +180,8 @@
             // 
             // TENTANG
             // 
+            this.TENTANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.TENTANG.AppearanceHeader.Options.UseFont = true;
             this.TENTANG.Caption = "TÊN TẦNG";
             this.TENTANG.FieldName = "TENTANG";
             this.TENTANG.MaxWidth = 450;
@@ -192,7 +198,7 @@
             this.groupControl1.Controls.Add(this.chkDisabled);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 623);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1228, 140);
             this.groupControl1.TabIndex = 4;
@@ -201,7 +207,7 @@
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(162, 58);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(666, 27);
             this.txtTen.TabIndex = 12;
@@ -222,7 +228,7 @@
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDisabled.Location = new System.Drawing.Point(922, 58);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
             this.chkDisabled.Size = new System.Drawing.Size(128, 33);
             this.chkDisabled.TabIndex = 10;
@@ -237,7 +243,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTang";
             this.Text = "Danh Mục Tầng";
             this.Load += new System.EventHandler(this.frmTang_Load);

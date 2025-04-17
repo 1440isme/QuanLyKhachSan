@@ -13,9 +13,9 @@ using USERMANAGEMENT.MyComponents;
 
 namespace USERMANAGEMENT
 {
-    public partial class frmMain : DevExpress.XtraEditors.XtraForm
+    public partial class formMain : DevExpress.XtraEditors.XtraForm
     {
-        public frmMain()
+        public formMain()
         {
             InitializeComponent();
         }
@@ -128,6 +128,11 @@ namespace USERMANAGEMENT
 
         private void btnCapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_treeView.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (gvUser.RowCount > 0 && gvUser.GetFocusedRowCellValue("ISGROUP").Equals(true))
             {
                 frmGroup frm = new frmGroup();
@@ -146,6 +151,11 @@ namespace USERMANAGEMENT
 
         private void btnChucNang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_treeView.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             frmPhanQuyenChucNang frm = new frmPhanQuyenChucNang();
             frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
             frm._macty = _macty;
@@ -155,6 +165,11 @@ namespace USERMANAGEMENT
 
         private void btnBaoCao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (_treeView.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             frmPhanQuyenBaoCao frm = new frmPhanQuyenBaoCao();
             frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
             frm._macty = _macty;
@@ -164,7 +179,7 @@ namespace USERMANAGEMENT
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void gvUser_DoubleClick(object sender, EventArgs e)
@@ -187,23 +202,29 @@ namespace USERMANAGEMENT
 
         private void gvUser_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            if (e.Column.Name == "ISGROUP")
+            if (e.Column.Name == "ISGROUP" && bool.Parse(e.CellValue.ToString()) == true)
             {
-                if (e.CellValue != null && bool.TryParse(e.CellValue.ToString(), out bool isGroup))
-                {
-                    Image img = isGroup ? Properties.Resources.usergroup_16x16 : Properties.Resources.employee_16x16;
-                    e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
-                    e.Handled = true;
-                }
+                Image img = Properties.Resources.Team_16x16;
+                int x = e.Bounds.X + (e.Bounds.Width - img.Width) / 2;
+                int y = e.Bounds.Y + (e.Bounds.Height - img.Height) / 2;
+                e.Graphics.DrawImage(img, x - 5, y - 3);
+                e.Handled = true;
             }
-            if (e.Column.Name == "DISABLED")
+            if (e.Column.Name == "ISGROUP" && bool.Parse(e.CellValue.ToString()) == false)
             {
-                if (e.CellValue != null && bool.Parse(e.CellValue.ToString()))
-                {
-                    Image img = Properties.Resources.cancel_16x16;
-                    e.Graphics.DrawImage(img, e.Bounds.X, e.Bounds.Y);
-                    e.Handled = true;
-                }
+                Image img = Properties.Resources.Customer_16x16;
+                int x = e.Bounds.X + (e.Bounds.Width - img.Width) / 2;
+                int y = e.Bounds.Y + (e.Bounds.Height - img.Height) / 2;
+                e.Graphics.DrawImage(img, x - 1, y);
+                e.Handled = true;
+            }
+            if (e.Column.Name == "DISABLED" && bool.Parse(e.CellValue.ToString()) == true)
+            {
+                Image img = Properties.Resources.del_icon_28px;
+                int x = e.Bounds.X + (e.Bounds.Width - img.Width) / 2;
+                int y = e.Bounds.Y + (e.Bounds.Height - img.Height) / 2;
+                e.Graphics.DrawImage(img, x - 1, y);
+                e.Handled = true;
             }
         }
     }

@@ -124,6 +124,9 @@
   <data name="5265645" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5265645.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Team_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Team_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="setting_system_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting_system_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +153,9 @@
   </data>
   <data name="apply_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="printer_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="216242_home_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\216242_home_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,7 +193,7 @@
   <data name="274899_option_settings_technology_adjustments_tools_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\274899_option_settings_technology_adjustments_tools_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="printer_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printer_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Customer_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

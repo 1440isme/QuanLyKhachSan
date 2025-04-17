@@ -171,6 +171,8 @@
             // 
             // DISABLED
             // 
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
             this.DISABLED.MaxWidth = 60;
@@ -182,6 +184,8 @@
             // 
             // IDLOAIPHONG
             // 
+            this.IDLOAIPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDLOAIPHONG.AppearanceHeader.Options.UseFont = true;
             this.IDLOAIPHONG.Caption = "MÃ LOẠI PHÒNG";
             this.IDLOAIPHONG.FieldName = "IDLOAIPHONG";
             this.IDLOAIPHONG.MaxWidth = 120;
@@ -191,6 +195,8 @@
             // 
             // TENLOAIPHONG
             // 
+            this.TENLOAIPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.TENLOAIPHONG.AppearanceHeader.Options.UseFont = true;
             this.TENLOAIPHONG.Caption = "TÊN LOẠI PHÒNG";
             this.TENLOAIPHONG.FieldName = "TENLOAIPHONG";
             this.TENLOAIPHONG.MaxWidth = 450;
@@ -202,7 +208,11 @@
             // 
             // DONGIA
             // 
+            this.DONGIA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DONGIA.AppearanceHeader.Options.UseFont = true;
             this.DONGIA.Caption = "ĐƠN GIÁ";
+            this.DONGIA.DisplayFormat.FormatString = "N0";
+            this.DONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.DONGIA.FieldName = "DONGIA";
             this.DONGIA.MaxWidth = 300;
             this.DONGIA.MinWidth = 120;
@@ -213,6 +223,8 @@
             // 
             // SONGUOI
             // 
+            this.SONGUOI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.SONGUOI.AppearanceHeader.Options.UseFont = true;
             this.SONGUOI.Caption = "SỐ NGƯỜI";
             this.SONGUOI.FieldName = "SONGUOI";
             this.SONGUOI.MaxWidth = 150;
@@ -224,6 +236,8 @@
             // 
             // SOGIUONG
             // 
+            this.SOGIUONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.SOGIUONG.AppearanceHeader.Options.UseFont = true;
             this.SOGIUONG.Caption = "SỐ GIƯỜNG";
             this.SOGIUONG.FieldName = "SOGIUONG";
             this.SOGIUONG.MaxWidth = 450;

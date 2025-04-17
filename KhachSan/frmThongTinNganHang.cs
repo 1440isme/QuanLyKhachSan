@@ -34,6 +34,10 @@ namespace KhachSan
 
         private void frmThongTinNganHang_Load(object sender, EventArgs e)
         {
+            pictureBox1.Image = Image.FromFile(@"E:\HK2_2024-2025\Lập trình trên Windows\cay vler\img\vietinbank-logo (1).png");
+            pictureBox2.Image = Image.FromFile(@"E:\HK2_2024-2025\Lập trình trên Windows\cay vler\img\logo-vietcombank (1).png");
+            pictureBox3.Image = Image.FromFile(@"E:\HK2_2024-2025\Lập trình trên Windows\cay vler\img\Logo_BIDV (1).png");
+            pictureBox4.Image = Image.FromFile(@"E:\HK2_2024-2025\Lập trình trên Windows\cay vler\img\agribank-logo (1).png");
             _nganhang = new NGANHANG();
             cbb_NganHang.Properties.Items.AddRange(new string[] { "VietinBank", "Vietcombank", "BIDV", "Agribank" });
 

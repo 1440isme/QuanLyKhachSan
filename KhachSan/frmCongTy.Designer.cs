@@ -186,6 +186,8 @@
             // 
             // DISABLE
             // 
+            this.DISABLE.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DISABLE.AppearanceHeader.Options.UseFont = true;
             this.DISABLE.Caption = "DEL";
             this.DISABLE.FieldName = "DISABLE";
             this.DISABLE.MaxWidth = 105;
@@ -197,6 +199,8 @@
             // 
             // MACTY
             // 
+            this.MACTY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.MACTY.AppearanceHeader.Options.UseFont = true;
             this.MACTY.Caption = "MÃ CÔNG TY";
             this.MACTY.FieldName = "MACTY";
             this.MACTY.MaxWidth = 105;
@@ -208,6 +212,8 @@
             // 
             // TENCTY
             // 
+            this.TENCTY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.TENCTY.AppearanceHeader.Options.UseFont = true;
             this.TENCTY.Caption = "TÊN CÔNG TY";
             this.TENCTY.FieldName = "TENCTY";
             this.TENCTY.MaxWidth = 450;
@@ -219,6 +225,8 @@
             // 
             // DIENTHOAI
             // 
+            this.DIENTHOAI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DIENTHOAI.AppearanceHeader.Options.UseFont = true;
             this.DIENTHOAI.Caption = "ĐIỆN THOẠI";
             this.DIENTHOAI.FieldName = "DIENTHOAI";
             this.DIENTHOAI.MaxWidth = 180;
@@ -230,6 +238,8 @@
             // 
             // FAX
             // 
+            this.FAX.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.FAX.AppearanceHeader.Options.UseFont = true;
             this.FAX.Caption = "FAX";
             this.FAX.FieldName = "FAX";
             this.FAX.MaxWidth = 150;
@@ -241,6 +251,8 @@
             // 
             // EMAIL
             // 
+            this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.EMAIL.AppearanceHeader.Options.UseFont = true;
             this.EMAIL.Caption = "EMAIL";
             this.EMAIL.FieldName = "EMAIL";
             this.EMAIL.MaxWidth = 450;
@@ -252,6 +264,8 @@
             // 
             // DIACHI
             // 
+            this.DIACHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DIACHI.AppearanceHeader.Options.UseFont = true;
             this.DIACHI.Caption = "ĐỊA CHỈ";
             this.DIACHI.FieldName = "DIACHI";
             this.DIACHI.MinWidth = 30;

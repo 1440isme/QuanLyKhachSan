@@ -62,14 +62,23 @@ namespace BusinessLayer
         {
             return db.tb_Phong.ToList();
         }
-        public List<tb_Phong> getPhongTrongFull()
+        public List<OBJ_PHONG> getPhongTrongFull()
         {
-            var _phong = db.tb_Phong.Where(p => p.TRANGTHAI == false && p.DISABLED == false).ToList();
-            if (_phong == null || !_phong.Any())
-            {
-                throw new Exception("Không tìm thấy phòng trống.");
-            }
-            return _phong;
+            var result = (from p in db.tb_Phong
+                          join lp in db.tb_LoaiPhong on p.IDLOAIPHONG equals lp.IDLOAIPHONG
+                          where p.TRANGTHAI == false && p.DISABLED == false
+                          select new OBJ_PHONG
+                          {
+                              IDPHONG = p.IDPHONG,
+                              TENPHONG = p.TENPHONG,
+                              STATUS = p.TRANGTHAI,
+                              IDTANG = p.IDTANG,
+                              IDLOAIPHONG = p.IDLOAIPHONG,
+                              DISABLED = p.DISABLED,
+                              DONGIA = lp.DONGIA
+                          }).ToList();
+
+            return result;
         }
         public List<tb_Phong> getByTang(int idTang)
         {

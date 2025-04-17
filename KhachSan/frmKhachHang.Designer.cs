@@ -93,12 +93,15 @@
             this.gvDanhSach.DetailHeight = 512;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
+            this.gvDanhSach.OptionsView.ShowGroupPanel = false;
             this.gvDanhSach.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDanhSach_CustomDrawCell);
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             this.gvDanhSach.DoubleClick += new System.EventHandler(this.gvDanhSach_DoubleClick);
             // 
             // DISABLED
             // 
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
             this.DISABLED.MaxWidth = 60;
@@ -110,6 +113,8 @@
             // 
             // IDKH
             // 
+            this.IDKH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDKH.AppearanceHeader.Options.UseFont = true;
             this.IDKH.Caption = "MÃ KHÁCH HÀNG";
             this.IDKH.FieldName = "IDKH";
             this.IDKH.MaxWidth = 150;
@@ -119,6 +124,8 @@
             // 
             // HOTEN
             // 
+            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.HOTEN.AppearanceHeader.Options.UseFont = true;
             this.HOTEN.Caption = "HỌ TÊN";
             this.HOTEN.FieldName = "HOTEN";
             this.HOTEN.MaxWidth = 450;
@@ -130,6 +137,8 @@
             // 
             // CCCD
             // 
+            this.CCCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.CCCD.AppearanceHeader.Options.UseFont = true;
             this.CCCD.Caption = "CCCD/CMND";
             this.CCCD.FieldName = "CCCD";
             this.CCCD.MaxWidth = 180;
@@ -141,6 +150,8 @@
             // 
             // GIOITINH
             // 
+            this.GIOITINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.GIOITINH.AppearanceHeader.Options.UseFont = true;
             this.GIOITINH.Caption = "GIỚI TÍNH";
             this.GIOITINH.FieldName = "GIOITINH";
             this.GIOITINH.MinWidth = 30;
@@ -151,6 +162,8 @@
             // 
             // DIENTHOAI
             // 
+            this.DIENTHOAI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DIENTHOAI.AppearanceHeader.Options.UseFont = true;
             this.DIENTHOAI.Caption = "ĐIỆN THOẠI";
             this.DIENTHOAI.FieldName = "DIENTHOAI";
             this.DIENTHOAI.MaxWidth = 150;
@@ -162,6 +175,8 @@
             // 
             // EMAIL
             // 
+            this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.EMAIL.AppearanceHeader.Options.UseFont = true;
             this.EMAIL.Caption = "EMAIL";
             this.EMAIL.FieldName = "EMAIL";
             this.EMAIL.MaxWidth = 450;
@@ -173,6 +188,8 @@
             // 
             // DIACHI
             // 
+            this.DIACHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DIACHI.AppearanceHeader.Options.UseFont = true;
             this.DIACHI.Caption = "ĐỊA CHỈ";
             this.DIACHI.FieldName = "DIACHI";
             this.DIACHI.MinWidth = 30;

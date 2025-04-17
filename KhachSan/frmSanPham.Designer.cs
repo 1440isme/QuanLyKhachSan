@@ -135,10 +135,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(956, 557);
             this.gcDanhSach.TabIndex = 4;
@@ -161,6 +161,8 @@
             // 
             // DISABLED
             // 
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
             this.DISABLED.MaxWidth = 60;
@@ -172,6 +174,8 @@
             // 
             // IDSP
             // 
+            this.IDSP.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDSP.AppearanceHeader.Options.UseFont = true;
             this.IDSP.Caption = "IDSP";
             this.IDSP.FieldName = "IDSP";
             this.IDSP.MaxWidth = 150;
@@ -181,6 +185,8 @@
             // 
             // TENSP
             // 
+            this.TENSP.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.TENSP.AppearanceHeader.Options.UseFont = true;
             this.TENSP.Caption = "TÊN SẢN PHẨM";
             this.TENSP.FieldName = "TENSP";
             this.TENSP.MaxWidth = 450;
@@ -192,6 +198,8 @@
             // 
             // DONGIA
             // 
+            this.DONGIA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DONGIA.AppearanceHeader.Options.UseFont = true;
             this.DONGIA.Caption = "ĐƠN GIÁ";
             this.DONGIA.FieldName = "DONGIA";
             this.DONGIA.MinWidth = 30;
@@ -209,7 +217,7 @@
             this.groupControl1.Controls.Add(this.chkDisabled);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 623);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(956, 157);
             this.groupControl1.TabIndex = 5;
@@ -218,7 +226,7 @@
             // numDonGia
             // 
             this.numDonGia.Location = new System.Drawing.Point(519, 63);
-            this.numDonGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.numDonGia.Name = "numDonGia";
             this.numDonGia.Size = new System.Drawing.Size(216, 27);
             this.numDonGia.TabIndex = 14;
@@ -237,7 +245,7 @@
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(134, 56);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(228, 27);
             this.txtTen.TabIndex = 12;
@@ -258,7 +266,7 @@
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDisabled.Location = new System.Drawing.Point(777, 63);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
             this.chkDisabled.Size = new System.Drawing.Size(128, 33);
             this.chkDisabled.TabIndex = 10;
@@ -273,7 +281,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSanPham";
             this.Text = "Danh Mục Sản Phẩm";
             this.Load += new System.EventHandler(this.frmSanPham_Load);

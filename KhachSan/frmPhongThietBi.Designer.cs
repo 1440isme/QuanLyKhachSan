@@ -136,10 +136,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1120, 557);
             this.gcDanhSach.TabIndex = 4;
@@ -162,6 +162,8 @@
             // 
             // DISABLED
             // 
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
             this.DISABLED.MaxWidth = 105;
@@ -171,6 +173,8 @@
             // 
             // IDPHONG
             // 
+            this.IDPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDPHONG.AppearanceHeader.Options.UseFont = true;
             this.IDPHONG.Caption = "MÃ PHÒNG";
             this.IDPHONG.FieldName = "IDPHONG";
             this.IDPHONG.MaxWidth = 105;
@@ -180,6 +184,8 @@
             // 
             // IDTHIETBI
             // 
+            this.IDTHIETBI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDTHIETBI.AppearanceHeader.Options.UseFont = true;
             this.IDTHIETBI.Caption = "IDTHIETBI";
             this.IDTHIETBI.FieldName = "IDTHIETBI";
             this.IDTHIETBI.MaxWidth = 450;
@@ -189,14 +195,22 @@
             // 
             // SOLUONG
             // 
+            this.SOLUONG.AppearanceCell.Options.UseTextOptions = true;
+            this.SOLUONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SOLUONG.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SOLUONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.SOLUONG.AppearanceHeader.Options.UseFont = true;
+            this.SOLUONG.AppearanceHeader.Options.UseTextOptions = true;
+            this.SOLUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SOLUONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SOLUONG.Caption = "SỐ LƯỢNG";
             this.SOLUONG.FieldName = "SOLUONG";
-            this.SOLUONG.MaxWidth = 180;
-            this.SOLUONG.MinWidth = 120;
+            this.SOLUONG.MaxWidth = 100;
+            this.SOLUONG.MinWidth = 90;
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.Visible = true;
             this.SOLUONG.VisibleIndex = 0;
-            this.SOLUONG.Width = 120;
+            this.SOLUONG.Width = 100;
             // 
             // groupControl1
             // 
@@ -208,7 +222,7 @@
             this.groupControl1.Controls.Add(this.cboPhong);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 623);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1120, 160);
             this.groupControl1.TabIndex = 5;
@@ -217,7 +231,7 @@
             // numSoLuong
             // 
             this.numSoLuong.Location = new System.Drawing.Point(909, 67);
-            this.numSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.numSoLuong.Name = "numSoLuong";
             this.numSoLuong.Size = new System.Drawing.Size(122, 27);
             this.numSoLuong.TabIndex = 16;
@@ -248,7 +262,7 @@
             // 
             this.cboThietBi.FormattingEnabled = true;
             this.cboThietBi.Location = new System.Drawing.Point(512, 67);
-            this.cboThietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboThietBi.Margin = new System.Windows.Forms.Padding(4);
             this.cboThietBi.Name = "cboThietBi";
             this.cboThietBi.Size = new System.Drawing.Size(229, 27);
             this.cboThietBi.TabIndex = 13;
@@ -268,7 +282,7 @@
             // 
             this.cboPhong.FormattingEnabled = true;
             this.cboPhong.Location = new System.Drawing.Point(135, 67);
-            this.cboPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(226, 27);
             this.cboPhong.TabIndex = 11;
@@ -281,7 +295,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPhongThietBi";
             this.Text = "Phòng Thiết Bị";
             this.Load += new System.EventHandler(this.PhongThietBi_Load);

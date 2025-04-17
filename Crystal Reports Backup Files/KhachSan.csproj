@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hotel_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -76,6 +79,11 @@
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.4, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.4\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -88,6 +96,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,6 +105,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VietQRHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VietQRHelper.1.0.2\lib\net35\VietQRHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmBaoCao.cs">
@@ -194,6 +207,12 @@
     <Compile Include="frmPhongThietBi.Designer.cs">
       <DependentUpon>frmPhongThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongTinNganHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinNganHang.Designer.cs">
+      <DependentUpon>frmThongTinNganHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyControls\frmShowDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,10 +246,22 @@
     <Compile Include="frmTang.Designer.cs">
       <DependentUpon>frmTang.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBill.Designer.cs">
+      <DependentUpon>ReportBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="REP_DOANHTHU_CONGTY_NGAY.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>REP_DOANHTHU_CONGTY_NGAY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REP_DOANHTHU_DONVI_NGAY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REP_DOANHTHU_DONVI_NGAY.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rpDatPhongDon.cs">
@@ -244,12 +275,6 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="rpCongTy.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpCongTy.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="frmBaoCao.resx">
       <DependentUpon>frmBaoCao.cs</DependentUpon>
@@ -302,6 +327,9 @@
     <EmbeddedResource Include="frmPhongThietBi.resx">
       <DependentUpon>frmPhongThietBi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinNganHang.resx">
+      <DependentUpon>frmThongTinNganHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyControls\frmShowDonVi.resx">
       <DependentUpon>frmShowDonVi.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,9 +353,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportBill.resx">
+      <DependentUpon>ReportBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REP_DOANHTHU_CONGTY_NGAY.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>REP_DOANHTHU_CONGTY_NGAY.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP_DOANHTHU_DONVI_NGAY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>REP_DOANHTHU_DONVI_NGAY.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rpDatPhongDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -336,10 +371,6 @@
     <EmbeddedResource Include="rpDatPhong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpDatPhong.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rpCongTy.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpCongTy.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -361,6 +392,10 @@
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{b349896f-283e-462f-9b47-7bf10e6be1bc}</Project>
       <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\USERMANAGEMENT\USERMANAGEMENT.csproj">
+      <Project>{2a4586c1-0ff0-4e7c-b75e-19bf352ce51a}</Project>
+      <Name>USERMANAGEMENT</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -405,7 +440,50 @@
   <ItemGroup>
     <None Include="Resources\cancel_32x32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\setting_system_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4413658.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5265645.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3631016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5235241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del_icon_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hotel_logo.ico" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\holtel_logo.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

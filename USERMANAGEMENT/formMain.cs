@@ -156,11 +156,19 @@ namespace USERMANAGEMENT
                 XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            frmPhanQuyenChucNang frm = new frmPhanQuyenChucNang();
-            frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
-            frm._macty = _macty;
-            frm._madvi = _madvi;
-            frm.ShowDialog();
+
+            if (gvUser.RowCount > 0)
+            {
+                int idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString()); 
+                frmPhanQuyenChucNang frm = new frmPhanQuyenChucNang(idUser); 
+                frm._macty = _macty;
+                frm._madvi = _madvi;
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("Không có người dùng được chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnBaoCao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -170,11 +178,18 @@ namespace USERMANAGEMENT
                 XtraMessageBox.Show("Vui lòng chọn đơn vị. ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            frmPhanQuyenBaoCao frm = new frmPhanQuyenBaoCao();
-            frm._idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
-            frm._macty = _macty;
-            frm._madvi = _madvi;
-            frm.ShowDialog();
+            if (gvUser.RowCount > 0)
+            {
+                int idUser = int.Parse(gvUser.GetFocusedRowCellValue("IDUSER").ToString());
+                frmPhanQuyenBaoCao frm = new frmPhanQuyenBaoCao(idUser);
+                frm._macty = _macty;
+                frm._madvi = _madvi;
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("Không có người dùng được chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

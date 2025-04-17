@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.XtraEditors.Mask.MaskSettings;
 
 namespace USERMANAGEMENT
 {
@@ -24,8 +25,14 @@ namespace USERMANAGEMENT
         public string _macty;
         public string _madvi;
         SYS_USER _sysuser;
+        
 
         SYS_RIGHT _sysRight;
+        public frmPhanQuyenChucNang(int idUser) 
+        {
+            InitializeComponent();
+            _idUser = idUser; 
+        }
         private void frmPhanQuyenChucNang_Load(object sender, EventArgs e)
         {
             _sysuser = new SYS_USER();

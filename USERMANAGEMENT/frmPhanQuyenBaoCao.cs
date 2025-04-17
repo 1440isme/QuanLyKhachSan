@@ -18,6 +18,11 @@ namespace USERMANAGEMENT
         {
             InitializeComponent();
         }
+        public frmPhanQuyenBaoCao(int idUser)
+        {
+            InitializeComponent();
+            _idUser = idUser;
+        }
         public int _idUser;
         public string _macty;
         public string _madvi;

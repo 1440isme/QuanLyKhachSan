@@ -280,7 +280,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn DESCIPTION;
         private DevExpress.XtraGrid.Columns.GridColumn QUYEN;
         private DevExpress.XtraGrid.GridControl gcUsers;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvUsers;
         private DevExpress.XtraGrid.Columns.GridColumn IDUSER;
         private DevExpress.XtraGrid.Columns.GridColumn USERNAME;
         private DevExpress.XtraGrid.Columns.GridColumn FULLNAME;
@@ -292,5 +291,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem btnToanfQuyen;
         private DevExpress.XtraGrid.Columns.GridColumn cISGROUP;
+        public DevExpress.XtraGrid.Views.Grid.GridView gvUsers;
     }
 }

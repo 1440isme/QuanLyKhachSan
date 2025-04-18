@@ -79,6 +79,7 @@ namespace KhachSan
             }
             else
             {
+                dtNgayDat.Enabled = false;
                 var dpct = _datphongct.getIDDPByPhong(_idPhong);
                 if (dpct != null)
                 {
@@ -236,6 +237,8 @@ namespace KhachSan
                 try
                 {
                     doc.SetParameterValue("@IDDP", _khoa);
+                    doc.SetParameterValue("@IDUSER", IDUSER);
+
                     crv.Dock = DockStyle.Fill;
                     crv.ReportSource = doc;
                     frm.Controls.Add(crv);

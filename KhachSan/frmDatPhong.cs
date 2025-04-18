@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using VietQRHelper;
 using QRCoder;
 using System.IO;
+using static DevExpress.XtraEditors.Mask.MaskSettings;
 
 namespace KhachSan
 {
@@ -85,7 +86,6 @@ namespace KhachSan
             _enable(false);
             gvPhong.ExpandAllGroups();
             tabDanhSach.SelectedTabPage = pageDanhSach;
-
             dtNgayDat.ValueChanged -= dtNgayDat_ValueChanged;
             dtNgayTra.ValueChanged -= dtNgayTra_ValueChanged;
             dtNgayDat.ValueChanged += dtNgayDat_ValueChanged;
@@ -172,6 +172,7 @@ namespace KhachSan
         private void btnThem_Click(object sender, EventArgs e)
         {
             _them = true;
+            dtNgayDat.Enabled = false;
             showHideControl(false);
             _enable(true);
             _reset();
@@ -192,6 +193,7 @@ namespace KhachSan
                 return;
             }
             _them = false;
+            dtNgayDat.Enabled = false;
             _enable(true);
             showHideControl(false);
             tabDanhSach.SelectedTabPage = pageChiTiet;
@@ -330,6 +332,7 @@ namespace KhachSan
                 try
                 {
                     doc.SetParameterValue("@IDDP", _khoa);
+                    doc.SetParameterValue("@IDUSER", IDUSER);
                     crv.Dock = DockStyle.Fill;
                     crv.ReportSource = doc;
                     frm.Controls.Add(crv);

@@ -923,6 +923,7 @@
             // dtNgayDat
             // 
             this.dtNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayDat.Enabled = false;
             this.dtNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayDat.Location = new System.Drawing.Point(132, 61);
             this.dtNgayDat.Name = "dtNgayDat";

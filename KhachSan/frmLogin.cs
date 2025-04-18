@@ -37,7 +37,7 @@ namespace KhachSan
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Trim()=="")
+            if (txtUsername.Text.Trim() == "")
             {
                 XtraMessageBox.Show("Tên đăng nhập không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -49,19 +49,26 @@ namespace KhachSan
                 return;
             }
             string pass = Encryptor.Encrypt(txtPassword.Text.Trim(), "qwert@123!poiuy", true);
-            tb_SYS_USER user = _sysUser.getItem(txtUsername.Text.Trim(),_sysParam.macty, _sysParam.madvi );
+            tb_SYS_USER user = _sysUser.getItem(txtUsername.Text.Trim(), _sysParam.macty, _sysParam.madvi);
             if (user.PASSWD.Equals(pass))
             {
                 frmMain frm = new frmMain(user);
-                frm.ShowDialog();
+                frm.FormClosed += FrmMain_FormClosed; 
+                frm.Show();
                 this.Hide();
-
             }
             else
             {
                 XtraMessageBox.Show("Mật khẩu đăng nhập không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+        }
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show(); 
+            txtUsername.Focus();
+            txtUsername.Text = ""; 
+            txtPassword.Text = ""; 
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

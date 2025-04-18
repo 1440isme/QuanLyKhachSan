@@ -112,7 +112,7 @@ namespace KhachSan
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void navMain_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -248,7 +248,7 @@ namespace KhachSan
                 frmDatPhongDon frm = new frmDatPhongDon();
                 frm._idPhong = int.Parse(item.Value.ToString());
                 frm._them = true;
-                frm.IDUSER = _user.IDUSER; // Truyền IDUSER
+                frm.IDUSER = _user.IDUSER; 
                 frm.ShowDialog();
             }
             catch (Exception ex)
@@ -320,6 +320,11 @@ namespace KhachSan
         {
             frmBaoCao frm = new frmBaoCao(_user);
             frm.ShowDialog();
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

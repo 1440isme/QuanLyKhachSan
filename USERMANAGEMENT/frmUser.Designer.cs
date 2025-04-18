@@ -138,7 +138,6 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtHoTen.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtHoTen.Location = new System.Drawing.Point(178, 51);
             this.txtHoTen.Name = "txtHoTen";
@@ -157,6 +156,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsername.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtUsername.Location = new System.Drawing.Point(178, 21);
             this.txtUsername.Name = "txtUsername";

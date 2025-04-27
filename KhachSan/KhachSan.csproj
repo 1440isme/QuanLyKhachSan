@@ -481,6 +481,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hotel_logo.ico" />
+    <Content Include="Logo-Photoroom-_1_.ico" />
+    <Content Include="Logo-Photoroom.ico" />
     <None Include="Resources\save_32px.png" />
     <None Include="Resources\cross_48.png" />
     <None Include="Resources\cross_32.png" />

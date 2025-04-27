@@ -65,6 +65,8 @@
             // 
             // btnChuyenPhong
             // 
+            this.btnChuyenPhong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuyenPhong.Appearance.Options.UseFont = true;
             this.btnChuyenPhong.Location = new System.Drawing.Point(393, 187);
             this.btnChuyenPhong.Margin = new System.Windows.Forms.Padding(4);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
@@ -161,34 +163,34 @@
             // lblPhong
             // 
             this.lblPhong.AutoSize = true;
-            this.lblPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhong.ForeColor = System.Drawing.Color.Blue;
             this.lblPhong.Location = new System.Drawing.Point(296, 57);
             this.lblPhong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhong.Name = "lblPhong";
-            this.lblPhong.Size = new System.Drawing.Size(88, 32);
+            this.lblPhong.Size = new System.Drawing.Size(89, 29);
             this.lblPhong.TabIndex = 32;
             this.lblPhong.Text = "Phòng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(52, 117);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 32);
+            this.label1.Size = new System.Drawing.Size(217, 29);
             this.label1.TabIndex = 19;
             this.label1.Text = "Phòng chuyển đến:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(96, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 32);
+            this.label3.Size = new System.Drawing.Size(172, 29);
             this.label3.TabIndex = 18;
             this.label3.Text = "Phòng hiện tại:";
             // 
@@ -198,6 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 286);
             this.Controls.Add(this.groupControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -215,8 +218,6 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.SimpleButton btnChuyenPhong;
@@ -226,5 +227,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn IDPHONG;
         private DevExpress.XtraGrid.Columns.GridColumn TENPHONG;
         private DevExpress.XtraGrid.Columns.GridColumn DONGIA;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

@@ -165,7 +165,7 @@
             // 
             // groupControl5
             // 
-            this.groupControl5.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupControl5.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupControl5.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
             this.groupControl5.AppearanceCaption.Options.UseFont = true;
             this.groupControl5.AppearanceCaption.Options.UseForeColor = true;
@@ -183,40 +183,41 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(651, 63);
+            this.label9.Location = new System.Drawing.Point(648, 55);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 32);
+            this.label9.Size = new System.Drawing.Size(73, 29);
             this.label9.TabIndex = 13;
             this.label9.Text = "đồng";
             // 
             // txtThanhTien
             // 
-            this.txtThanhTien.Location = new System.Drawing.Point(198, 63);
+            this.txtThanhTien.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtThanhTien.Location = new System.Drawing.Point(198, 54);
             this.txtThanhTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtThanhTien.Size = new System.Drawing.Size(442, 27);
+            this.txtThanhTien.Size = new System.Drawing.Size(442, 36);
             this.txtThanhTien.TabIndex = 12;
             // 
             // lblThanhToan
             // 
             this.lblThanhToan.AutoSize = true;
-            this.lblThanhToan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThanhToan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThanhToan.ForeColor = System.Drawing.Color.Red;
             this.lblThanhToan.Location = new System.Drawing.Point(39, 58);
             this.lblThanhToan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblThanhToan.Name = "lblThanhToan";
-            this.lblThanhToan.Size = new System.Drawing.Size(143, 32);
+            this.lblThanhToan.Size = new System.Drawing.Size(151, 29);
             this.lblThanhToan.TabIndex = 2;
             this.lblThanhToan.Text = "TỔNG TIỀN";
             // 
             // groupControl4
             // 
-            this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupControl4.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupControl4.AppearanceCaption.Options.UseFont = true;
             this.groupControl4.AppearanceCaption.Options.UseForeColor = true;
@@ -347,7 +348,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Blue;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
@@ -379,11 +380,13 @@
             this.searchKH.Location = new System.Drawing.Point(226, 136);
             this.searchKH.Margin = new System.Windows.Forms.Padding(4);
             this.searchKH.Name = "searchKH";
+            this.searchKH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.searchKH.Properties.Appearance.Options.UseFont = true;
             this.searchKH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchKH.Properties.NullText = " ";
             this.searchKH.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchKH.Size = new System.Drawing.Size(548, 26);
+            this.searchKH.Size = new System.Drawing.Size(548, 36);
             this.searchKH.TabIndex = 32;
             // 
             // searchLookUpEdit1View
@@ -432,20 +435,21 @@
             // 
             // numSoNguoi
             // 
+            this.numSoNguoi.Font = new System.Drawing.Font("Tahoma", 12F);
             this.numSoNguoi.Location = new System.Drawing.Point(225, 256);
             this.numSoNguoi.Margin = new System.Windows.Forms.Padding(4);
             this.numSoNguoi.Name = "numSoNguoi";
-            this.numSoNguoi.Size = new System.Drawing.Size(255, 27);
+            this.numSoNguoi.Size = new System.Drawing.Size(255, 36);
             this.numSoNguoi.TabIndex = 30;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(93, 250);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 32);
+            this.label8.Size = new System.Drawing.Size(107, 29);
             this.label8.TabIndex = 29;
             this.label8.Text = "Số người";
             // 
@@ -475,99 +479,103 @@
             // 
             // txtGhiChu
             // 
+            this.txtGhiChu.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtGhiChu.Location = new System.Drawing.Point(225, 314);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(666, 27);
+            this.txtGhiChu.Size = new System.Drawing.Size(666, 36);
             this.txtGhiChu.TabIndex = 26;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(108, 314);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 32);
+            this.label7.Size = new System.Drawing.Size(92, 29);
             this.label7.TabIndex = 25;
             this.label7.Text = "Ghi chú";
             // 
             // cboTrangThai
             // 
+            this.cboTrangThai.Font = new System.Drawing.Font("Tahoma", 12F);
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Location = new System.Drawing.Point(646, 254);
             this.cboTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(244, 27);
+            this.cboTrangThai.Size = new System.Drawing.Size(244, 37);
             this.cboTrangThai.TabIndex = 24;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(506, 254);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(502, 254);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 32);
+            this.label6.Size = new System.Drawing.Size(122, 29);
             this.label6.TabIndex = 23;
             this.label6.Text = "Trạng thái";
             // 
             // dtNgayTra
             // 
             this.dtNgayTra.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayTra.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayTra.Location = new System.Drawing.Point(639, 194);
             this.dtNgayTra.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayTra.Name = "dtNgayTra";
-            this.dtNgayTra.Size = new System.Drawing.Size(252, 27);
+            this.dtNgayTra.Size = new System.Drawing.Size(252, 36);
             this.dtNgayTra.TabIndex = 22;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(502, 194);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(519, 194);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 32);
+            this.label5.Size = new System.Drawing.Size(105, 29);
             this.label5.TabIndex = 21;
             this.label5.Text = "Ngày trả";
             // 
             // dtNgayDat
             // 
             this.dtNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayDat.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayDat.Location = new System.Drawing.Point(225, 194);
             this.dtNgayDat.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayDat.Name = "dtNgayDat";
-            this.dtNgayDat.Size = new System.Drawing.Size(253, 27);
+            this.dtNgayDat.Size = new System.Drawing.Size(253, 36);
             this.dtNgayDat.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(93, 194);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 32);
+            this.label4.Size = new System.Drawing.Size(110, 29);
             this.label4.TabIndex = 19;
             this.label4.Text = "Ngày đặt";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(66, 134);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 32);
+            this.label3.Size = new System.Drawing.Size(137, 29);
             this.label3.TabIndex = 17;
             this.label3.Text = "Khách hàng";
             // 
             // groupControl2
             // 
-            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.AppearanceCaption.Options.UseForeColor = true;

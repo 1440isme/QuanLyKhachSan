@@ -214,13 +214,17 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl1.Controls.Add(this.numSoLuong);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.cboThietBi);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.cboPhong);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 623);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
@@ -230,61 +234,64 @@
             // 
             // numSoLuong
             // 
-            this.numSoLuong.Location = new System.Drawing.Point(909, 67);
+            this.numSoLuong.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.numSoLuong.Location = new System.Drawing.Point(909, 65);
             this.numSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.numSoLuong.Name = "numSoLuong";
-            this.numSoLuong.Size = new System.Drawing.Size(122, 27);
+            this.numSoLuong.Size = new System.Drawing.Size(122, 32);
             this.numSoLuong.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(771, 67);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(802, 67);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 32);
+            this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "Số lượng";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(392, 67);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(418, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 32);
+            this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 14;
             this.label3.Text = "Thiết bị";
             // 
             // cboThietBi
             // 
+            this.cboThietBi.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboThietBi.FormattingEnabled = true;
             this.cboThietBi.Location = new System.Drawing.Point(512, 67);
             this.cboThietBi.Margin = new System.Windows.Forms.Padding(4);
             this.cboThietBi.Name = "cboThietBi";
-            this.cboThietBi.Size = new System.Drawing.Size(229, 27);
+            this.cboThietBi.Size = new System.Drawing.Size(229, 32);
             this.cboThietBi.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 67);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(53, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 32);
+            this.label2.Size = new System.Drawing.Size(74, 24);
             this.label2.TabIndex = 12;
             this.label2.Text = "Phòng";
             // 
             // cboPhong
             // 
+            this.cboPhong.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboPhong.FormattingEnabled = true;
             this.cboPhong.Location = new System.Drawing.Point(135, 67);
             this.cboPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cboPhong.Name = "cboPhong";
-            this.cboPhong.Size = new System.Drawing.Size(226, 27);
+            this.cboPhong.Size = new System.Drawing.Size(226, 32);
             this.cboPhong.TabIndex = 11;
             // 
             // frmPhongThietBi
@@ -295,7 +302,10 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPhongThietBi";
             this.Text = "Phòng Thiết Bị";
             this.Load += new System.EventHandler(this.PhongThietBi_Load);

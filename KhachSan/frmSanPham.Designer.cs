@@ -201,6 +201,8 @@
             this.DONGIA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.DONGIA.AppearanceHeader.Options.UseFont = true;
             this.DONGIA.Caption = "ĐƠN GIÁ";
+            this.DONGIA.DisplayFormat.FormatString = "N0";
+            this.DONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.DONGIA.FieldName = "DONGIA";
             this.DONGIA.MinWidth = 30;
             this.DONGIA.Name = "DONGIA";
@@ -210,6 +212,10 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl1.Controls.Add(this.numDonGia);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.txtTen);
@@ -219,45 +225,47 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 623);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(956, 157);
+            this.groupControl1.Size = new System.Drawing.Size(956, 139);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Thông tin";
             // 
             // numDonGia
             // 
-            this.numDonGia.Location = new System.Drawing.Point(519, 63);
+            this.numDonGia.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.numDonGia.Location = new System.Drawing.Point(485, 54);
             this.numDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.numDonGia.Name = "numDonGia";
-            this.numDonGia.Size = new System.Drawing.Size(216, 27);
+            this.numDonGia.Size = new System.Drawing.Size(216, 32);
             this.numDonGia.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 60);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(390, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 32);
+            this.label1.Size = new System.Drawing.Size(87, 24);
             this.label1.TabIndex = 13;
             this.label1.Text = "Đơn giá";
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(134, 56);
+            this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtTen.Location = new System.Drawing.Point(105, 53);
             this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(228, 27);
+            this.txtTen.Size = new System.Drawing.Size(228, 32);
             this.txtTen.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(50, 56);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 29);
+            this.label6.Size = new System.Drawing.Size(47, 24);
             this.label6.TabIndex = 11;
             this.label6.Text = "Tên";
             // 
@@ -265,23 +273,26 @@
             // 
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDisabled.Location = new System.Drawing.Point(777, 63);
+            this.chkDisabled.Location = new System.Drawing.Point(746, 53);
             this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
-            this.chkDisabled.Size = new System.Drawing.Size(128, 33);
+            this.chkDisabled.Size = new System.Drawing.Size(165, 33);
             this.chkDisabled.TabIndex = 10;
-            this.chkDisabled.Text = "Disabled";
+            this.chkDisabled.Text = "Vô hiệu hóa";
             this.chkDisabled.UseVisualStyleBackColor = true;
             // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 780);
+            this.ClientSize = new System.Drawing.Size(956, 762);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSanPham";
             this.Text = "Danh Mục Sản Phẩm";
             this.Load += new System.EventHandler(this.frmSanPham_Load);

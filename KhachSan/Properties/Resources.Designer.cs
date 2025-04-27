@@ -213,6 +213,36 @@ namespace KhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agribank_logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("agribank-logo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap apply_16 {
+            get {
+                object obj = ResourceManager.GetObject("apply_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap apply_161 {
+            get {
+                object obj = ResourceManager.GetObject("apply_161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apply_32x32 {
             get {
                 object obj = ResourceManager.GetObject("apply_32x32", resourceCulture);
@@ -233,6 +263,26 @@ namespace KhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cross_32 {
+            get {
+                object obj = ResourceManager.GetObject("cross_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cross_48 {
+            get {
+                object obj = ResourceManager.GetObject("cross_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Customer_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Customer_16x16", resourceCulture);
@@ -246,6 +296,26 @@ namespace KhachSan.Properties {
         internal static System.Drawing.Bitmap del_icon_32px {
             get {
                 object obj = ResourceManager.GetObject("del_icon_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_BIDV__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo_BIDV (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_vietcombank__1_ {
+            get {
+                object obj = ResourceManager.GetObject("logo-vietcombank (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +363,16 @@ namespace KhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap save_32px {
+            get {
+                object obj = ResourceManager.GetObject("save_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap setting_system_32px {
             get {
                 object obj = ResourceManager.GetObject("setting_system_32px", resourceCulture);
@@ -306,6 +386,46 @@ namespace KhachSan.Properties {
         internal static System.Drawing.Bitmap Team_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Team_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tick_32 {
+            get {
+                object obj = ResourceManager.GetObject("tick_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tick_48 {
+            get {
+                object obj = ResourceManager.GetObject("tick_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tick_512 {
+            get {
+                object obj = ResourceManager.GetObject("tick_512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vietinbank_logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("vietinbank-logo (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

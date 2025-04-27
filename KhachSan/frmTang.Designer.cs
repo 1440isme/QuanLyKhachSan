@@ -64,7 +64,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1228, 66);
+            this.toolStrip1.Size = new System.Drawing.Size(713, 66);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -136,7 +136,7 @@
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1228, 557);
+            this.gcDanhSach.Size = new System.Drawing.Size(713, 456);
             this.gcDanhSach.TabIndex = 3;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -193,33 +193,38 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl1.Controls.Add(this.txtTen);
             this.groupControl1.Controls.Add(this.label6);
             this.groupControl1.Controls.Add(this.chkDisabled);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 623);
+            this.groupControl1.Location = new System.Drawing.Point(0, 522);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1228, 140);
+            this.groupControl1.Size = new System.Drawing.Size(713, 132);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Thông tin";
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(162, 58);
+            this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtTen.Location = new System.Drawing.Point(124, 53);
             this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(666, 27);
+            this.txtTen.Size = new System.Drawing.Size(338, 32);
             this.txtTen.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(69, 56);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 29);
+            this.label6.Size = new System.Drawing.Size(47, 24);
             this.label6.TabIndex = 11;
             this.label6.Text = "Tên";
             // 
@@ -227,23 +232,26 @@
             // 
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDisabled.Location = new System.Drawing.Point(922, 58);
+            this.chkDisabled.Location = new System.Drawing.Point(507, 51);
             this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
-            this.chkDisabled.Size = new System.Drawing.Size(128, 33);
+            this.chkDisabled.Size = new System.Drawing.Size(165, 33);
             this.chkDisabled.TabIndex = 10;
-            this.chkDisabled.Text = "Disabled";
+            this.chkDisabled.Text = "Vô hiệu quá";
             this.chkDisabled.UseVisualStyleBackColor = true;
             // 
             // frmTang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 763);
+            this.ClientSize = new System.Drawing.Size(713, 654);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTang";
             this.Text = "Danh Mục Tầng";
             this.Load += new System.EventHandler(this.frmTang_Load);

@@ -481,6 +481,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hotel_logo.ico" />
+    <None Include="Resources\save_32px.png" />
+    <None Include="Resources\cross_48.png" />
+    <None Include="Resources\cross_32.png" />
+    <None Include="Resources\tick_32.png" />
+    <None Include="Resources\tick_48.png" />
+    <None Include="Resources\tick_512.png" />
+    <None Include="Resources\apply_161.png" />
+    <None Include="Resources\apply_16.png" />
+    <None Include="Resources\Logo_BIDV %281%29.png" />
+    <None Include="Resources\agribank-logo %281%29.png" />
+    <None Include="Resources\logo-vietcombank %281%29.png" />
+    <None Include="Resources\vietinbank-logo %281%29.png" />
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\holtel_logo.bmp" />
   </ItemGroup>

@@ -37,19 +37,19 @@
             this.txt_STK = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbb_NganHang = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_TenTK = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbb_NganHang = new DevExpress.XtraEditors.ComboBoxEdit();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbb_NganHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_NganHang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -107,10 +107,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(198, 393);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 24);
+            this.label3.Size = new System.Drawing.Size(116, 24);
             this.label3.TabIndex = 14;
             this.label3.Text = "Nội Dung :";
             // 
@@ -125,22 +125,76 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(181, 241);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 24);
+            this.label1.Size = new System.Drawing.Size(135, 24);
             this.label1.TabIndex = 11;
             this.label1.Text = "Ngân Hàng :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(162, 290);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 24);
+            this.label2.Size = new System.Drawing.Size(154, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "Số Tài Khoản :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(150, 343);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(166, 24);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Tên Tài Khoản :";
+            // 
+            // txt_TenTK
+            // 
+            this.txt_TenTK.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenTK.Location = new System.Drawing.Point(322, 340);
+            this.txt_TenTK.Name = "txt_TenTK";
+            this.txt_TenTK.Size = new System.Drawing.Size(380, 32);
+            this.txt_TenTK.TabIndex = 17;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::KhachSan.Properties.Resources.Logo_BIDV__1_;
+            this.pictureBox4.Location = new System.Drawing.Point(690, 127);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(180, 100);
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::KhachSan.Properties.Resources.agribank_logo__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(489, 116);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(180, 100);
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::KhachSan.Properties.Resources.logo_vietcombank__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(283, 128);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(180, 100);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::KhachSan.Properties.Resources.vietinbank_logo__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(84, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 120);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // cbb_NganHang
             // 
@@ -153,56 +207,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbb_NganHang.Size = new System.Drawing.Size(381, 30);
             this.cbb_NganHang.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(150, 343);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 24);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Tên Tài Khoản :";
-            // 
-            // txt_TenTK
-            // 
-            this.txt_TenTK.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenTK.Location = new System.Drawing.Point(322, 340);
-            this.txt_TenTK.Name = "txt_TenTK";
-            this.txt_TenTK.Size = new System.Drawing.Size(380, 32);
-            this.txt_TenTK.TabIndex = 17;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(84, 83);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 100);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(283, 123);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(180, 100);
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(489, 123);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(180, 100);
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(690, 113);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(180, 100);
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
             // 
             // frmThongTinNganHang
             // 
@@ -223,16 +227,19 @@
             this.Controls.Add(this.cbb_NganHang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmThongTinNganHang";
             this.Text = "Thông Tin Ngân Hàng";
             this.Load += new System.EventHandler(this.frmThongTinNganHang_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbb_NganHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_NganHang.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

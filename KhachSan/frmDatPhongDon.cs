@@ -192,7 +192,7 @@ namespace KhachSan
             _datphong.update(dp, IDUSER);
             _datphong.updateStatus(_idDP, IDUSER);
             _phong.updateStatus(_idPhong, false);
-            XuatReport(_idDP.ToString(), "rpDatPhong", "Đơn đặt phòng", (decimal)_tongtien);
+            XuatReport(_idDP.ToString(), "rpDatPhongDon", "Đơn đặt phòng", (decimal)_tongtien);
             cboTrangThai.SelectedValue = true;
             objMain.showRoom();
         }

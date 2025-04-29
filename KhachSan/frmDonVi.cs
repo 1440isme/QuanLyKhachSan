@@ -53,6 +53,7 @@ namespace KhachSan
         }
         void _enable(bool t)
         {
+            cboCTY.Enabled = t;
             txtTen.Enabled = t;
             txtDienThoai.Enabled = t;
             txtFax.Enabled = t;
@@ -63,6 +64,7 @@ namespace KhachSan
         void _reset()
         {
             txtTen.Text = "";
+            txtMa.Text = "";
             txtDienThoai.Text = "";
             txtFax.Text = "";
             txtEmail.Text = "";
@@ -185,7 +187,7 @@ namespace KhachSan
             if (e.Column.Name == "DISABLE" && bool.Parse(e.CellValue.ToString()) == true)
             {
                 Image img = Properties.Resources.del_icon_32px;
-                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
+                e.Graphics.DrawImage(img, e.Bounds.X + 7, e.Bounds.Y - 2); // sửa lại dấu X 
                 e.Handled = true;
             }
         }

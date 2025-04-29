@@ -20,6 +20,12 @@ namespace KhachSan
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            gvDanhSach.RowHeight = 25;
+            gvDanhSach.Appearance.Row.Font = new Font("Tahoma", 9F); // chỉnh font dòng
+            gvDanhSach.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, FontStyle.Bold); // header
+            gvDanhSach.Appearance.Row.Options.UseFont = true;
+            gvDanhSach.Appearance.HeaderPanel.Options.UseFont = true;
+
         }
         PHONG_THIETBI _phongtb;
         THIETBI _thietbi;

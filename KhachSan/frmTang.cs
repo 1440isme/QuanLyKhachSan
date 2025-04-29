@@ -188,7 +188,7 @@ namespace KhachSan
             if (e.Column.Name == "DISABLED" && e.CellValue != null && bool.Parse(e.CellValue.ToString()) == true)
             {
                 Image img = Properties.Resources.del_icon_32px;
-                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
+                e.Graphics.DrawImage(img, e.Bounds.X + 7, e.Bounds.Y - 2);
                 e.Handled = true;
             }
         }

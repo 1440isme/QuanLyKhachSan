@@ -73,6 +73,8 @@ namespace KhachSan
         void _reset()
         {
             txtTen.Text = "";
+            cboTang.Text = "";
+            cboLoaiPhong.Text = "";
             chkThue.Checked = false;
             chkDisabled.Checked = false;
         }
@@ -106,6 +108,13 @@ namespace KhachSan
                     colTenTang.UnboundType = DevExpress.Data.UnboundColumnType.String;
                     colTenTang.Caption = "TẦNG";
                     colTenTang.Visible = true;
+
+                    // chỉnh font
+                    colTenTang.AppearanceCell.Font = new Font("Tahoma", 9F);
+                    colTenTang.AppearanceCell.Options.UseFont = true;
+
+                    colTenTang.AppearanceHeader.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+                    colTenTang.AppearanceHeader.Options.UseFont = true;
                 }
 
                 if (!gvDanhSach.Columns.Contains(gvDanhSach.Columns["TENLOAIPHONG"]))
@@ -114,6 +123,13 @@ namespace KhachSan
                     colTenLoaiPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
                     colTenLoaiPhong.Caption = "LOẠI PHÒNG";
                     colTenLoaiPhong.Visible = true;
+
+                    // chỉnh font
+                    colTenLoaiPhong.AppearanceCell.Font = new Font("Tahoma", 9F);
+                    colTenLoaiPhong.AppearanceCell.Options.UseFont = true;
+
+                    colTenLoaiPhong.AppearanceHeader.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+                    colTenLoaiPhong.AppearanceHeader.Options.UseFont = true;
                 }
 
                 gvDanhSach.CustomUnboundColumnData += gvDanhSach_CustomUnboundColumnData;
@@ -323,7 +339,7 @@ namespace KhachSan
             if (e.Column.Name == "DISABLED" && e.CellValue != null && bool.TryParse(e.CellValue.ToString(), out bool isDisabled) && isDisabled)
             {
                 Image img = Properties.Resources.del_icon_32px;
-                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
+                e.Graphics.DrawImage(img, e.Bounds.X + 7, e.Bounds.Y - 2);
                 e.Handled = true;
             }
         }

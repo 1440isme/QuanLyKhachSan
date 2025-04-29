@@ -68,12 +68,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
+            this.gcDanhSach.Location = new System.Drawing.Point(0, 54);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1276, 557);
+            this.gcDanhSach.Size = new System.Drawing.Size(851, 366);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -81,6 +79,10 @@
             // 
             // gvDanhSach
             // 
+            this.gvDanhSach.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvDanhSach.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvDanhSach.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvDanhSach.Appearance.Row.Options.UseFont = true;
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DISABLED,
             this.IDKH,
@@ -90,117 +92,110 @@
             this.DIENTHOAI,
             this.EMAIL,
             this.DIACHI});
-            this.gvDanhSach.DetailHeight = 512;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
+            this.gvDanhSach.RowHeight = 25;
             this.gvDanhSach.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDanhSach_CustomDrawCell);
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             this.gvDanhSach.DoubleClick += new System.EventHandler(this.gvDanhSach_DoubleClick);
             // 
             // DISABLED
             // 
-            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DISABLED.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
-            this.DISABLED.MaxWidth = 60;
-            this.DISABLED.MinWidth = 37;
+            this.DISABLED.MaxWidth = 40;
+            this.DISABLED.MinWidth = 25;
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 52;
+            this.DISABLED.Width = 35;
             // 
             // IDKH
             // 
-            this.IDKH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.IDKH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDKH.AppearanceHeader.Options.UseFont = true;
             this.IDKH.Caption = "MÃ KHÁCH HÀNG";
             this.IDKH.FieldName = "IDKH";
-            this.IDKH.MaxWidth = 150;
-            this.IDKH.MinWidth = 75;
+            this.IDKH.MaxWidth = 100;
+            this.IDKH.MinWidth = 50;
             this.IDKH.Name = "IDKH";
-            this.IDKH.Width = 105;
+            this.IDKH.Width = 70;
             // 
             // HOTEN
             // 
-            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HOTEN.AppearanceHeader.Options.UseFont = true;
             this.HOTEN.Caption = "HỌ TÊN";
             this.HOTEN.FieldName = "HOTEN";
-            this.HOTEN.MaxWidth = 450;
-            this.HOTEN.MinWidth = 30;
+            this.HOTEN.MaxWidth = 300;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
             this.HOTEN.VisibleIndex = 1;
-            this.HOTEN.Width = 112;
             // 
             // CCCD
             // 
-            this.CCCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.CCCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CCCD.AppearanceHeader.Options.UseFont = true;
             this.CCCD.Caption = "CCCD/CMND";
             this.CCCD.FieldName = "CCCD";
-            this.CCCD.MaxWidth = 180;
-            this.CCCD.MinWidth = 120;
+            this.CCCD.MaxWidth = 120;
+            this.CCCD.MinWidth = 80;
             this.CCCD.Name = "CCCD";
             this.CCCD.Visible = true;
             this.CCCD.VisibleIndex = 2;
-            this.CCCD.Width = 120;
+            this.CCCD.Width = 80;
             // 
             // GIOITINH
             // 
-            this.GIOITINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.GIOITINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GIOITINH.AppearanceHeader.Options.UseFont = true;
             this.GIOITINH.Caption = "GIỚI TÍNH";
             this.GIOITINH.FieldName = "GIOITINH";
-            this.GIOITINH.MinWidth = 30;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 4;
-            this.GIOITINH.Width = 112;
             // 
             // DIENTHOAI
             // 
-            this.DIENTHOAI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DIENTHOAI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DIENTHOAI.AppearanceHeader.Options.UseFont = true;
             this.DIENTHOAI.Caption = "ĐIỆN THOẠI";
             this.DIENTHOAI.FieldName = "DIENTHOAI";
-            this.DIENTHOAI.MaxWidth = 150;
-            this.DIENTHOAI.MinWidth = 120;
+            this.DIENTHOAI.MaxWidth = 100;
+            this.DIENTHOAI.MinWidth = 80;
             this.DIENTHOAI.Name = "DIENTHOAI";
             this.DIENTHOAI.Visible = true;
             this.DIENTHOAI.VisibleIndex = 3;
-            this.DIENTHOAI.Width = 150;
+            this.DIENTHOAI.Width = 100;
             // 
             // EMAIL
             // 
-            this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EMAIL.AppearanceHeader.Options.UseFont = true;
             this.EMAIL.Caption = "EMAIL";
             this.EMAIL.FieldName = "EMAIL";
-            this.EMAIL.MaxWidth = 450;
-            this.EMAIL.MinWidth = 150;
+            this.EMAIL.MaxWidth = 300;
+            this.EMAIL.MinWidth = 100;
             this.EMAIL.Name = "EMAIL";
             this.EMAIL.Visible = true;
             this.EMAIL.VisibleIndex = 5;
-            this.EMAIL.Width = 150;
+            this.EMAIL.Width = 100;
             // 
             // DIACHI
             // 
-            this.DIACHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.DIACHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DIACHI.AppearanceHeader.Options.UseFont = true;
             this.DIACHI.Caption = "ĐỊA CHỈ";
             this.DIACHI.FieldName = "DIACHI";
-            this.DIACHI.MinWidth = 30;
             this.DIACHI.Name = "DIACHI";
             this.DIACHI.Visible = true;
             this.DIACHI.VisibleIndex = 6;
-            this.DIACHI.Width = 112;
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
@@ -217,21 +212,20 @@
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.txtDienThoai);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Location = new System.Drawing.Point(0, 623);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(0, 420);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1276, 260);
+            this.groupControl1.Size = new System.Drawing.Size(851, 180);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Thông tin";
             // 
             // chkNam
             // 
             this.chkNam.AutoSize = true;
-            this.chkNam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNam.Location = new System.Drawing.Point(930, 58);
-            this.chkNam.Margin = new System.Windows.Forms.Padding(4);
+            this.chkNam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNam.Location = new System.Drawing.Point(620, 40);
             this.chkNam.Name = "chkNam";
-            this.chkNam.Size = new System.Drawing.Size(88, 33);
+            this.chkNam.Size = new System.Drawing.Size(52, 20);
             this.chkNam.TabIndex = 13;
             this.chkNam.Text = "Nam";
             this.chkNam.UseVisualStyleBackColor = true;
@@ -239,112 +233,101 @@
             // txtTen
             // 
             this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtTen.Location = new System.Drawing.Point(162, 58);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTen.Location = new System.Drawing.Point(108, 38);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(661, 32);
+            this.txtTen.Size = new System.Drawing.Size(442, 24);
             this.txtTen.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 56);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(38, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 24);
+            this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Họ tên";
             // 
             // chkDisabled
             // 
             this.chkDisabled.AutoSize = true;
-            this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDisabled.Location = new System.Drawing.Point(1084, 58);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
+            this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDisabled.Location = new System.Drawing.Point(723, 40);
             this.chkDisabled.Name = "chkDisabled";
-            this.chkDisabled.Size = new System.Drawing.Size(128, 33);
+            this.chkDisabled.Size = new System.Drawing.Size(94, 20);
             this.chkDisabled.TabIndex = 10;
-            this.chkDisabled.Text = "Disabled";
+            this.chkDisabled.Text = "Vô hiệu hóa";
             this.chkDisabled.UseVisualStyleBackColor = true;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtDiaChi.Location = new System.Drawing.Point(162, 174);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaChi.Location = new System.Drawing.Point(108, 119);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(1052, 32);
+            this.txtDiaChi.Size = new System.Drawing.Size(703, 24);
             this.txtDiaChi.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(68, 175);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(38, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 24);
+            this.label5.Size = new System.Drawing.Size(46, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Địa chỉ";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtEmail.Location = new System.Drawing.Point(930, 113);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(620, 77);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(284, 32);
+            this.txtEmail.Size = new System.Drawing.Size(191, 24);
             this.txtEmail.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(854, 113);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(569, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 24);
+            this.label4.Size = new System.Drawing.Size(38, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Email";
             // 
             // txtCCCD
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtCCCD.Location = new System.Drawing.Point(561, 110);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCCCD.Location = new System.Drawing.Point(374, 77);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(262, 32);
+            this.txtCCCD.Size = new System.Drawing.Size(176, 24);
             this.txtCCCD.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(489, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(326, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 24);
+            this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "CCCD";
             // 
             // txtDienThoai
             // 
             this.txtDienThoai.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtDienThoai.Location = new System.Drawing.Point(162, 113);
-            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDienThoai.Location = new System.Drawing.Point(108, 77);
             this.txtDienThoai.Name = "txtDienThoai";
-            this.txtDienThoai.Size = new System.Drawing.Size(316, 32);
+            this.txtDienThoai.Size = new System.Drawing.Size(212, 24);
             this.txtDienThoai.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 112);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 24);
+            this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Điện thoại";
             // 
@@ -353,7 +336,7 @@
             this.btnThem.Image = global::KhachSan.Properties.Resources.plus_48px;
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(60, 61);
+            this.btnThem.Size = new System.Drawing.Size(42, 51);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -363,7 +346,7 @@
             this.btnSua.Image = global::KhachSan.Properties.Resources._4413658;
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(46, 61);
+            this.btnSua.Size = new System.Drawing.Size(36, 51);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -373,7 +356,7 @@
             this.btnXoa.Image = global::KhachSan.Properties.Resources._5265645;
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(47, 61);
+            this.btnXoa.Size = new System.Drawing.Size(36, 51);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -383,7 +366,7 @@
             this.btnLuu.Image = global::KhachSan.Properties.Resources._285657_floppy_guardar_save_icon;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(45, 61);
+            this.btnLuu.Size = new System.Drawing.Size(36, 51);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -393,7 +376,7 @@
             this.btnBoQua.Image = global::KhachSan.Properties.Resources._3631016;
             this.btnBoQua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(72, 61);
+            this.btnBoQua.Size = new System.Drawing.Size(48, 51);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
@@ -403,7 +386,7 @@
             this.btnThoat.Image = global::KhachSan.Properties.Resources._5235241;
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(61, 61);
+            this.btnThoat.Size = new System.Drawing.Size(42, 51);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -420,20 +403,19 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1276, 66);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(851, 54);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 883);
+            this.ClientSize = new System.Drawing.Size(851, 598);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmKhachHang";

@@ -46,7 +46,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Blue;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
@@ -57,9 +57,8 @@
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(915, 286);
+            this.groupControl1.Size = new System.Drawing.Size(610, 196);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Chọn phòng chuyển đến";
             // 
@@ -67,24 +66,22 @@
             // 
             this.btnChuyenPhong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuyenPhong.Appearance.Options.UseFont = true;
-            this.btnChuyenPhong.Location = new System.Drawing.Point(393, 187);
-            this.btnChuyenPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChuyenPhong.Location = new System.Drawing.Point(262, 128);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
-            this.btnChuyenPhong.Size = new System.Drawing.Size(170, 56);
+            this.btnChuyenPhong.Size = new System.Drawing.Size(113, 38);
             this.btnChuyenPhong.TabIndex = 34;
             this.btnChuyenPhong.Text = "Chuyển phòng";
             this.btnChuyenPhong.Click += new System.EventHandler(this.btnChuyenPhong_Click);
             // 
             // searchPhong
             // 
-            this.searchPhong.Location = new System.Drawing.Point(302, 121);
-            this.searchPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.searchPhong.Location = new System.Drawing.Point(201, 83);
             this.searchPhong.Name = "searchPhong";
             this.searchPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchPhong.Properties.NullText = "  ";
             this.searchPhong.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchPhong.Size = new System.Drawing.Size(399, 26);
+            this.searchPhong.Size = new System.Drawing.Size(266, 20);
             this.searchPhong.TabIndex = 33;
             // 
             // searchLookUpEdit1View
@@ -98,7 +95,6 @@
             this.IDPHONG,
             this.TENPHONG,
             this.DONGIA});
-            this.searchLookUpEdit1View.DetailHeight = 512;
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -116,12 +112,11 @@
             this.IDPHONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.IDPHONG.Caption = "ID";
             this.IDPHONG.FieldName = "IDPHONG";
-            this.IDPHONG.MaxWidth = 40;
-            this.IDPHONG.MinWidth = 30;
+            this.IDPHONG.MaxWidth = 27;
             this.IDPHONG.Name = "IDPHONG";
             this.IDPHONG.Visible = true;
             this.IDPHONG.VisibleIndex = 0;
-            this.IDPHONG.Width = 40;
+            this.IDPHONG.Width = 27;
             // 
             // TENPHONG
             // 
@@ -135,12 +130,12 @@
             this.TENPHONG.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.TENPHONG.Caption = "TÊN PHÒNG";
             this.TENPHONG.FieldName = "TENPHONG";
-            this.TENPHONG.MaxWidth = 200;
-            this.TENPHONG.MinWidth = 150;
+            this.TENPHONG.MaxWidth = 133;
+            this.TENPHONG.MinWidth = 100;
             this.TENPHONG.Name = "TENPHONG";
             this.TENPHONG.Visible = true;
             this.TENPHONG.VisibleIndex = 1;
-            this.TENPHONG.Width = 179;
+            this.TENPHONG.Width = 119;
             // 
             // DONGIA
             // 
@@ -153,22 +148,21 @@
             this.DONGIA.DisplayFormat.FormatString = "N0";
             this.DONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.DONGIA.FieldName = "DONGIA";
-            this.DONGIA.MaxWidth = 150;
-            this.DONGIA.MinWidth = 120;
+            this.DONGIA.MaxWidth = 100;
+            this.DONGIA.MinWidth = 80;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.Visible = true;
             this.DONGIA.VisibleIndex = 2;
-            this.DONGIA.Width = 127;
+            this.DONGIA.Width = 85;
             // 
             // lblPhong
             // 
             this.lblPhong.AutoSize = true;
             this.lblPhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhong.ForeColor = System.Drawing.Color.Blue;
-            this.lblPhong.Location = new System.Drawing.Point(296, 57);
-            this.lblPhong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhong.Location = new System.Drawing.Point(197, 39);
             this.lblPhong.Name = "lblPhong";
-            this.lblPhong.Size = new System.Drawing.Size(89, 29);
+            this.lblPhong.Size = new System.Drawing.Size(60, 19);
             this.lblPhong.TabIndex = 32;
             this.lblPhong.Text = "Phòng";
             // 
@@ -176,10 +170,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 117);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(35, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 29);
+            this.label1.Size = new System.Drawing.Size(146, 19);
             this.label1.TabIndex = 19;
             this.label1.Text = "Phòng chuyển đến:";
             // 
@@ -187,21 +180,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(96, 57);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(64, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 29);
+            this.label3.Size = new System.Drawing.Size(117, 19);
             this.label3.TabIndex = 18;
             this.label3.Text = "Phòng hiện tại:";
             // 
             // frmChuyenPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 286);
+            this.ClientSize = new System.Drawing.Size(610, 196);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmChuyenPhong";

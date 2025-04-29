@@ -19,6 +19,13 @@ namespace KhachSan
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            gvDanhSach.RowHeight = 25;
+            gvDanhSach.Appearance.Row.Font = new Font("Tahoma", 9F); // chỉnh font dòng
+            gvDanhSach.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, FontStyle.Bold); // header
+            gvDanhSach.Appearance.Row.Options.UseFont = true;
+            gvDanhSach.Appearance.HeaderPanel.Options.UseFont = true;
+
         }
         THIETBI _thietbi;
         bool _them;
@@ -191,7 +198,7 @@ namespace KhachSan
             if (e.Column.Name == "DISABLED" && e.CellValue != null && bool.Parse(e.CellValue.ToString()) == true)
             {
                 Image img = Properties.Resources.del_icon_32px;
-                e.Graphics.DrawImage(img, e.Bounds.X + 12, e.Bounds.Y - 3);
+                e.Graphics.DrawImage(img, e.Bounds.X + 7, e.Bounds.Y - 2);
                 e.Handled = true;
             }
         }

@@ -127,7 +127,7 @@
             <PropertyRef Name="IDPHONG" />
             <PropertyRef Name="IDTB" />
           </Key>
-          <Property Name="IDPHONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPHONG" Type="int" Nullable="false" />
           <Property Name="IDTB" Type="int" Nullable="false" />
           <Property Name="SOLUONG" Type="int" />
           <Property Name="DISABLED" Type="bit" />
@@ -386,7 +386,6 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <EntitySet Name="tb_LoaiPhong" EntityType="KhachSan.tb_LoaiPhong" />
           <EntitySet Name="tb_Param" EntityType="KhachSan.tb_Param" />
           <EntitySet Name="tb_Phong" EntityType="KhachSan.tb_Phong" />
-          <EntitySet Name="tb_Phong_ThietBi" EntityType="KhachSan.tb_Phong_ThietBi" />
           <EntitySet Name="tb_SanPham" EntityType="KhachSan.tb_SanPham" />
           <EntitySet Name="tb_SYS_FUNC" EntityType="KhachSan.tb_SYS_FUNC" />
           <EntitySet Name="tb_SYS_GROUP" EntityType="KhachSan.tb_SYS_GROUP" />
@@ -401,6 +400,7 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <EntitySet Name="tb_SYS_RIGHT_REP" EntityType="KhachSan.tb_SYS_RIGHT_REP" />
           <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="KhachSan.V_REP_SYS_RIGHT_REP" />
           <EntitySet Name="tb_ThongTinNganHang" EntityType="KhachSan.tb_ThongTinNganHang" />
+          <EntitySet Name="tb_Phong_ThietBi" EntityType="KhachSan.tb_Phong_ThietBi" />
         </EntityContainer>
         <EntityType Name="tb_CongTy">
           <Key>
@@ -517,16 +517,6 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="TRANGTHAI" Type="Boolean" />
           <Property Name="IDTANG" Type="Int32" Nullable="false" />
           <Property Name="IDLOAIPHONG" Type="Int32" Nullable="false" />
-          <Property Name="DISABLED" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="tb_Phong_ThietBi">
-          <Key>
-            <PropertyRef Name="IDPHONG" />
-            <PropertyRef Name="IDTB" />
-          </Key>
-          <Property Name="IDPHONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDTB" Type="Int32" Nullable="false" />
-          <Property Name="SOLUONG" Type="Int32" />
           <Property Name="DISABLED" Type="Boolean" />
         </EntityType>
         <EntityType Name="tb_SanPham">
@@ -690,6 +680,16 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="TenTaiKhoan" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NoiDung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="tb_Phong_ThietBi">
+          <Key>
+            <PropertyRef Name="IDPHONG" />
+            <PropertyRef Name="IDTB" />
+          </Key>
+          <Property Name="IDPHONG" Type="Int32" Nullable="false" />
+          <Property Name="IDTB" Type="Int32" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -817,16 +817,6 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
                 <ScalarProperty Name="IDTANG" ColumnName="IDTANG" />
                 <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
                 <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
-                <ScalarProperty Name="IDPHONG" ColumnName="IDPHONG" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_Phong_ThietBi">
-            <EntityTypeMapping TypeName="KhachSan.tb_Phong_ThietBi">
-              <MappingFragment StoreEntitySet="tb_Phong_ThietBi">
-                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
-                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
-                <ScalarProperty Name="IDTB" ColumnName="IDTB" />
                 <ScalarProperty Name="IDPHONG" ColumnName="IDPHONG" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -993,6 +983,16 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
                 <ScalarProperty Name="SoTaiKhoan" ColumnName="SoTaiKhoan" />
                 <ScalarProperty Name="TenNganHang" ColumnName="TenNganHang" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Phong_ThietBi">
+            <EntityTypeMapping TypeName="KhachSan.tb_Phong_ThietBi">
+              <MappingFragment StoreEntitySet="tb_Phong_ThietBi">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="IDTB" ColumnName="IDTB" />
+                <ScalarProperty Name="IDPHONG" ColumnName="IDPHONG" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

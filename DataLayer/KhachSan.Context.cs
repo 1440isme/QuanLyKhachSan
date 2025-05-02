@@ -34,7 +34,6 @@ namespace DataLayer
         public virtual DbSet<tb_LoaiPhong> tb_LoaiPhong { get; set; }
         public virtual DbSet<tb_Param> tb_Param { get; set; }
         public virtual DbSet<tb_Phong> tb_Phong { get; set; }
-        public virtual DbSet<tb_Phong_ThietBi> tb_Phong_ThietBi { get; set; }
         public virtual DbSet<tb_SanPham> tb_SanPham { get; set; }
         public virtual DbSet<tb_SYS_FUNC> tb_SYS_FUNC { get; set; }
         public virtual DbSet<tb_SYS_GROUP> tb_SYS_GROUP { get; set; }
@@ -49,5 +48,6 @@ namespace DataLayer
         public virtual DbSet<tb_SYS_RIGHT_REP> tb_SYS_RIGHT_REP { get; set; }
         public virtual DbSet<V_REP_SYS_RIGHT_REP> V_REP_SYS_RIGHT_REP { get; set; }
         public virtual DbSet<tb_ThongTinNganHang> tb_ThongTinNganHang { get; set; }
+        public virtual DbSet<tb_Phong_ThietBi> tb_Phong_ThietBi { get; set; }
     }
 }

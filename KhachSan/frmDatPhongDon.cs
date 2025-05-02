@@ -75,11 +75,14 @@ namespace KhachSan
             if (_them)
             {
                 dtNgayDat.Enabled = false;
+                cboTrangThai.Enabled = false;
                 ClearProductList();
             }
             else
             {
+                searchKH.Enabled = false;
                 dtNgayDat.Enabled = false;
+                cboTrangThai.Enabled = false;
                 var dpct = _datphongct.getIDDPByPhong(_idPhong);
                 if (dpct != null)
                 {

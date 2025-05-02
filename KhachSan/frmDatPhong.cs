@@ -145,9 +145,9 @@ namespace KhachSan
         {
             cboKhachHang.Enabled = t;
             btnAddNew.Enabled = t;
-            dtNgayDat.Enabled = t;
+            //dtNgayDat.Enabled = t;
             dtNgayTra.Enabled = t;
-            cboTrangThai.Enabled = t;
+            //cboTrangThai.Enabled = t;
             chkTheoDoan.Enabled = t;
             numSoNguoi.Enabled = t;
             txtGhiChu.Enabled = t;
@@ -173,6 +173,7 @@ namespace KhachSan
         {
             _them = true;
             dtNgayDat.Enabled = false;
+            cboTrangThai.Enabled = false;
             showHideControl(false);
             _enable(true);
             _reset();

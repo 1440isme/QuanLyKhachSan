@@ -81,7 +81,8 @@ namespace KhachSan
             cboTrangThai.DisplayMember = "_display";
             cboTrangThai.ValueMember = "_value";
             cboTrangThai.SelectedValue = 1;
-
+            cboTrangThai.Enabled = false;
+            dtNgayDat.Enabled = false;
             showHideControl(true);
             _enable(false);
             gvPhong.ExpandAllGroups();

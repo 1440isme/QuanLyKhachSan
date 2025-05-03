@@ -112,7 +112,7 @@ namespace KhachSan
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void navMain_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -325,6 +325,11 @@ namespace KhachSan
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

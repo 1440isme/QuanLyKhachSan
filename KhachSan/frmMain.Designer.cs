@@ -53,6 +53,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btn_Thoat = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -75,7 +76,8 @@
             this.toolStripSeparator1,
             this.btnBaoCao,
             this.toolStripSeparator2,
-            this.btnThoat});
+            this.btnThoat,
+            this.btn_Thoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
@@ -114,7 +116,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Image = global::KhachSan.Properties.Resources.logout_32px;
+            this.btnThoat.Image = global::KhachSan.Properties.Resources.logout;
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(97, 61);
@@ -126,7 +128,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 66);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -148,7 +150,7 @@
             this.navMain.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navMain.LargeImages = this.imageList1;
             this.navMain.Location = new System.Drawing.Point(0, 0);
-            this.navMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navMain.Margin = new System.Windows.Forms.Padding(4);
             this.navMain.Name = "navMain";
             this.navMain.OptionsNavPane.ExpandedWidth = 318;
             this.navMain.Size = new System.Drawing.Size(318, 1122);
@@ -175,7 +177,7 @@
             this.gControl.Controls.Add(this.galleryControlClient1);
             this.gControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gControl.Location = new System.Drawing.Point(0, 0);
-            this.gControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gControl.Margin = new System.Windows.Forms.Padding(4);
             this.gControl.Name = "gControl";
             this.barManager1.SetPopupContextMenu(this.gControl, this.popupMenu1);
             this.gControl.Size = new System.Drawing.Size(1689, 1122);
@@ -186,7 +188,7 @@
             // 
             this.galleryControlClient1.GalleryControl = this.gControl;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.galleryControlClient1.Margin = new System.Windows.Forms.Padding(4);
             this.galleryControlClient1.Size = new System.Drawing.Size(1659, 1118);
             // 
             // imageList3
@@ -260,7 +262,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlTop.Size = new System.Drawing.Size(2022, 0);
             // 
             // barDockControlBottom
@@ -269,7 +271,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 1188);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlBottom.Size = new System.Drawing.Size(2022, 0);
             // 
             // barDockControlLeft
@@ -278,7 +280,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 1188);
             // 
             // barDockControlRight
@@ -287,8 +289,18 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(2022, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 1188);
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.Image = global::KhachSan.Properties.Resources.logout_32px;
+            this.btn_Thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(61, 61);
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Thoat.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frmMain
             // 
@@ -303,7 +315,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";
@@ -355,5 +367,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnChuyenPhong;
+        private System.Windows.Forms.ToolStripButton btn_Thoat;
     }
 }

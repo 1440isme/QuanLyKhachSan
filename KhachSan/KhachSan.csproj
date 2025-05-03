@@ -484,6 +484,7 @@
     <Content Include="hotel_logo.ico" />
     <Content Include="Logo-Photoroom-_1_.ico" />
     <Content Include="Logo-Photoroom.ico" />
+    <None Include="Resources\logout.png" />
     <None Include="Resources\Thoát.png" />
     <None Include="Resources\Đăng Nhập.png" />
     <None Include="Resources\Username.png" />

@@ -45,20 +45,21 @@
             // 
             this.splBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splBaoCao.Location = new System.Drawing.Point(0, 0);
+            this.splBaoCao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splBaoCao.Name = "splBaoCao";
             // 
-            // splBaoCao.splBaoCao_Panel1
+            // splBaoCao.Panel1
             // 
             this.splBaoCao.Panel1.Controls.Add(this.lstDanhSach);
             this.splBaoCao.Panel1.Text = "Panel1";
             // 
-            // splBaoCao.splBaoCao_Panel2
+            // splBaoCao.Panel2
             // 
             this.splBaoCao.Panel2.Controls.Add(this.btnThoat);
             this.splBaoCao.Panel2.Controls.Add(this.btnThucHien);
             this.splBaoCao.Panel2.Text = "Panel2";
-            this.splBaoCao.Size = new System.Drawing.Size(927, 553);
-            this.splBaoCao.SplitterPosition = 383;
+            this.splBaoCao.Size = new System.Drawing.Size(1390, 808);
+            this.splBaoCao.SplitterPosition = 574;
             this.splBaoCao.TabIndex = 0;
             // 
             // lstDanhSach
@@ -67,8 +68,9 @@
             this.lstDanhSach.Appearance.Options.UseFont = true;
             this.lstDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstDanhSach.Location = new System.Drawing.Point(0, 0);
+            this.lstDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstDanhSach.Name = "lstDanhSach";
-            this.lstDanhSach.Size = new System.Drawing.Size(383, 553);
+            this.lstDanhSach.Size = new System.Drawing.Size(574, 808);
             this.lstDanhSach.TabIndex = 0;
             // 
             // btnThoat
@@ -77,9 +79,10 @@
             this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.ImageOptions.Image = global::KhachSan.Properties.Resources.cancel_32x32;
-            this.btnThoat.Location = new System.Drawing.Point(252, 470);
+            this.btnThoat.Location = new System.Drawing.Point(378, 687);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(119, 43);
+            this.btnThoat.Size = new System.Drawing.Size(178, 63);
             this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -89,19 +92,22 @@
             this.btnThucHien.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnThucHien.Appearance.Options.UseFont = true;
             this.btnThucHien.ImageOptions.Image = global::KhachSan.Properties.Resources.apply_32x32;
-            this.btnThucHien.Location = new System.Drawing.Point(117, 470);
+            this.btnThucHien.Location = new System.Drawing.Point(176, 687);
+            this.btnThucHien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThucHien.Name = "btnThucHien";
-            this.btnThucHien.Size = new System.Drawing.Size(119, 43);
+            this.btnThucHien.Size = new System.Drawing.Size(178, 63);
             this.btnThucHien.TabIndex = 7;
             this.btnThucHien.Text = "Thực hiện";
             this.btnThucHien.Click += new System.EventHandler(this.btnThucHien_Click);
             // 
             // frmBaoCao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 553);
+            this.ClientSize = new System.Drawing.Size(1390, 808);
             this.Controls.Add(this.splBaoCao);
+            this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBaoCao";

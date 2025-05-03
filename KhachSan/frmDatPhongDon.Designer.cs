@@ -657,6 +657,7 @@
             this.ClientSize = new System.Drawing.Size(1587, 1038);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.toolStrip1);
+            this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDatPhongDon";
             this.Text = "Đặt Phòng Khách Lẻ";

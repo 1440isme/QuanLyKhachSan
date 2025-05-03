@@ -293,9 +293,39 @@ namespace KhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Đăng_Nhập {
+            get {
+                object obj = ResourceManager.GetObject("Đăng Nhập", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap del_icon_32px {
             get {
                 object obj = ResourceManager.GetObject("del_icon_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hotel {
+            get {
+                object obj = ResourceManager.GetObject("Hotel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +423,16 @@ namespace KhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Thoát {
+            get {
+                object obj = ResourceManager.GetObject("Thoát", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tick_32 {
             get {
                 object obj = ResourceManager.GetObject("tick_32", resourceCulture);
@@ -416,6 +456,16 @@ namespace KhachSan.Properties {
         internal static System.Drawing.Bitmap tick_512 {
             get {
                 object obj = ResourceManager.GetObject("tick_512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Username {
+            get {
+                object obj = ResourceManager.GetObject("Username", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

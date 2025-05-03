@@ -112,7 +112,7 @@ namespace KhachSan
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void navMain_LinkClicked(object sender, NavBarLinkEventArgs e)

@@ -20,6 +20,7 @@ namespace KhachSan
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.Icon = Properties.Resources.Hotel1;
         }
         public frmMain(tb_SYS_USER user)
         {

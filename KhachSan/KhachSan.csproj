@@ -36,9 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Hotel32x32.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -481,9 +481,11 @@
     <None Include="Resources\Customer_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hotel_logo.ico" />
-    <Content Include="Logo-Photoroom-_1_.ico" />
-    <Content Include="Logo-Photoroom.ico" />
+    <None Include="Resources\login%282%29.png" />
+    <None Include="Resources\Untitled design %281%291.png" />
+    <None Include="Resources\Untitled design.png" />
+    <None Include="Resources\Untitled design %281%29.png" />
+    <None Include="Resources\login%281%29.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\Thoát.png" />
     <None Include="Resources\Đăng Nhập.png" />
@@ -504,6 +506,11 @@
     <None Include="Resources\vietinbank-logo %281%29.png" />
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\holtel_logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Hotel.ico" />
+    <Content Include="Hotel32x32.ico" />
+    <None Include="Resources\Icon1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -36,6 +36,7 @@
             this.btnBaoCao = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.btn_Thoat = new System.Windows.Forms.ToolStripButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navMain = new DevExpress.XtraNavBar.NavBarControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -53,7 +54,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btn_Thoat = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -123,6 +123,16 @@
             this.btnThoat.Text = "Đăng xuất";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.Image = global::KhachSan.Properties.Resources.logout_32px;
+            this.btn_Thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(61, 61);
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Thoat.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // splitContainerControl1
             // 
@@ -292,28 +302,18 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 1188);
             // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.Image = global::KhachSan.Properties.Resources.logout_32px;
-            this.btn_Thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(61, 61);
-            this.btn_Thoat.Text = "Thoát";
-            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_Thoat.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2022, 1188);
-            this.ControlBox = false;
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmMain.IconOptions.Icon")));
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;

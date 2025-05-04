@@ -20,13 +20,13 @@ namespace KhachSan
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Icon = Properties.Resources.Hotel1;
         }
         public frmMain(tb_SYS_USER user)
         {
             InitializeComponent();
             this._user = user;
             this.Text = "PHẦN MỀM QUẢN LÝ KHÁCH SẠN - " + user.FULLNAME;
+            this.Icon = Properties.Resources.Hotel1;
         }
         tb_SYS_USER _user;
         TANG _tang = new TANG();

@@ -510,6 +510,16 @@
   <ItemGroup>
     <Content Include="Hotel.ico" />
     <Content Include="Hotel32x32.ico" />
+    <None Include="Resources\chart%281%29.png" />
+    <None Include="Resources\chart.png" />
+    <None Include="Resources\197597_success_graph_modern_chart_figures_icon.png" />
+    <None Include="Resources\thoat%281%29.png" />
+    <None Include="Resources\Đăng Nhập %281%29.png" />
+    <None Include="Resources\Đăng Nhập1.png" />
+    <None Include="Resources\thoat.png" />
+    <None Include="Resources\Đa.png" />
+    <None Include="Resources\login3.png" />
+    <None Include="Resources\login2.png" />
     <None Include="Resources\Icon1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

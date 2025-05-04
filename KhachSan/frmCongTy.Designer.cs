@@ -305,7 +305,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 409);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1305, 205);
+            this.groupControl1.Size = new System.Drawing.Size(1305, 227);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thông tin";
             // 
@@ -443,7 +443,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 609);
+            this.ClientSize = new System.Drawing.Size(1305, 636);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);

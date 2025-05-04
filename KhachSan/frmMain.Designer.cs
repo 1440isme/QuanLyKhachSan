@@ -87,11 +87,11 @@
             // 
             // btnHeThong
             // 
-            this.btnHeThong.Image = global::KhachSan.Properties.Resources.setting_system_32px;
+            this.btnHeThong.Image = global::KhachSan.Properties.Resources.chart;
             this.btnHeThong.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.Size = new System.Drawing.Size(91, 61);
-            this.btnHeThong.Text = "Hệ thống";
+            this.btnHeThong.Size = new System.Drawing.Size(90, 61);
+            this.btnHeThong.Text = "Thống kê";
             this.btnHeThong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator1
@@ -230,7 +230,7 @@
             // 
             // btnSPDV
             // 
-            this.btnSPDV.Caption = "Cập nhật Sản phẩm - Dịch vụ";
+            this.btnSPDV.Caption = "Cập nhật thông tin";
             this.btnSPDV.Id = 1;
             this.btnSPDV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSPDV.ImageOptions.SvgImage")));
             this.btnSPDV.Name = "btnSPDV";

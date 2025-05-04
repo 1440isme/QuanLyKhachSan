@@ -136,10 +136,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1120, 542);
             this.gcDanhSach.TabIndex = 4;
@@ -226,7 +226,7 @@
             this.groupControl1.Controls.Add(this.cboPhong);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 608);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1120, 145);
             this.groupControl1.TabIndex = 5;
@@ -236,7 +236,7 @@
             // 
             this.numSoLuong.Font = new System.Drawing.Font("Tahoma", 10F);
             this.numSoLuong.Location = new System.Drawing.Point(909, 64);
-            this.numSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.numSoLuong.Name = "numSoLuong";
             this.numSoLuong.Size = new System.Drawing.Size(122, 32);
             this.numSoLuong.TabIndex = 16;
@@ -268,7 +268,7 @@
             this.cboThietBi.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboThietBi.FormattingEnabled = true;
             this.cboThietBi.Location = new System.Drawing.Point(454, 64);
-            this.cboThietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboThietBi.Margin = new System.Windows.Forms.Padding(4);
             this.cboThietBi.Name = "cboThietBi";
             this.cboThietBi.Size = new System.Drawing.Size(298, 32);
             this.cboThietBi.TabIndex = 13;
@@ -289,7 +289,7 @@
             this.cboPhong.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboPhong.FormattingEnabled = true;
             this.cboPhong.Location = new System.Drawing.Point(135, 64);
-            this.cboPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(154, 32);
             this.cboPhong.TabIndex = 11;
@@ -298,13 +298,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 769);
+            this.ClientSize = new System.Drawing.Size(1120, 756);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPhongThietBi";

@@ -218,7 +218,7 @@
             // groupControl4
             // 
             this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.groupControl4.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.groupControl4.AppearanceCaption.ForeColor = System.Drawing.Color.Blue;
             this.groupControl4.AppearanceCaption.Options.UseFont = true;
             this.groupControl4.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl4.Controls.Add(this.gcSPDV);
@@ -258,6 +258,7 @@
             this.gvSPDV.GridControl = this.gcSPDV;
             this.gvSPDV.Name = "gvSPDV";
             this.gvSPDV.OptionsView.ShowFooter = true;
+            this.gvSPDV.OptionsView.ShowGroupPanel = false;
             this.gvSPDV.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvSPDV_CellValueChanged);
             // 
             // spIDSP
@@ -321,6 +322,8 @@
             this.spDONGIA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.spDONGIA.AppearanceHeader.Options.UseFont = true;
             this.spDONGIA.Caption = "ĐƠN GIÁ";
+            this.spDONGIA.DisplayFormat.FormatString = "n0";
+            this.spDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spDONGIA.FieldName = "DONGIA";
             this.spDONGIA.MinWidth = 30;
             this.spDONGIA.Name = "spDONGIA";
@@ -576,7 +579,7 @@
             // groupControl2
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.Blue;
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl2.Controls.Add(this.gcSanPham);

@@ -147,10 +147,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1317, 490);
             this.gcDanhSach.TabIndex = 2;
@@ -304,9 +304,9 @@
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 556);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1317, 298);
+            this.groupControl1.Size = new System.Drawing.Size(1317, 308);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Thông tin";
             // 
@@ -315,7 +315,7 @@
             this.cboCTY.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboCTY.FormattingEnabled = true;
             this.cboCTY.Location = new System.Drawing.Point(234, 69);
-            this.cboCTY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCTY.Margin = new System.Windows.Forms.Padding(4);
             this.cboCTY.Name = "cboCTY";
             this.cboCTY.Size = new System.Drawing.Size(790, 32);
             this.cboCTY.TabIndex = 14;
@@ -335,7 +335,7 @@
             // 
             this.txtMa.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtMa.Location = new System.Drawing.Point(190, 123);
-            this.txtMa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(313, 32);
             this.txtMa.TabIndex = 12;
@@ -356,7 +356,7 @@
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDisabled.Location = new System.Drawing.Point(1077, 126);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
             this.chkDisabled.Size = new System.Drawing.Size(142, 28);
             this.chkDisabled.TabIndex = 10;
@@ -367,7 +367,7 @@
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtDiaChi.Location = new System.Drawing.Point(190, 235);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(1052, 32);
             this.txtDiaChi.TabIndex = 9;
@@ -387,7 +387,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtEmail.Location = new System.Drawing.Point(958, 181);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(284, 32);
             this.txtEmail.TabIndex = 7;
@@ -407,7 +407,7 @@
             // 
             this.txtFax.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtFax.Location = new System.Drawing.Point(572, 181);
-            this.txtFax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFax.Margin = new System.Windows.Forms.Padding(4);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(284, 32);
             this.txtFax.TabIndex = 5;
@@ -427,7 +427,7 @@
             // 
             this.txtDienThoai.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtDienThoai.Location = new System.Drawing.Point(190, 181);
-            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(316, 32);
             this.txtDienThoai.TabIndex = 3;
@@ -447,7 +447,7 @@
             // 
             this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTen.Location = new System.Drawing.Point(572, 123);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(482, 32);
             this.txtTen.TabIndex = 1;
@@ -467,12 +467,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1317, 868);
+            this.ClientSize = new System.Drawing.Size(1317, 865);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDonVi";
             this.Text = "Danh mục Đơn vị";
             this.Load += new System.EventHandler(this.frmDonVi_Load);

@@ -68,10 +68,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1276, 535);
             this.gcDanhSach.TabIndex = 2;
@@ -223,9 +223,9 @@
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 601);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1276, 263);
+            this.groupControl1.Size = new System.Drawing.Size(1276, 252);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Thông tin";
             // 
@@ -234,7 +234,7 @@
             this.chkNam.AutoSize = true;
             this.chkNam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkNam.Location = new System.Drawing.Point(930, 58);
-            this.chkNam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkNam.Margin = new System.Windows.Forms.Padding(4);
             this.chkNam.Name = "chkNam";
             this.chkNam.Size = new System.Drawing.Size(77, 28);
             this.chkNam.TabIndex = 13;
@@ -245,7 +245,7 @@
             // 
             this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTen.Location = new System.Drawing.Point(162, 56);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(661, 32);
             this.txtTen.TabIndex = 12;
@@ -266,7 +266,7 @@
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDisabled.Location = new System.Drawing.Point(1084, 58);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
             this.chkDisabled.Size = new System.Drawing.Size(142, 28);
             this.chkDisabled.TabIndex = 10;
@@ -277,7 +277,7 @@
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtDiaChi.Location = new System.Drawing.Point(162, 174);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(1052, 32);
             this.txtDiaChi.TabIndex = 9;
@@ -297,7 +297,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtEmail.Location = new System.Drawing.Point(930, 113);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(284, 32);
             this.txtEmail.TabIndex = 7;
@@ -317,7 +317,7 @@
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtCCCD.Location = new System.Drawing.Point(561, 113);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(262, 32);
             this.txtCCCD.TabIndex = 5;
@@ -337,7 +337,7 @@
             // 
             this.txtDienThoai.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtDienThoai.Location = new System.Drawing.Point(162, 113);
-            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(316, 32);
             this.txtDienThoai.TabIndex = 3;
@@ -434,12 +434,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 874);
+            this.ClientSize = new System.Drawing.Size(1276, 855);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmKhachHang";

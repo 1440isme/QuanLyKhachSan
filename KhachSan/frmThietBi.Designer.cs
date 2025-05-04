@@ -135,10 +135,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(958, 500);
             this.gcDanhSach.TabIndex = 5;
@@ -223,7 +223,7 @@
             this.groupControl1.Controls.Add(this.chkDisabled);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 566);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(958, 134);
             this.groupControl1.TabIndex = 6;
@@ -233,7 +233,7 @@
             // 
             this.numDonGia.Font = new System.Drawing.Font("Tahoma", 10F);
             this.numDonGia.Location = new System.Drawing.Point(480, 56);
-            this.numDonGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.numDonGia.Name = "numDonGia";
             this.numDonGia.Size = new System.Drawing.Size(216, 32);
             this.numDonGia.TabIndex = 14;
@@ -255,7 +255,7 @@
             // 
             this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTen.Location = new System.Drawing.Point(105, 56);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(228, 32);
             this.txtTen.TabIndex = 12;
@@ -276,7 +276,7 @@
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDisabled.Location = new System.Drawing.Point(740, 58);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
             this.chkDisabled.Size = new System.Drawing.Size(142, 28);
             this.chkDisabled.TabIndex = 10;
@@ -287,13 +287,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 707);
+            this.ClientSize = new System.Drawing.Size(958, 704);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThietBi";

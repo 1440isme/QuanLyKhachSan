@@ -139,10 +139,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1066, 544);
             this.gcDanhSach.TabIndex = 3;
@@ -262,7 +262,7 @@
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 610);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1066, 209);
             this.groupControl1.TabIndex = 4;
@@ -273,7 +273,7 @@
             this.chkThue.AutoSize = true;
             this.chkThue.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkThue.Location = new System.Drawing.Point(546, 66);
-            this.chkThue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkThue.Margin = new System.Windows.Forms.Padding(4);
             this.chkThue.Name = "chkThue";
             this.chkThue.Size = new System.Drawing.Size(144, 28);
             this.chkThue.TabIndex = 15;
@@ -296,7 +296,7 @@
             this.cboTang.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboTang.FormattingEnabled = true;
             this.cboTang.Location = new System.Drawing.Point(108, 127);
-            this.cboTang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTang.Margin = new System.Windows.Forms.Padding(4);
             this.cboTang.Name = "cboTang";
             this.cboTang.Size = new System.Drawing.Size(362, 32);
             this.cboTang.TabIndex = 13;
@@ -317,7 +317,7 @@
             this.cboLoaiPhong.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cboLoaiPhong.FormattingEnabled = true;
             this.cboLoaiPhong.Location = new System.Drawing.Point(663, 127);
-            this.cboLoaiPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cboLoaiPhong.Name = "cboLoaiPhong";
             this.cboLoaiPhong.Size = new System.Drawing.Size(258, 32);
             this.cboLoaiPhong.TabIndex = 11;
@@ -327,7 +327,7 @@
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDisabled.Location = new System.Drawing.Point(778, 66);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
             this.chkDisabled.Name = "chkDisabled";
             this.chkDisabled.Size = new System.Drawing.Size(142, 28);
             this.chkDisabled.TabIndex = 10;
@@ -338,7 +338,7 @@
             // 
             this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTen.Location = new System.Drawing.Point(108, 63);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(362, 32);
             this.txtTen.TabIndex = 1;
@@ -358,12 +358,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 833);
+            this.ClientSize = new System.Drawing.Size(1066, 822);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPhong";

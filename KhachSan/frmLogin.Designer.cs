@@ -39,20 +39,18 @@
             this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsername.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.txtUsername.Location = new System.Drawing.Point(205, 488);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.Location = new System.Drawing.Point(107, 257);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(385, 41);
+            this.txtUsername.Size = new System.Drawing.Size(213, 30);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.txtPassword.Location = new System.Drawing.Point(205, 576);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Location = new System.Drawing.Point(107, 303);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(385, 41);
+            this.txtPassword.Size = new System.Drawing.Size(213, 30);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -68,10 +66,9 @@
             this.btnLogin.AppearanceDisabled.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.AppearanceDisabled.Options.UseBackColor = true;
             this.btnLogin.ImageOptions.Image = global::KhachSan.Properties.Resources.Đăng_Nhập__1_;
-            this.btnLogin.Location = new System.Drawing.Point(146, 649);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Location = new System.Drawing.Point(98, 366);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(179, 63);
+            this.btnLogin.Size = new System.Drawing.Size(185, 43);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -81,10 +78,9 @@
             this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.ImageOptions.Image = global::KhachSan.Properties.Resources.thoat_1_;
-            this.btnThoat.Location = new System.Drawing.Point(396, 649);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Location = new System.Drawing.Point(98, 431);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(179, 63);
+            this.btnThoat.Size = new System.Drawing.Size(185, 43);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -93,19 +89,19 @@
             this.AcceptButton = this.btnLogin;
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Zoom;
             this.BackgroundImageStore = global::KhachSan.Properties.Resources.login3;
             this.CancelButton = this.btnThoat;
-            this.ClientSize = new System.Drawing.Size(723, 852);
+            this.ClientSize = new System.Drawing.Size(387, 576);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";

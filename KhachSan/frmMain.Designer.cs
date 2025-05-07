@@ -93,6 +93,7 @@
             this.btnHeThong.Size = new System.Drawing.Size(90, 61);
             this.btnHeThong.Text = "Thống kê";
             this.btnHeThong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
             // 
             // toolStripSeparator1
             // 

@@ -12,6 +12,8 @@ namespace DataLayer
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Entities : DbContext
     {
@@ -49,5 +51,37 @@ namespace DataLayer
         public virtual DbSet<V_REP_SYS_RIGHT_REP> V_REP_SYS_RIGHT_REP { get; set; }
         public virtual DbSet<tb_ThongTinNganHang> tb_ThongTinNganHang { get; set; }
         public virtual DbSet<tb_Phong_ThietBi> tb_Phong_ThietBi { get; set; }
+    
+        [DbFunction("Entities", "FN_DOANHTHU_THEOPHONG")]
+        public virtual IQueryable<FN_DOANHTHU_THEOPHONG_Result> FN_DOANHTHU_THEOPHONG(Nullable<System.DateTime> nGAYD, Nullable<System.DateTime> nGAYC)
+        {
+            var nGAYDParameter = nGAYD.HasValue ?
+                new ObjectParameter("NGAYD", nGAYD) :
+                new ObjectParameter("NGAYD", typeof(System.DateTime));
+    
+            var nGAYCParameter = nGAYC.HasValue ?
+                new ObjectParameter("NGAYC", nGAYC) :
+                new ObjectParameter("NGAYC", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DOANHTHU_THEOPHONG_Result>("[Entities].[FN_DOANHTHU_THEOPHONG](@NGAYD, @NGAYC)", nGAYDParameter, nGAYCParameter);
+        }
+    
+        [DbFunction("Entities", "FN_DOANHTHU_THEOTG")]
+        public virtual IQueryable<FN_DOANHTHU_THEOTG_Result> FN_DOANHTHU_THEOTG(Nullable<System.DateTime> nGAYD, Nullable<System.DateTime> nGAYC, string lOAI)
+        {
+            var nGAYDParameter = nGAYD.HasValue ?
+                new ObjectParameter("NGAYD", nGAYD) :
+                new ObjectParameter("NGAYD", typeof(System.DateTime));
+    
+            var nGAYCParameter = nGAYC.HasValue ?
+                new ObjectParameter("NGAYC", nGAYC) :
+                new ObjectParameter("NGAYC", typeof(System.DateTime));
+    
+            var lOAIParameter = lOAI != null ?
+                new ObjectParameter("LOAI", lOAI) :
+                new ObjectParameter("LOAI", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DOANHTHU_THEOTG_Result>("[Entities].[FN_DOANHTHU_THEOTG](@NGAYD, @NGAYC, @LOAI)", nGAYDParameter, nGAYCParameter, lOAIParameter);
+        }
     }
 }

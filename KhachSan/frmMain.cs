@@ -332,5 +332,11 @@ namespace KhachSan
         {
             Application.Exit();
         }
+
+        private void btnHeThong_Click(object sender, EventArgs e)
+        {
+            frmThongKe frm = new frmThongKe(_user);
+            frm.ShowDialog();
+        }
     }
 }

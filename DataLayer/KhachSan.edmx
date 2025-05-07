@@ -301,6 +301,32 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="ISGROUP" Type="bit" />
           <Property Name="DISABLED" Type="bit" />
         </EntityType>
+        <Function Name="FN_DOANHTHU_THEOPHONG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="IDPHONG" Type="int" Nullable="false" />
+                <Property Name="TENPHONG" Type="nvarchar" MaxLength="50" />
+                <Property Name="THANHTIEN" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FN_DOANHTHU_THEOTG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <Parameter Name="LOAI" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="NGAYDATPHONG" Type="datetime" />
+                <Property Name="THANHTIEN" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <EntityContainer Name="KhachSanStoreContainer">
           <EntitySet Name="tb_CongTy" EntityType="Self.tb_CongTy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_DatPhong" EntityType="Self.tb_DatPhong" Schema="dbo" store:Type="Tables" />
@@ -401,6 +427,15 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <EntitySet Name="V_REP_SYS_RIGHT_REP" EntityType="KhachSan.V_REP_SYS_RIGHT_REP" />
           <EntitySet Name="tb_ThongTinNganHang" EntityType="KhachSan.tb_ThongTinNganHang" />
           <EntitySet Name="tb_Phong_ThietBi" EntityType="KhachSan.tb_Phong_ThietBi" />
+          <FunctionImport Name="FN_DOANHTHU_THEOPHONG" IsComposable="true" ReturnType="Collection(KhachSan.FN_DOANHTHU_THEOPHONG_Result)">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="FN_DOANHTHU_THEOTG" IsComposable="true" ReturnType="Collection(KhachSan.FN_DOANHTHU_THEOTG_Result)">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+            <Parameter Name="LOAI" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="tb_CongTy">
           <Key>
@@ -690,6 +725,15 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="SOLUONG" Type="Int32" />
           <Property Name="DISABLED" Type="Boolean" />
         </EntityType>
+        <ComplexType Name="FN_DOANHTHU_THEOPHONG_Result">
+          <Property Type="Int32" Name="IDPHONG" Nullable="false" />
+          <Property Type="String" Name="TENPHONG" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="THANHTIEN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FN_DOANHTHU_THEOTG_Result">
+          <Property Type="DateTime" Name="NGAYDATPHONG" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="THANHTIEN" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -996,6 +1040,23 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FN_DOANHTHU_THEOPHONG" FunctionName="KhachSan.Store.FN_DOANHTHU_THEOPHONG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KhachSan.FN_DOANHTHU_THEOPHONG_Result">
+                <ScalarProperty Name="IDPHONG" ColumnName="IDPHONG" />
+                <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FN_DOANHTHU_THEOTG" FunctionName="KhachSan.Store.FN_DOANHTHU_THEOTG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KhachSan.FN_DOANHTHU_THEOTG_Result">
+                <ScalarProperty Name="NGAYDATPHONG" ColumnName="NGAYDATPHONG" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

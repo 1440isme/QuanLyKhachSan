@@ -73,6 +73,8 @@
     <Compile Include="DATPHONG_SANPHAM.cs" />
     <Compile Include="DONVI.cs" />
     <Compile Include="NGANHANG.cs" />
+    <Compile Include="OBJ_DOANHTHUDV.cs" />
+    <Compile Include="OBJ_DOANHTHUPHONG.cs" />
     <Compile Include="SYS_FUNC.cs" />
     <Compile Include="KHACHHANG.cs" />
     <Compile Include="LOAIPHONG.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="SYS_USER.cs" />
     <Compile Include="TANG.cs" />
     <Compile Include="THIETBI.cs" />
+    <Compile Include="THONGKE.cs" />
     <Compile Include="TRANGTHAI.cs" />
     <Compile Include="VIEW_FUNC_SYS_RIGHT.cs" />
     <Compile Include="VIEW_REP_SYS_RIGHT_REP.cs" />

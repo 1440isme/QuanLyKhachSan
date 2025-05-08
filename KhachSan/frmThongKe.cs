@@ -128,7 +128,7 @@ namespace KhachSan
                 }
 
                 barSeries.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-                barSeries.Label.TextPattern = "{V:c0}";
+                barSeries.Label.TextPattern = "{V:n0}";
 
                 ((BarSeriesLabel)barSeries.Label).Position = BarSeriesLabelPosition.Top;
                 ((BarSeriesLabel)barSeries.Label).Font = new Font("Tahoma", 9, FontStyle.Bold);
@@ -144,7 +144,7 @@ namespace KhachSan
 
                     diagram.AxisY.Title.Text = "Doanh thu (VNĐ)";
                     diagram.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-                    diagram.AxisY.Label.TextPattern = "{V:c0}";
+                    diagram.AxisY.Label.TextPattern = "{V:n0}";
                 }
 
                 chartDoanhThu.Legend.Font = new Font("Tahoma", 10);
@@ -183,7 +183,7 @@ namespace KhachSan
                 }
 
                 lineSeries.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-                lineSeries.Label.TextPattern = "{V:c0}";
+                lineSeries.Label.TextPattern = "{V:n0}";
                 chartDoanhThu.Series.Add(lineSeries);
 
                 chartDoanhThu.Legend.Font = new Font("Tahoma", 10);
@@ -229,7 +229,7 @@ namespace KhachSan
 
                 diagram.AxisY.Title.Text = "Thành tiền (VNĐ)";
                 diagram.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-                diagram.AxisY.Label.TextPattern = "{V:c0}";
+                diagram.AxisY.Label.TextPattern = "{V:n0}";
             }
             else if (selected.Contains("Lượng khách theo thời gian"))
             {

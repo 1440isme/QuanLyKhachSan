@@ -192,46 +192,46 @@ namespace KhachSan
             }
         }
 
-        private void btn_Print_Click(object sender, EventArgs e)
-        {
+        //private void btn_Print_Click(object sender, EventArgs e)
+        //{
            
-            XuatReport(_macty, "rpCongTy", "DANH MỤC CÔNG TY");
-        }
+        //    XuatReport(_macty, "rpCongTy", "DANH MỤC CÔNG TY");
+        //}
 
-        private void XuatReport(string _khoa, string _rpName, string _rpTitle)
-        {
-            if (_khoa!=null)
-            {
-                Form frm = new Form();
-                CrystalReportViewer crv = new CrystalReportViewer();
-                crv.ShowGroupTreeButton = false;
-                crv.ShowParameterPanelButton = false;
-                crv.ToolPanelView = ToolPanelViewType.None;
-                TableLogOnInfo thongtin;
-                ReportDocument doc = new ReportDocument();
-                doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
-                thongtin = doc.Database.Tables[0].LogOnInfo;
-                thongtin.ConnectionInfo.ServerName = myFunctions._srv;
-                thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
-                thongtin.ConnectionInfo.UserID = myFunctions._us;
-                thongtin.ConnectionInfo.Password = myFunctions._pw;
-                doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
-                try
-                {
-                    doc.SetParameterValue("MACTY", _khoa.ToString());
-                    crv.Dock = DockStyle.Fill;
-                    crv.ReportSource = doc;
-                    frm.Controls.Add(crv);
-                    crv.Refresh();
-                    frm.Text = _rpTitle;
-                    frm.WindowState = FormWindowState.Maximized;
-                    frm.ShowDialog();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
-                }
-            }
-        }
+        //private void XuatReport(string _khoa, string _rpName, string _rpTitle)
+        //{
+        //    if (_khoa!=null)
+        //    {
+        //        Form frm = new Form();
+        //        CrystalReportViewer crv = new CrystalReportViewer();
+        //        crv.ShowGroupTreeButton = false;
+        //        crv.ShowParameterPanelButton = false;
+        //        crv.ToolPanelView = ToolPanelViewType.None;
+        //        TableLogOnInfo thongtin;
+        //        ReportDocument doc = new ReportDocument();
+        //        doc.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\" + _rpName + ".rpt"));
+        //        thongtin = doc.Database.Tables[0].LogOnInfo;
+        //        thongtin.ConnectionInfo.ServerName = myFunctions._srv;
+        //        thongtin.ConnectionInfo.DatabaseName = myFunctions._db;
+        //        thongtin.ConnectionInfo.UserID = myFunctions._us;
+        //        thongtin.ConnectionInfo.Password = myFunctions._pw;
+        //        doc.Database.Tables[0].ApplyLogOnInfo(thongtin);
+        //        try
+        //        {
+        //            doc.SetParameterValue("MACTY", _khoa.ToString());
+        //            crv.Dock = DockStyle.Fill;
+        //            crv.ReportSource = doc;
+        //            frm.Controls.Add(crv);
+        //            crv.Refresh();
+        //            frm.Text = _rpTitle;
+        //            frm.WindowState = FormWindowState.Maximized;
+        //            frm.ShowDialog();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Lỗi: " + ex.Message);
+        //        }
+        //    }
+        //}
     }
 }

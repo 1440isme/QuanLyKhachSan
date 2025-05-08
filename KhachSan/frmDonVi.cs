@@ -20,6 +20,14 @@ namespace KhachSan
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+        public frmDonVi(tb_SYS_USER user, int right)
+        {
+            InitializeComponent();
+            this._user = user;
+            this._right = right;
+        }
+        tb_SYS_USER _user;
+        int _right;
         DONVI _donvi;
         CONGTY _congty;
         bool _them;
@@ -89,6 +97,12 @@ namespace KhachSan
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             _them = true;
             showHideControl(false);
             _enable(true);
@@ -99,6 +113,12 @@ namespace KhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             _them = false;
             _enable(true);
             txtMa.Enabled = false;
@@ -108,6 +128,12 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 _donvi.delete(_madvi);

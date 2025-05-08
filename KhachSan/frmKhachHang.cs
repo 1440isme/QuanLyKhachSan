@@ -193,7 +193,7 @@ namespace KhachSan
 
                 var ten = gvDanhSach.GetFocusedRowCellValue("HOTEN");
                 var dienThoai = gvDanhSach.GetFocusedRowCellValue("DIENTHOAI");
-                var cccd = gvDanhSach.GetFocusedRowCellValue("FAX");
+                var cccd = gvDanhSach.GetFocusedRowCellValue("CCCD");
                 var email = gvDanhSach.GetFocusedRowCellValue("EMAIL");
                 var diaChi = gvDanhSach.GetFocusedRowCellValue("DIACHI");
                 var gioiTinh = gvDanhSach.GetFocusedRowCellValue("GIOITINH");

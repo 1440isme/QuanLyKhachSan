@@ -145,7 +145,7 @@ namespace KhachSan
                         }
                     case "DONVI":
                         {
-                            frmDonVi _frm = new frmDonVi();
+                            frmDonVi _frm = new frmDonVi(_user, _uRight.USER_RIGHT.Value);
                             _frm.ShowDialog();
                             break;
                         }

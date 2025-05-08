@@ -62,11 +62,11 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(75, 57);
+            this.labelControl2.Location = new System.Drawing.Point(68, 62);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(46, 19);
+            this.labelControl2.Size = new System.Drawing.Size(53, 19);
             this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Sever";
+            this.labelControl2.Text = "Server";
             // 
             // labelControl3
             // 

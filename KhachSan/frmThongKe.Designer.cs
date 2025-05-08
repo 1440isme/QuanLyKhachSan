@@ -39,10 +39,10 @@
             this.dtTuNgay = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.chartDoanhThu = new DevExpress.XtraCharts.ChartControl();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
             this.btnTao = new System.Windows.Forms.Button();
-            this.chartDoanhThu = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(247, 197);
+            this.comboBox2.Location = new System.Drawing.Point(297, 210);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(441, 37);
             this.comboBox2.TabIndex = 8;
@@ -99,7 +99,7 @@
             // 
             this.lbDonVi.AutoSize = true;
             this.lbDonVi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDonVi.Location = new System.Drawing.Point(28, 203);
+            this.lbDonVi.Location = new System.Drawing.Point(78, 216);
             this.lbDonVi.Name = "lbDonVi";
             this.lbDonVi.Size = new System.Drawing.Size(190, 29);
             this.lbDonVi.TabIndex = 7;
@@ -109,7 +109,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(741, 201);
+            this.label4.Location = new System.Drawing.Point(791, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 29);
             this.label4.TabIndex = 6;
@@ -119,7 +119,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(755, 124);
+            this.label3.Location = new System.Drawing.Point(805, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 29);
             this.label3.TabIndex = 5;
@@ -129,7 +129,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 124);
+            this.label2.Location = new System.Drawing.Point(159, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 4;
@@ -139,7 +139,7 @@
             // 
             this.cbBieuDo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBieuDo.FormattingEnabled = true;
-            this.cbBieuDo.Location = new System.Drawing.Point(247, 120);
+            this.cbBieuDo.Location = new System.Drawing.Point(297, 133);
             this.cbBieuDo.Name = "cbBieuDo";
             this.cbBieuDo.Size = new System.Drawing.Size(441, 37);
             this.cbBieuDo.TabIndex = 3;
@@ -147,16 +147,21 @@
             // 
             // dtDenNgay
             // 
+            this.dtDenNgay.CustomFormat = "dd/MM/yyyy";
             this.dtDenNgay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtDenNgay.Location = new System.Drawing.Point(920, 197);
+            this.dtDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDenNgay.Location = new System.Drawing.Point(970, 210);
             this.dtDenNgay.Name = "dtDenNgay";
             this.dtDenNgay.Size = new System.Drawing.Size(377, 36);
             this.dtDenNgay.TabIndex = 2;
+            this.dtDenNgay.Value = new System.DateTime(2025, 5, 8, 0, 0, 0, 0);
             // 
             // dtTuNgay
             // 
+            this.dtTuNgay.CustomFormat = "dd/MM/yyyy";
             this.dtTuNgay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtTuNgay.Location = new System.Drawing.Point(920, 117);
+            this.dtTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTuNgay.Location = new System.Drawing.Point(970, 130);
             this.dtTuNgay.Name = "dtTuNgay";
             this.dtTuNgay.Size = new System.Drawing.Size(377, 36);
             this.dtTuNgay.TabIndex = 1;
@@ -194,6 +199,15 @@
             this.splitContainerControl2.SplitterPosition = 699;
             this.splitContainerControl2.TabIndex = 0;
             // 
+            // chartDoanhThu
+            // 
+            this.chartDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartDoanhThu.Location = new System.Drawing.Point(0, 0);
+            this.chartDoanhThu.Name = "chartDoanhThu";
+            this.chartDoanhThu.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartDoanhThu.Size = new System.Drawing.Size(1438, 699);
+            this.chartDoanhThu.TabIndex = 0;
+            // 
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,15 +241,6 @@
             this.btnTao.UseVisualStyleBackColor = true;
             this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
-            // chartDoanhThu
-            // 
-            this.chartDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartDoanhThu.Location = new System.Drawing.Point(0, 0);
-            this.chartDoanhThu.Name = "chartDoanhThu";
-            this.chartDoanhThu.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartDoanhThu.Size = new System.Drawing.Size(1438, 699);
-            this.chartDoanhThu.TabIndex = 0;
-            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -244,7 +249,7 @@
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "frmThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmThongKe";
+            this.Text = "Thống kê doanh thu";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);

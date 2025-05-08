@@ -75,6 +75,8 @@
     <Compile Include="NGANHANG.cs" />
     <Compile Include="OBJ_DOANHTHUDV.cs" />
     <Compile Include="OBJ_DOANHTHUPHONG.cs" />
+    <Compile Include="OBJ_DOANHTHUSP.cs" />
+    <Compile Include="OBJ_SOLUONGKHACH.cs" />
     <Compile Include="SYS_FUNC.cs" />
     <Compile Include="KHACHHANG.cs" />
     <Compile Include="LOAIPHONG.cs" />

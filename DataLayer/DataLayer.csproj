@@ -72,10 +72,16 @@
     <Compile Include="connect.cs" />
     <Compile Include="Encryptor.cs" />
     <Compile Include="Entities.cs" />
+    <Compile Include="FN_DOANHTHU_SANPHAM_Result.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
     <Compile Include="FN_DOANHTHU_THEOPHONG_Result.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
     <Compile Include="FN_DOANHTHU_THEOTG_Result.cs">
+      <DependentUpon>KhachSan.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FN_SOLUONG_KHACHO_Result.cs">
       <DependentUpon>KhachSan.tt</DependentUpon>
     </Compile>
     <Compile Include="KhachSan.Context.cs">

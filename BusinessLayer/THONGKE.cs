@@ -135,5 +135,125 @@ namespace BusinessLayer
             }
             return lstDoanhThuPhong;
         }
+
+        public List<OBJ_DOANHTHUSP> DoanhThuTheoSanPham(DateTime ngayd, DateTime ngayc)
+        {
+            OBJ_DOANHTHUSP dp;
+            List<OBJ_DOANHTHUSP> lstDoanhThuSP = new List<OBJ_DOANHTHUSP>();
+            var lstSP = db.FN_DOANHTHU_SANPHAM(ngayd, ngayc).ToList();
+
+            foreach(var sp in lstSP)
+            {
+                dp = new OBJ_DOANHTHUSP();
+                dp.TENSP = sp.TENSP;
+                dp.IDSP = sp.IDSP;
+                dp.THANHTIEN = sp.THANHTIEN;
+
+                lstDoanhThuSP.Add(dp);
+            }
+
+            return lstDoanhThuSP;
+        }
+
+        public List<OBJ_SOLUONGKHACH> SoNguoiOTheoThoiGian (DateTime ngayd, DateTime ngayc, string donViThoiGian)
+        {
+            var lstKhach = db.FN_SOLUONG_KHACHO(ngayd, ngayc, donViThoiGian).ToList();
+            List<OBJ_SOLUONGKHACH> result = new List<OBJ_SOLUONGKHACH>();
+
+            if (donViThoiGian.Equals("Ngày", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (var day in lstKhach)
+                {
+                    result.Add(new OBJ_SOLUONGKHACH
+                    {
+                        NGAYDATPHONG = day.NGAYDATPHONG,
+                        NGUOIO = day.NGUOIO,
+                    });
+                }
+            }
+            else if (donViThoiGian.Equals("Tuần", StringComparison.OrdinalIgnoreCase))
+            {
+                var groups = lstKhach
+                                .GroupBy(x => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                                    x.NGAYDATPHONG.Value,
+                                    CalendarWeekRule.FirstDay,
+                                    DayOfWeek.Monday
+                                )).OrderBy(g => g.Key);
+
+                foreach (var grp in groups)
+                {
+                    DateTime groupWeekStart = grp.Min(x => x.NGAYDATPHONG.Value);
+                    DateTime groupWeekEnd = groupWeekStart.AddDays(6);
+                    DateTime effectiveStart = groupWeekStart < ngayd ? ngayd : groupWeekStart;
+                    DateTime effectiveEnd = groupWeekEnd > ngayc ? ngayc : groupWeekEnd;
+                    result.Add(new OBJ_SOLUONGKHACH
+                    {
+                        NGAYDATPHONG = effectiveStart,
+                        NGUOIO = grp.Sum(x => x.NGUOIO)
+                    });
+                }
+            }
+            else if (donViThoiGian.Equals("Tháng", StringComparison.OrdinalIgnoreCase))
+            {
+                var groups = lstKhach
+                                .GroupBy(x => new { Year = x.NGAYDATPHONG.Value.Year, Month = x.NGAYDATPHONG.Value.Month })
+                                .OrderBy(g => new DateTime(g.Key.Year, g.Key.Month, 1));
+
+                foreach (var grp in groups)
+                {
+                    DateTime groupMonthStart = new DateTime(grp.Key.Year, grp.Key.Month, 1);
+                    DateTime groupMonthEnd = groupMonthStart.AddMonths(1).AddDays(-1);
+                    DateTime effectiveStart = groupMonthStart < ngayd ? ngayd : groupMonthStart;
+                    DateTime effectiveEnd = groupMonthEnd > ngayc ? ngayc : groupMonthEnd;
+
+                    result.Add(new OBJ_SOLUONGKHACH
+                    {
+                        NGAYDATPHONG = effectiveStart,
+                        NGUOIO = grp.Sum(x => x.NGUOIO)
+                    });
+                }
+            }
+            else if (donViThoiGian.Equals("Quý", StringComparison.OrdinalIgnoreCase))
+            {
+                var groups = lstKhach
+                                .GroupBy(x => new { Year = x.NGAYDATPHONG.Value.Year, Quarter = (x.NGAYDATPHONG.Value.Month - 1) / 3 + 1 })
+                                .OrderBy(g => new DateTime(g.Key.Year, (g.Key.Quarter - 1) * 3 + 1, 1));
+                foreach (var grp in groups)
+                {
+                    DateTime groupQuarterStart = new DateTime(grp.Key.Year, (grp.Key.Quarter - 1) * 3 + 1, 1);
+                    DateTime groupQuarterEnd = groupQuarterStart.AddMonths(3).AddDays(-1);
+                    DateTime effectiveStart = groupQuarterStart < ngayd ? ngayd : groupQuarterStart;
+                    DateTime effectiveEnd = groupQuarterEnd > ngayc ? ngayc : groupQuarterEnd;
+                    result.Add(new OBJ_SOLUONGKHACH
+                    {
+                        NGAYDATPHONG = effectiveStart,
+                        NGUOIO = grp.Sum(x => x.NGUOIO)
+                    });
+                }
+            }
+            else if (donViThoiGian.Equals("Năm", StringComparison.OrdinalIgnoreCase))
+            {
+                var groups = lstKhach.GroupBy(x => x.NGAYDATPHONG.Value.Year).OrderBy(g => g.Key);
+
+                foreach (var grp in groups)
+                {
+                    DateTime groupYearStart = new DateTime(grp.Key, 1, 1);
+                    DateTime groupYearEnd = new DateTime(grp.Key, 12, 31);
+                    DateTime effectiveStart = groupYearStart < ngayd ? ngayd : groupYearStart;
+                    DateTime effectiveEnd = groupYearEnd > ngayc ? ngayc : groupYearEnd;
+
+                    result.Add(new OBJ_SOLUONGKHACH
+                    {
+                        NGAYDATPHONG = effectiveStart,
+                        NGUOIO = grp.Sum(x => x.NGUOIO)
+                    });
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Đơn vị thời gian không hợp lệ. Vui lòng chọn 'Ngày', 'Tuần', 'Tháng', 'Quý' hoặc 'Năm'.");
+            }
+            return result;
+        }
     }
 }

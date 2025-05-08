@@ -83,5 +83,37 @@ namespace DataLayer
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DOANHTHU_THEOTG_Result>("[Entities].[FN_DOANHTHU_THEOTG](@NGAYD, @NGAYC, @LOAI)", nGAYDParameter, nGAYCParameter, lOAIParameter);
         }
+    
+        [DbFunction("Entities", "FN_DOANHTHU_SANPHAM")]
+        public virtual IQueryable<FN_DOANHTHU_SANPHAM_Result> FN_DOANHTHU_SANPHAM(Nullable<System.DateTime> nGAYD, Nullable<System.DateTime> nGAYC)
+        {
+            var nGAYDParameter = nGAYD.HasValue ?
+                new ObjectParameter("NGAYD", nGAYD) :
+                new ObjectParameter("NGAYD", typeof(System.DateTime));
+    
+            var nGAYCParameter = nGAYC.HasValue ?
+                new ObjectParameter("NGAYC", nGAYC) :
+                new ObjectParameter("NGAYC", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_DOANHTHU_SANPHAM_Result>("[Entities].[FN_DOANHTHU_SANPHAM](@NGAYD, @NGAYC)", nGAYDParameter, nGAYCParameter);
+        }
+    
+        [DbFunction("Entities", "FN_SOLUONG_KHACHO")]
+        public virtual IQueryable<FN_SOLUONG_KHACHO_Result> FN_SOLUONG_KHACHO(Nullable<System.DateTime> nGAYD, Nullable<System.DateTime> nGAYC, string lOAI)
+        {
+            var nGAYDParameter = nGAYD.HasValue ?
+                new ObjectParameter("NGAYD", nGAYD) :
+                new ObjectParameter("NGAYD", typeof(System.DateTime));
+    
+            var nGAYCParameter = nGAYC.HasValue ?
+                new ObjectParameter("NGAYC", nGAYC) :
+                new ObjectParameter("NGAYC", typeof(System.DateTime));
+    
+            var lOAIParameter = lOAI != null ?
+                new ObjectParameter("LOAI", lOAI) :
+                new ObjectParameter("LOAI", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<FN_SOLUONG_KHACHO_Result>("[Entities].[FN_SOLUONG_KHACHO](@NGAYD, @NGAYC, @LOAI)", nGAYDParameter, nGAYCParameter, lOAIParameter);
+        }
     }
 }

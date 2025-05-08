@@ -301,6 +301,19 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="ISGROUP" Type="bit" />
           <Property Name="DISABLED" Type="bit" />
         </EntityType>
+        <Function Name="FN_DOANHTHU_SANPHAM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="IDSP" Type="int" />
+                <Property Name="TENSP" Type="nvarchar" MaxLength="50" />
+                <Property Name="THANHTIEN" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="FN_DOANHTHU_THEOPHONG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NGAYD" Type="datetime" Mode="In" />
           <Parameter Name="NGAYC" Type="datetime" Mode="In" />
@@ -323,6 +336,19 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
               <RowType>
                 <Property Name="NGAYDATPHONG" Type="datetime" />
                 <Property Name="THANHTIEN" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FN_SOLUONG_KHACHO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <Parameter Name="LOAI" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="NGAYDATPHONG" Type="datetime" />
+                <Property Name="NGUOIO" Type="int" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -432,6 +458,15 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
             <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="FN_DOANHTHU_THEOTG" IsComposable="true" ReturnType="Collection(KhachSan.FN_DOANHTHU_THEOTG_Result)">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+            <Parameter Name="LOAI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FN_DOANHTHU_SANPHAM" IsComposable="true" ReturnType="Collection(KhachSan.FN_DOANHTHU_SANPHAM_Result)">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="FN_SOLUONG_KHACHO" IsComposable="true" ReturnType="Collection(KhachSan.FN_SOLUONG_KHACHO_Result)">
             <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
             <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
             <Parameter Name="LOAI" Mode="In" Type="String" />
@@ -733,6 +768,15 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
         <ComplexType Name="FN_DOANHTHU_THEOTG_Result">
           <Property Type="DateTime" Name="NGAYDATPHONG" Nullable="true" Precision="23" />
           <Property Type="Double" Name="THANHTIEN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FN_DOANHTHU_SANPHAM_Result">
+          <Property Type="Int32" Name="IDSP" Nullable="true" />
+          <Property Type="String" Name="TENSP" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="THANHTIEN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FN_SOLUONG_KHACHO_Result">
+          <Property Type="DateTime" Name="NGAYDATPHONG" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="NGUOIO" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1054,6 +1098,23 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
               <ComplexTypeMapping TypeName="KhachSan.FN_DOANHTHU_THEOTG_Result">
                 <ScalarProperty Name="NGAYDATPHONG" ColumnName="NGAYDATPHONG" />
                 <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FN_DOANHTHU_SANPHAM" FunctionName="KhachSan.Store.FN_DOANHTHU_SANPHAM">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KhachSan.FN_DOANHTHU_SANPHAM_Result">
+                <ScalarProperty Name="IDSP" ColumnName="IDSP" />
+                <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FN_SOLUONG_KHACHO" FunctionName="KhachSan.Store.FN_SOLUONG_KHACHO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KhachSan.FN_SOLUONG_KHACHO_Result">
+                <ScalarProperty Name="NGAYDATPHONG" ColumnName="NGAYDATPHONG" />
+                <ScalarProperty Name="NGUOIO" ColumnName="NGUOIO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

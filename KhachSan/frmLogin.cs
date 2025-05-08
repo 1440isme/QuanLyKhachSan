@@ -21,6 +21,7 @@ namespace KhachSan
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         }
         SYS_PARAM _sysParam;
         SYS_USER _sysUser;

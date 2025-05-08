@@ -32,7 +32,7 @@ namespace USERMANAGEMENT
             _donvi = new DONVI();
             _sysuser = new SYS_USER();
             loadTreeView();
-            loadUser("CTUTE", "~");
+            loadUser("CTMT", "~");
         }
         public void loadUser(string macty, string madvi)
         {
@@ -87,8 +87,8 @@ namespace USERMANAGEMENT
             else
             {
                 _isRoot = false;
-                _macty = _treeView.TreeView.SelectedNode.Name.Substring(0, 5);
-                _madvi = _treeView.TreeView.SelectedNode.Name.Substring(6);
+                _macty = _treeView.TreeView.SelectedNode.Name.Substring(0, 4);
+                _madvi = _treeView.TreeView.SelectedNode.Name.Substring(5);
             }
             loadUser(_macty, _madvi);
             _treeView.dropDown.Close();

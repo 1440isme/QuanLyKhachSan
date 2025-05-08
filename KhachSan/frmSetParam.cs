@@ -25,7 +25,7 @@ namespace KhachSan
             _congty = new CONGTY();
             _donvi = new DONVI();
             loadCongTy();
-            cboCongTy.SelectedValue = "CTUTE";
+            cboCongTy.SelectedValue = "CTMT";
             cboCongTy.SelectedIndexChanged += CboCongTy_SelectedIndexChanged;
             loadDonVi();
         }

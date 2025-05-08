@@ -74,7 +74,7 @@ namespace KhachSan
             }
             else
             {
-                rep_code = 0; 
+                rep_code = 0;
             }
 
             tb_SYS_REPORT rep = _sysReport.getItem(rep_code);
@@ -88,7 +88,6 @@ namespace KhachSan
             _panel.MinimumSize = new Size(_panel.Width, 500);
             List<Control> _ctrl = new List<Control>();
 
-            
             if (rep != null)
             {
                 if (rep.TUNGAY == true)
@@ -96,12 +95,6 @@ namespace KhachSan
                     _uTuNgay = new ucTuNgay();
                     _uTuNgay.Dock = DockStyle.Top;
                     _ctrl.Add(_uTuNgay);
-                }
-                if (rep.MACTY == true)
-                {
-                    _uCongTy = new ucCongTy();
-                    _uCongTy.Dock = DockStyle.Top;
-                    _ctrl.Add(_uCongTy);
                 }
                 if (rep.MADVI == true)
                 {
@@ -112,7 +105,6 @@ namespace KhachSan
             }
             else
             {
-              
                 MessageBox.Show("Không tìm thấy báo cáo được chọn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
@@ -186,15 +178,6 @@ namespace KhachSan
                     doc.SetParameterValue("@NGAYD", _uTuNgay.dtTuNgay.Value);
                     doc.SetParameterValue("@NGAYC", _uTuNgay.dtDenNgay.Value);
                 }
-                if (rp.MACTY == true)
-                {
-                    if (_uCongTy?.cboCongTy?.SelectedValue == null)
-                    {
-                        MessageBox.Show("Vui lòng chọn công ty.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    doc.SetParameterValue("@MACTY", _uCongTy.cboCongTy.SelectedValue.ToString());
-                }
                 if (rp.MADVI == true)
                 {
                     if (_uDonVi?.cboDonVi?.SelectedValue == null)
@@ -202,6 +185,7 @@ namespace KhachSan
                         MessageBox.Show("Vui lòng chọn đơn vị.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    doc.SetParameterValue("@MACTY", _user.MACTY); // Lấy MACTY từ thông tin người dùng
                     doc.SetParameterValue("@MADVI", _uDonVi.cboDonVi.SelectedValue.ToString());
                 }
                 doc.SetParameterValue("@IDUSER", _user.IDUSER);

@@ -173,6 +173,14 @@ namespace KhachSan
                 MessageBox.Show("Vui lòng chọn khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
+            int maxOccupancy = _phong.GetMaxOccupancyByRoom(_idPhong); // Lấy số người tối đa từ loại phòng
+            if (numSoNguoi.Value > maxOccupancy)
+            {
+                
+                MessageBox.Show($"{_phongHienTai.TENPHONG} chỉ cho phép tối đa {maxOccupancy} người!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             SaveData();
             _them = false;

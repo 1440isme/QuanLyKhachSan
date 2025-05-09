@@ -236,17 +236,24 @@ namespace KhachSan
                 return;
             }
 
+            // Tính tổng số người tối đa của tất cả các phòng được chọn
+            int totalMaxOccupancy = 0;
             for (int i = 0; i < gvDatPhong.RowCount; i++)
             {
                 int idPhong = int.Parse(gvDatPhong.GetRowCellValue(i, "IDPHONG").ToString());
-                if (_datphong.IsRoomBooked(idPhong, dtNgayDat.Value, dtNgayTra.Value, _them ? (int?)null : _idDP))
-                {
-                    string tenPhong = gvDatPhong.GetRowCellValue(i, "TENPHONG").ToString();
-                    MessageBox.Show($"Phòng {tenPhong} đã được đặt trong khoảng thời gian bạn chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                int maxOccupancy = _phong.GetMaxOccupancyByRoom(idPhong); // Lấy số người tối đa từ loại phòng
+                totalMaxOccupancy += maxOccupancy;
             }
 
+            // Kiểm tra tổng số người không vượt quá tổng số người tối đa
+            if (numSoNguoi.Value > totalMaxOccupancy)
+            {
+                MessageBox.Show($"Tổng số người ({numSoNguoi.Value}) vượt quá số người tối đa cho phép ({totalMaxOccupancy}) của các phòng đã chọn!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Tiếp tục lưu dữ liệu
             SaveData();
             _them = false;
             _enable(false);

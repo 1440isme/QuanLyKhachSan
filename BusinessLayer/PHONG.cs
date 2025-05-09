@@ -161,5 +161,15 @@ namespace BusinessLayer
             }
             return false;
         }
+        public int GetMaxOccupancyByRoom(int idPhong)
+        {
+            var phong = db.tb_Phong.FirstOrDefault(p => p.IDPHONG == idPhong);
+            if (phong != null)
+            {
+                var loaiPhong = db.tb_LoaiPhong.FirstOrDefault(lp => lp.IDLOAIPHONG == phong.IDLOAIPHONG);
+                return loaiPhong?.SONGUOI ?? 0;
+            }
+            return 0;
+        }
     }
 }

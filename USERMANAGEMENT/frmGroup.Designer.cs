@@ -180,27 +180,27 @@
             // 
             this.USERNAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.USERNAME.AppearanceHeader.Options.UseFont = true;
-            this.USERNAME.Caption = "USERNAME";
+            this.USERNAME.Caption = "TÊN NGƯỜI DÙNG";
             this.USERNAME.FieldName = "USERNAME";
-            this.USERNAME.MaxWidth = 100;
+            this.USERNAME.MaxWidth = 150;
             this.USERNAME.MinWidth = 80;
             this.USERNAME.Name = "USERNAME";
             this.USERNAME.Visible = true;
             this.USERNAME.VisibleIndex = 0;
-            this.USERNAME.Width = 80;
+            this.USERNAME.Width = 100;
             // 
             // FULLNAME
             // 
             this.FULLNAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.FULLNAME.AppearanceHeader.Options.UseFont = true;
-            this.FULLNAME.Caption = "FULLNAME";
+            this.FULLNAME.Caption = "HỌ TÊN";
             this.FULLNAME.FieldName = "FULLNAME";
             this.FULLNAME.MaxWidth = 120;
             this.FULLNAME.MinWidth = 100;
             this.FULLNAME.Name = "FULLNAME";
             this.FULLNAME.Visible = true;
             this.FULLNAME.VisibleIndex = 1;
-            this.FULLNAME.Width = 100;
+            this.FULLNAME.Width = 120;
             // 
             // btnLuu
             // 

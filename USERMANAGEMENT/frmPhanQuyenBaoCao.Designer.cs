@@ -37,15 +37,15 @@
             this.FULLNAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.USERNAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcChucNang = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnCamQuyen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnToanfQuyen = new System.Windows.Forms.ToolStripMenuItem();
             this.gvChucNang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.REP_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DESCIPTION = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QUYEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cISGROUP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnCamQuyen = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnToanfQuyen = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -55,8 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcChucNang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvChucNang)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvChucNang)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -123,7 +123,7 @@
             // 
             this.FULLNAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.FULLNAME.AppearanceHeader.Options.UseFont = true;
-            this.FULLNAME.Caption = "FULLNAME";
+            this.FULLNAME.Caption = "HỌ TÊN/MÔ TẢ";
             this.FULLNAME.FieldName = "FULLNAME";
             this.FULLNAME.MaxWidth = 150;
             this.FULLNAME.Name = "FULLNAME";
@@ -134,7 +134,7 @@
             // 
             this.USERNAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.USERNAME.AppearanceHeader.Options.UseFont = true;
-            this.USERNAME.Caption = "USERNAME";
+            this.USERNAME.Caption = "TÊN ND/NHÓM";
             this.USERNAME.FieldName = "USERNAME";
             this.USERNAME.MaxWidth = 250;
             this.USERNAME.Name = "USERNAME";
@@ -152,6 +152,35 @@
             this.gcChucNang.TabIndex = 1;
             this.gcChucNang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvChucNang});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnCamQuyen,
+            this.toolStripSeparator1,
+            this.btnToanfQuyen});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 58);
+            // 
+            // btnCamQuyen
+            // 
+            this.btnCamQuyen.Name = "btnCamQuyen";
+            this.btnCamQuyen.Size = new System.Drawing.Size(151, 24);
+            this.btnCamQuyen.Text = "Khoá quyền";
+            this.btnCamQuyen.Click += new System.EventHandler(this.btnCamQuyen_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
+            // 
+            // btnToanfQuyen
+            // 
+            this.btnToanfQuyen.Name = "btnToanfQuyen";
+            this.btnToanfQuyen.Size = new System.Drawing.Size(151, 24);
+            this.btnToanfQuyen.Text = "Toàn quyền";
+            this.btnToanfQuyen.Click += new System.EventHandler(this.btnToanfQuyen_Click);
             // 
             // gvChucNang
             // 
@@ -201,35 +230,6 @@
             this.cISGROUP.FieldName = "ISGROUP";
             this.cISGROUP.Name = "cISGROUP";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCamQuyen,
-            this.toolStripSeparator1,
-            this.btnToanfQuyen});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 58);
-            // 
-            // btnCamQuyen
-            // 
-            this.btnCamQuyen.Name = "btnCamQuyen";
-            this.btnCamQuyen.Size = new System.Drawing.Size(180, 24);
-            this.btnCamQuyen.Text = "Khoá quyền";
-            this.btnCamQuyen.Click += new System.EventHandler(this.btnCamQuyen_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // btnToanfQuyen
-            // 
-            this.btnToanfQuyen.Name = "btnToanfQuyen";
-            this.btnToanfQuyen.Size = new System.Drawing.Size(180, 24);
-            this.btnToanfQuyen.Text = "Toàn quyền";
-            this.btnToanfQuyen.Click += new System.EventHandler(this.btnToanfQuyen_Click);
-            // 
             // frmPhanQuyenBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,8 +249,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcChucNang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvChucNang)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvChucNang)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -248,7 +248,7 @@ namespace KhachSan
             // Kiểm tra tổng số người không vượt quá tổng số người tối đa
             if (numSoNguoi.Value > totalMaxOccupancy)
             {
-                MessageBox.Show($"Tổng số người ({numSoNguoi.Value}) vượt quá số người tối đa cho phép ({totalMaxOccupancy}) của các phòng đã chọn!",
+                MessageBox.Show($"Tổng số người ({numSoNguoi.Value}) vượt quá số người tối đa cho phép ({totalMaxOccupancy} người) của các phòng đã chọn!",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

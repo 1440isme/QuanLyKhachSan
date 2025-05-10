@@ -199,7 +199,7 @@
           </Key>
           <Property Name="IDUSER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
           <Property Name="PASSWD" Type="nvarchar" MaxLength="50" />
           <Property Name="MACTY" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="MADVI" Type="nvarchar" MaxLength="10" Nullable="false" />
@@ -443,7 +443,6 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <EntitySet Name="tb_SYS_GROUP" EntityType="KhachSan.tb_SYS_GROUP" />
           <EntitySet Name="tb_SYS_REPORT" EntityType="KhachSan.tb_SYS_REPORT" />
           <EntitySet Name="tb_SYS_RIGHT" EntityType="KhachSan.tb_SYS_RIGHT" />
-          <EntitySet Name="tb_SYS_USER" EntityType="KhachSan.tb_SYS_USER" />
           <EntitySet Name="tb_Tang" EntityType="KhachSan.tb_Tang" />
           <EntitySet Name="tb_ThietBi" EntityType="KhachSan.tb_ThietBi" />
           <EntitySet Name="V_USER_NOTIN_GROUP" EntityType="KhachSan.V_USER_NOTIN_GROUP" />
@@ -471,6 +470,7 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
             <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
             <Parameter Name="LOAI" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tb_SYS_USER" EntityType="KhachSan.tb_SYS_USER" />
         </EntityContainer>
         <EntityType Name="tb_CongTy">
           <Key>
@@ -641,20 +641,6 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Name="IDUSER" Type="Int32" Nullable="false" />
           <Property Name="USER_RIGHT" Type="Int32" />
         </EntityType>
-        <EntityType Name="tb_SYS_USER">
-          <Key>
-            <PropertyRef Name="IDUSER" />
-          </Key>
-          <Property Name="IDUSER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MACTY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="MADVI" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="LAST_PWD_CHANGED" Type="DateTime" Precision="3" />
-          <Property Name="ISGROUP" Type="Boolean" />
-          <Property Name="DISABLED" Type="Boolean" />
-        </EntityType>
         <EntityType Name="tb_Tang">
           <Key>
             <PropertyRef Name="IDTANG" />
@@ -778,6 +764,20 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
           <Property Type="DateTime" Name="NGAYDATPHONG" Nullable="true" Precision="23" />
           <Property Type="Int32" Name="NGUOIO" Nullable="true" />
         </ComplexType>
+        <EntityType Name="tb_SYS_USER">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACTY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MADVI" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_PWD_CHANGED" Type="DateTime" Precision="3" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -963,21 +963,6 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_SYS_USER">
-            <EntityTypeMapping TypeName="KhachSan.tb_SYS_USER">
-              <MappingFragment StoreEntitySet="tb_SYS_USER">
-                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
-                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
-                <ScalarProperty Name="LAST_PWD_CHANGED" ColumnName="LAST_PWD_CHANGED" />
-                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
-                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
-                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
-                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
-                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_Tang">
             <EntityTypeMapping TypeName="KhachSan.tb_Tang">
               <MappingFragment StoreEntitySet="tb_Tang">
@@ -1118,6 +1103,21 @@ warning 6002: The table/view 'KhachSan.dbo.V_USER_NOTIN_GROUP' does not have a p
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="tb_SYS_USER">
+            <EntityTypeMapping TypeName="KhachSan.tb_SYS_USER">
+              <MappingFragment StoreEntitySet="tb_SYS_USER">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="LAST_PWD_CHANGED" ColumnName="LAST_PWD_CHANGED" />
+                <ScalarProperty Name="MADVI" ColumnName="MADVI" />
+                <ScalarProperty Name="MACTY" ColumnName="MACTY" />
+                <ScalarProperty Name="PASSWD" ColumnName="PASSWD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

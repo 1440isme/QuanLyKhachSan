@@ -86,7 +86,7 @@ namespace KhachSan
 
             if (selected.Contains("Tỷ lệ doanh thu theo phòng"))
             {
-                Series pieSeries = new Series("Tỷ lệ doanh thu theo phòng", ViewType.Pie3D);
+                Series pieSeries = new Series("Tỷ lệ doanh thu theo phòng", ViewType.Pie);
 
                 ChartTitle chartTitle = new ChartTitle();
                 chartTitle.Text = "Tỷ lệ doanh thu theo phòng";

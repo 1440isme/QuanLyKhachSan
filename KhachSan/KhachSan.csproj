@@ -268,10 +268,10 @@
     <Compile Include="ReportBill.Designer.cs">
       <DependentUpon>ReportBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="REP_DOANHTHU_CHITIET.cs">
+    <Compile Include="REP_DOANHTHU_CHITIET_FULL.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>REP_DOANHTHU_CHITIET.rpt</DependentUpon>
+      <DependentUpon>REP_DOANHTHU_CHITIET_FULL.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="REP_DOANHTHU_CONGTY_NGAY.cs">
@@ -381,9 +381,9 @@
     <EmbeddedResource Include="ReportBill.resx">
       <DependentUpon>ReportBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="REP_DOANHTHU_CHITIET.rpt">
+    <EmbeddedResource Include="REP_DOANHTHU_CHITIET_FULL.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>REP_DOANHTHU_CHITIET.cs</LastGenOutput>
+      <LastGenOutput>REP_DOANHTHU_CHITIET_FULL.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP_DOANHTHU_CONGTY_NGAY.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

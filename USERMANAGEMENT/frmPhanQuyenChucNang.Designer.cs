@@ -125,7 +125,7 @@
             // 
             this.FULLNAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.FULLNAME.AppearanceHeader.Options.UseFont = true;
-            this.FULLNAME.Caption = "FULLNAME";
+            this.FULLNAME.Caption = "HỌ TÊN/MÔ TẢ";
             this.FULLNAME.FieldName = "FULLNAME";
             this.FULLNAME.MaxWidth = 150;
             this.FULLNAME.Name = "FULLNAME";
@@ -136,7 +136,7 @@
             // 
             this.USERNAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.USERNAME.AppearanceHeader.Options.UseFont = true;
-            this.USERNAME.Caption = "USERNAME";
+            this.USERNAME.Caption = "TÊN ND/NHÓM";
             this.USERNAME.FieldName = "USERNAME";
             this.USERNAME.MaxWidth = 250;
             this.USERNAME.Name = "USERNAME";

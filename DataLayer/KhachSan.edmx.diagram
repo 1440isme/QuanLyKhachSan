@@ -19,7 +19,6 @@
         <EntityTypeShape EntityType="KhachSan.tb_SYS_GROUP" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="KhachSan.tb_SYS_REPORT" Width="1.5" PointX="10.75" PointY="2.375" />
         <EntityTypeShape EntityType="KhachSan.tb_SYS_RIGHT" Width="1.5" PointX="12.375" PointY="3.5" />
-        <EntityTypeShape EntityType="KhachSan.tb_SYS_USER" Width="1.5" PointX="10.75" PointY="5.125" />
         <EntityTypeShape EntityType="KhachSan.tb_Tang" Width="1.5" PointX="4.75" PointY="6.125" />
         <EntityTypeShape EntityType="KhachSan.tb_ThietBi" Width="1.5" PointX="14.125" PointY="3.625" />
         <EntityTypeShape EntityType="KhachSan.V_USER_NOTIN_GROUP" Width="1.5" PointX="14.125" PointY="0.75" />
@@ -29,6 +28,7 @@
         <EntityTypeShape EntityType="KhachSan.V_REP_SYS_RIGHT_REP" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="KhachSan.tb_ThongTinNganHang" Width="1.5" PointX="12.375" PointY="5.625" />
         <EntityTypeShape EntityType="KhachSan.tb_Phong_ThietBi" Width="1.5" PointX="2.75" PointY="5.25" />
+        <EntityTypeShape EntityType="KhachSan.tb_SYS_USER" Width="1.5" PointX="0.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

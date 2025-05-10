@@ -41,7 +41,6 @@ namespace DataLayer
         public virtual DbSet<tb_SYS_GROUP> tb_SYS_GROUP { get; set; }
         public virtual DbSet<tb_SYS_REPORT> tb_SYS_REPORT { get; set; }
         public virtual DbSet<tb_SYS_RIGHT> tb_SYS_RIGHT { get; set; }
-        public virtual DbSet<tb_SYS_USER> tb_SYS_USER { get; set; }
         public virtual DbSet<tb_Tang> tb_Tang { get; set; }
         public virtual DbSet<tb_ThietBi> tb_ThietBi { get; set; }
         public virtual DbSet<V_USER_NOTIN_GROUP> V_USER_NOTIN_GROUP { get; set; }
@@ -51,6 +50,7 @@ namespace DataLayer
         public virtual DbSet<V_REP_SYS_RIGHT_REP> V_REP_SYS_RIGHT_REP { get; set; }
         public virtual DbSet<tb_ThongTinNganHang> tb_ThongTinNganHang { get; set; }
         public virtual DbSet<tb_Phong_ThietBi> tb_Phong_ThietBi { get; set; }
+        public virtual DbSet<tb_SYS_USER> tb_SYS_USER { get; set; }
     
         [DbFunction("Entities", "FN_DOANHTHU_THEOPHONG")]
         public virtual IQueryable<FN_DOANHTHU_THEOPHONG_Result> FN_DOANHTHU_THEOPHONG(Nullable<System.DateTime> nGAYD, Nullable<System.DateTime> nGAYC)

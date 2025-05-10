@@ -179,7 +179,15 @@ namespace KhachSan
                         MessageBox.Show("Dữ liệu không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }
-                    lineSeries.Points.Add(new SeriesPoint(item.NGAYDATPHONG, item.THANHTIEN));
+                    if (donViThoiGian.Equals("Quý", StringComparison.OrdinalIgnoreCase))
+                    {
+                        string quarterLabel = $"Quý {((item.NGAYDATPHONG.Value.Month - 1) / 3 + 1)}/{item.NGAYDATPHONG.Value.Year}";
+                        lineSeries.Points.Add(new SeriesPoint(quarterLabel, item.THANHTIEN));
+                    }
+                    else
+                    {
+                        lineSeries.Points.Add(new SeriesPoint(item.NGAYDATPHONG, item.THANHTIEN));
+                    }
                 }
 
                 lineSeries.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
@@ -209,14 +217,14 @@ namespace KhachSan
                         break;
                     case "tuần":
                         diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Week;
-                        diagram.AxisX.Label.TextPattern = "'Tuần' {A:dd/MM}";
+                        diagram.AxisX.Label.TextPattern = "Tuần {A:dd/MM}";
                         break;
                     case "tháng":
                         diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
                         diagram.AxisX.Label.TextPattern = "{A:MM/yyyy}";
                         break;
                     case "quý":
-                        diagram.AxisX.Label.TextPattern = "'Quý' Q/yyyy";
+                        diagram.AxisX.Label.TextPattern = "{A}";
                         break;
                     case "năm":
                         diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Year;
@@ -258,7 +266,13 @@ namespace KhachSan
                         MessageBox.Show("Dữ liệu không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }
-                    areaSeries.Points.Add(new SeriesPoint(item.NGAYDATPHONG, item.NGUOIO));
+                    if (donViThoiGian.Equals("Quý", StringComparison.OrdinalIgnoreCase))
+                    {
+                        string quarterLabel = $"Quý {((item.NGAYDATPHONG.Value.Month - 1) / 3 + 1)}/{item.NGAYDATPHONG.Value.Year}";
+                        areaSeries.Points.Add(new SeriesPoint(quarterLabel, item.NGUOIO));
+                    }
+                    else
+                        areaSeries.Points.Add(new SeriesPoint(item.NGAYDATPHONG, item.NGUOIO));
                 }
 
                 areaSeries.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
@@ -289,14 +303,14 @@ namespace KhachSan
                         break;
                     case "tuần":
                         diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Week;
-                        diagram.AxisX.Label.TextPattern = "'Tuần' {A:dd/MM}";
+                        diagram.AxisX.Label.TextPattern = "Tuần {A:dd/MM}";
                         break;
                     case "tháng":
                         diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
                         diagram.AxisX.Label.TextPattern = "{A:MM/yyyy}";
                         break;
                     case "quý":
-                        diagram.AxisX.Label.TextPattern = "'Quý' Q/yyyy";
+                        diagram.AxisX.Label.TextPattern = "{A}";
                         break;
                     case "năm":
                         diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Year;
@@ -309,7 +323,7 @@ namespace KhachSan
 
                 diagram.AxisY.Title.Text = "Số người";
                 diagram.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-                diagram.AxisY.Label.TextPattern = "{V} người";
+                diagram.AxisY.Label.TextPattern = "{V}";
             }
         }
         

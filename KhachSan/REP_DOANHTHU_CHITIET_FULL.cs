@@ -16,14 +16,14 @@ namespace KhachSan {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class REP_DOANHTHU_CHITIET : ReportClass {
+    public class REP_DOANHTHU_CHITIET_FULL : ReportClass {
         
-        public REP_DOANHTHU_CHITIET() {
+        public REP_DOANHTHU_CHITIET_FULL() {
         }
         
         public override string ResourceName {
             get {
-                return "REP_DOANHTHU_CHITIET.rpt";
+                return "REP_DOANHTHU_CHITIET_FULL.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace KhachSan {
         
         public override string FullResourceName {
             get {
-                return "KhachSan.REP_DOANHTHU_CHITIET.rpt";
+                return "KhachSan.REP_DOANHTHU_CHITIET_FULL.rpt";
             }
             set {
                 // Do nothing
@@ -130,9 +130,9 @@ namespace KhachSan {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedREP_DOANHTHU_CHITIET : Component, ICachedReport {
+    public class CachedREP_DOANHTHU_CHITIET_FULL : Component, ICachedReport {
         
-        public CachedREP_DOANHTHU_CHITIET() {
+        public CachedREP_DOANHTHU_CHITIET_FULL() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace KhachSan {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            REP_DOANHTHU_CHITIET rpt = new REP_DOANHTHU_CHITIET();
+            REP_DOANHTHU_CHITIET_FULL rpt = new REP_DOANHTHU_CHITIET_FULL();
             rpt.Site = this.Site;
             return rpt;
         }

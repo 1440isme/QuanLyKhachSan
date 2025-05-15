@@ -235,9 +235,9 @@ namespace KhachSan
                 MessageBox.Show("Vui lòng chọn ít nhất một phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (dtNgayDat.Value>dtNgayTra.Value)
+            if (DateTime.Now > dtNgayTra.Value)
             {
-                MessageBox.Show("Ngày trả phòng phải lớn hơn ngày đặt phòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ngày trả phòng không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             // Tính tổng số người tối đa của tất cả các phòng được chọn
@@ -303,6 +303,7 @@ namespace KhachSan
             XuatReport(_idDP.ToString(), "rpDatPhong", "ĐƠN ĐẶT PHÒNG CHI TIẾT", (decimal)_tongtien);
             cboTrangThai.SelectedValue = true;
             objMain.showRoom();
+            loadDanhSach();
         }
 
         private void XuatReport(string _khoa, string _rpName, string _rpTitle, decimal _tongtien)

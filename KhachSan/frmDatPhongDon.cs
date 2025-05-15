@@ -23,6 +23,7 @@ namespace KhachSan
     {
         public int IDUSER { get; set; }
         public bool _them;
+        public bool _sua;
         public int _idPhong;
         private int _idDP;
         private string _macty;
@@ -77,12 +78,14 @@ namespace KhachSan
             // Xử lý dữ liệu khi chỉnh sửa hoặc thêm mới
             if (_them)
             {
+                btnPrint.Visible = false;
                 dtNgayDat.Enabled = false;
                 cboTrangThai.Enabled = false;
                 ClearProductList();
             }
-            else
+            else if (_sua)
             {
+                btnPrint.Visible = false;
                 searchKH.Enabled = false;
                 dtNgayDat.Enabled = false;
                 cboTrangThai.Enabled = false;
@@ -108,6 +111,41 @@ namespace KhachSan
                     ClearProductList();
                 }
             }
+            else
+            {
+                btnPrint.Visible = true;
+                btnAddNew.Enabled = true;
+                btnLuu.Visible = false;
+                searchKH.Enabled = false;
+                dtNgayDat.Enabled = false;
+                dtNgayTra.Enabled = false;
+                cboTrangThai.Enabled = false;
+                numSoNguoi.Enabled = false;
+                txtGhiChu.Enabled = false;
+                gcSanPham.Enabled = false;
+                gcSPDV.Enabled = false;
+                var dpct = _datphongct.getIDDPByPhong(_idPhong);
+                if (dpct != null)
+                {
+                    _idDP = dpct.IDDP;
+                    var dp = _datphong.getItem(_idDP);
+                    if (dp != null)
+                    {
+                        searchKH.EditValue = dp.IDKH;
+                        dtNgayDat.Value = dp.NGAYDATPHONG.Value;
+                        dtNgayTra.Value = dp.NGAYTRAPHONG.Value;
+                        cboTrangThai.SelectedValue = dp.STATUS;
+                        numSoNguoi.Value = dp.SONGUOIO ?? 1;
+                        txtGhiChu.Text = dp.GHICHU ?? "";
+                        LoadBookingProducts(); // Load danh sách sản phẩm từ DB
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin đặt phòng cho phòng này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearProductList();
+                }
+            }    
 
             // Gắn sự kiện
             dtNgayDat.ValueChanged -= dtNgay_ValueChanged;
@@ -176,11 +214,13 @@ namespace KhachSan
                 MessageBox.Show("Vui lòng chọn khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (dtNgayDat.Value > dtNgayTra.Value)
+            if (DateTime.Now > dtNgayTra.Value)
             {
-                MessageBox.Show("Ngày trả phòng phải lớn hơn ngày đặt phòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ngày trả phòng không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
+
             int maxOccupancy = _phong.GetMaxOccupancyByRoom(_idPhong); 
             if (numSoNguoi.Value > maxOccupancy)
             {
@@ -446,7 +486,7 @@ namespace KhachSan
                         }
                     }
                 }
-                else // Chỉnh sửa
+                else if (_sua) // Cập nhật
                 {
                     var dp = _datphong.getItem(_idDP);
                     if (dp == null)

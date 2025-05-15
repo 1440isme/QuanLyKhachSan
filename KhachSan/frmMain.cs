@@ -249,6 +249,7 @@ namespace KhachSan
                 frmDatPhongDon frm = new frmDatPhongDon();
                 frm._idPhong = int.Parse(item.Value.ToString());
                 frm._them = true;
+                frm._sua = false;
                 frm.IDUSER = _user.IDUSER; 
                 frm.ShowDialog();
             }
@@ -293,6 +294,7 @@ namespace KhachSan
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
+            frm._sua = true;
             frm.IDUSER = _user.IDUSER; // Truyền IDUSER
             frm.ShowDialog();
         }
@@ -313,6 +315,7 @@ namespace KhachSan
             frmDatPhongDon frm = new frmDatPhongDon();
             frm._idPhong = int.Parse(item.Value.ToString());
             frm._them = false;
+            frm._sua = false;
             frm.IDUSER = _user.IDUSER; // Truyền IDUSER
             frm.ShowDialog();
         }

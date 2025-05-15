@@ -18,6 +18,7 @@ namespace BusinessLayer
         public bool ?DISABLED { get; set; }
         public string TENTANG { get; set; }
         public string TENLOAIPHONG { get; set; }
+        public int SONGUOI { get; set; }
 
     }
 }

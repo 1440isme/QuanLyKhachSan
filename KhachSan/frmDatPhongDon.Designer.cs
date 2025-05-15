@@ -403,7 +403,7 @@
             this.lblPhong.AutoSize = true;
             this.lblPhong.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhong.ForeColor = System.Drawing.Color.Red;
-            this.lblPhong.Location = new System.Drawing.Point(146, 37);
+            this.lblPhong.Location = new System.Drawing.Point(71, 36);
             this.lblPhong.Name = "lblPhong";
             this.lblPhong.Size = new System.Drawing.Size(71, 25);
             this.lblPhong.TabIndex = 31;

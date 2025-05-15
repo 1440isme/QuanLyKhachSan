@@ -56,6 +56,7 @@ namespace BusinessLayer
             var lp = db.tb_LoaiPhong.FirstOrDefault(l => l.IDLOAIPHONG == _p.IDLOAIPHONG);
             phong.TENLOAIPHONG = lp?.TENLOAIPHONG;
             phong.DONGIA = double.Parse(lp?.DONGIA.ToString() ?? "0");
+            phong.SONGUOI = lp?.SONGUOI ?? 0;
             return phong;
         }
         public List<tb_Phong> getAll()

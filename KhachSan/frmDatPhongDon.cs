@@ -57,7 +57,7 @@ namespace KhachSan
 
             // Load thông tin phòng
             _phongHienTai = _phong.getItemFull(_idPhong);
-            lblPhong.Text = $"{_phongHienTai.TENPHONG} - Đơn giá: {_phongHienTai.DONGIA:N0} VNĐ";
+            lblPhong.Text = $"{_phongHienTai.TENPHONG} - Đơn giá: {_phongHienTai.DONGIA:N0} VNĐ - Số người: {_phongHienTai.SONGUOI}";
 
             // Thiết lập giá trị mặc định
             dtNgayDat.Value = DateTime.Now;

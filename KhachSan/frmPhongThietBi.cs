@@ -27,6 +27,19 @@ namespace KhachSan
             gvDanhSach.Appearance.HeaderPanel.Options.UseFont = true;
 
         }
+        public frmPhongThietBi(int right)
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this._right = right;
+            gvDanhSach.RowHeight = 25;
+            gvDanhSach.Appearance.Row.Font = new Font("Tahoma", 9F); // chỉnh font dòng
+            gvDanhSach.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, FontStyle.Bold); // header
+            gvDanhSach.Appearance.Row.Options.UseFont = true;
+            gvDanhSach.Appearance.HeaderPanel.Options.UseFont = true;
+
+        }
+        int _right;
         PHONG_THIETBI _phongtb;
         THIETBI _thietbi;
         PHONG _phong;
@@ -69,13 +82,13 @@ namespace KhachSan
         }
         void LoadPhong()
         {
-            cboPhong.DataSource = _phong.getAll();
+            cboPhong.DataSource = _phong.getAllActive();
             cboPhong.DisplayMember = "TENPHONG";
             cboPhong.ValueMember = "IDPHONG";
         }
         void LoadThietBi()
         {
-            cboThietBi.DataSource = _thietbi.getAll();
+            cboThietBi.DataSource = _thietbi.getAllActive();
             cboThietBi.DisplayMember = "TENTB";
             cboThietBi.ValueMember = "IDTB";
         }
@@ -110,6 +123,11 @@ namespace KhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             _them = true;
             showHideControl(false);
             _enable(true);
@@ -118,6 +136,11 @@ namespace KhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             _them = false;
             _enable(true);
 
@@ -126,6 +149,11 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (MessageBox.Show("Bạn có chắc chắn muốn đánh dấu phòng này là trống không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try

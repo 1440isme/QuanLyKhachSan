@@ -20,6 +20,12 @@ namespace KhachSan
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+        public frmSanPham(int right)
+        {
+            InitializeComponent();
+            this._right = right;
+        }
+        int _right;
         SANPHAM _sanpham;
         bool _them;
         int _idsp;
@@ -70,6 +76,11 @@ namespace KhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             _them = true;
             showHideControl(false);
             _enable(true);
@@ -78,6 +89,11 @@ namespace KhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             _them = false;
             _enable(true);
             showHideControl(false);
@@ -85,6 +101,11 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (_idsp != 0 && MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try

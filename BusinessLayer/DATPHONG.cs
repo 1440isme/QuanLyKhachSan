@@ -59,16 +59,7 @@ namespace BusinessLayer
 
         public tb_DatPhong add(tb_DatPhong dp)
         {
-            // Kiểm tra dữ liệu đầu vào
-            if (dp.NGAYDATPHONG > dp.NGAYTRAPHONG)
-            {
-                throw new Exception("Ngày đặt phòng phải nhỏ hơn hoặc bằng ngày trả phòng.");
-            }
-            if (dp.SONGUOIO <= 0)
-            {
-                throw new Exception("Số người ở phải lớn hơn 0.");
-            }
-
+           
             // Kiểm tra khách hàng tồn tại
             var khachHang = db.tb_KhachHang.FirstOrDefault(x => x.IDKH == dp.IDKH && x.DISABLED == false);
             if (khachHang == null)
@@ -141,15 +132,8 @@ namespace BusinessLayer
                 throw new Exception("Không tìm thấy đặt phòng để cập nhật.");
             }
 
-            // Kiểm tra dữ liệu đầu vào
-            if (dp.NGAYDATPHONG > dp.NGAYTRAPHONG)
-            {
-                throw new Exception("Ngày đặt phòng phải nhỏ hơn hoặc bằng ngày trả phòng.");
-            }
-            if (dp.SONGUOIO <= 0)
-            {
-                throw new Exception("Số người ở phải lớn hơn 0.");
-            }
+            
+            
 
             try
             {

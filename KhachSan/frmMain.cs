@@ -151,26 +151,26 @@ namespace KhachSan
                         }
                     case "LOAIPHONG":
                         {
-                            frmLoaiPhong _frm = new frmLoaiPhong();
+                            frmLoaiPhong _frm = new frmLoaiPhong(_uRight.USER_RIGHT.Value);
                             _frm.ShowDialog();
                             break;
                         }
                     case "KHACHHANG":
                         {
-                            frmKhachHang _frm = new frmKhachHang();
+                            frmKhachHang _frm = new frmKhachHang(_uRight.USER_RIGHT.Value);
                             _frm.ShowDialog();
                             break;
                         }
                     case "TANG":
                         {
-                            frmTang _frm = new frmTang();
+                            frmTang _frm = new frmTang(_uRight.USER_RIGHT.Value);
                             _frm.DataChanged += FrmTang_DataChanged;
                             _frm.ShowDialog();
                             break;
                         }
                     case "PHONG":
                         {
-                            frmPhong _frm = new frmPhong();
+                            frmPhong _frm = new frmPhong(_uRight.USER_RIGHT.Value);
                             _frm.DataChanged += FrmPhong_DataChanged;
 
                             _frm.ShowDialog();
@@ -178,26 +178,26 @@ namespace KhachSan
                         }
                     case "SANPHAM":
                         {
-                            frmSanPham _frm = new frmSanPham();
+                            frmSanPham _frm = new frmSanPham(_uRight.USER_RIGHT.Value);
                             _frm.ShowDialog();
                             break;
                         }
                     case "THIETBI":
                         {
-                            frmThietBi _frm = new frmThietBi();
+                            frmThietBi _frm = new frmThietBi(_uRight.USER_RIGHT.Value);
                             _frm.ShowDialog();
                             break;
                         }
                     case "PHONG_THIETBI":
                         {
-                            frmPhongThietBi _frm = new frmPhongThietBi();
+                            frmPhongThietBi _frm = new frmPhongThietBi(_uRight.USER_RIGHT.Value);
                             _frm.ShowDialog();
                             break;
                         }
                     case "DATPHONG":
                         {
                             frmDatPhong _frm = new frmDatPhong();
-                            _frm.IDUSER = _user.IDUSER; // Truyền IDUSER
+                            _frm.IDUSER = _user.IDUSER; 
                             _frm.ShowDialog();
                             break;
                         }

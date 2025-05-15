@@ -26,7 +26,7 @@ namespace KhachSan
         public frmDatPhong()
         {
             InitializeComponent();
-            DataTable tb = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG FROM tb_Phong A, tb_Tang B, tb_LoaiPhong C WHERE A.IDTANG = B.IDTANG AND A.TRANGTHAI = 0 AND A.DISABLED = 0 AND A.IDLOAIPHONG = C.IDLOAIPHONG");
+            DataTable tb = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG, C.SONGUOI FROM tb_Phong A, tb_Tang B, tb_LoaiPhong C WHERE A.IDTANG = B.IDTANG AND A.TRANGTHAI = 0 AND A.DISABLED = 0 AND A.IDLOAIPHONG = C.IDLOAIPHONG");
             gcPhong.DataSource = tb;
             gcPhong.AllowDrop = true;
             gcDatPhong.DataSource = tb.Clone();
@@ -123,7 +123,7 @@ namespace KhachSan
 
         void addReset()
         {
-            DataTable tb = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG FROM tb_Phong A, tb_Tang B, tb_LoaiPhong C WHERE A.IDTANG = B.IDTANG AND A.TRANGTHAI = 0 AND A.DISABLED = 0 AND A.IDLOAIPHONG = C.IDLOAIPHONG");
+            DataTable tb = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG, C.SONGUOI FROM tb_Phong A, tb_Tang B, tb_LoaiPhong C WHERE A.IDTANG = B.IDTANG AND A.TRANGTHAI = 0 AND A.DISABLED = 0 AND A.IDLOAIPHONG = C.IDLOAIPHONG");
             gcPhong.DataSource = tb;
             gcPhong.AllowDrop = true;
             gcDatPhong.DataSource = tb.Clone();
@@ -235,7 +235,11 @@ namespace KhachSan
                 MessageBox.Show("Vui lòng chọn ít nhất một phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            if (dtNgayDat.Value>dtNgayTra.Value)
+            {
+                MessageBox.Show("Ngày trả phòng phải lớn hơn ngày đặt phòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             // Tính tổng số người tối đa của tất cả các phòng được chọn
             int totalMaxOccupancy = 0;
             for (int i = 0; i < gvDatPhong.RowCount; i++)
@@ -560,7 +564,7 @@ namespace KhachSan
 
         private void loadDP()
         {
-            gcDatPhong.DataSource = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG FROM tb_Phong A, tb_Tang B, tb_LoaiPhong C, tb_DatPhong_CT D WHERE A.IDTANG = B.IDTANG AND A.IDLOAIPHONG = C.IDLOAIPHONG AND A.IDPHONG = D.IDPHONG AND D.IDDP = '" + _idDP + "'");
+            gcDatPhong.DataSource = myFunctions.laydulieu("SELECT A.IDPHONG, A.TENPHONG, C.DONGIA, A.IDTANG, B.TENTANG, C.SONGUOI FROM tb_Phong A, tb_Tang B, tb_LoaiPhong C, tb_DatPhong_CT D WHERE A.IDTANG = B.IDTANG AND A.IDLOAIPHONG = C.IDLOAIPHONG AND A.IDPHONG = D.IDPHONG AND D.IDDP = '" + _idDP + "'");
         }
 
         private void LoadBookingProducts()
@@ -906,5 +910,7 @@ namespace KhachSan
                 }
             }
         }
+
+        
     }
 }

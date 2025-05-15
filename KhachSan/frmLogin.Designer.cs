@@ -95,6 +95,7 @@
             this.BackgroundImageStore = global::KhachSan.Properties.Resources.login3;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(371, 559);
+            this.ControlBox = false;
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

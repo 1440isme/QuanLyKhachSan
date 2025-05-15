@@ -67,8 +67,8 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(958, 66);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(639, 54);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -77,7 +77,7 @@
             this.btnThem.Image = global::KhachSan.Properties.Resources.plus_48px;
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(60, 61);
+            this.btnThem.Size = new System.Drawing.Size(42, 51);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -87,7 +87,7 @@
             this.btnSua.Image = global::KhachSan.Properties.Resources._4413658;
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(46, 61);
+            this.btnSua.Size = new System.Drawing.Size(36, 51);
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -97,7 +97,7 @@
             this.btnXoa.Image = global::KhachSan.Properties.Resources._5265645;
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(47, 61);
+            this.btnXoa.Size = new System.Drawing.Size(36, 51);
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -107,7 +107,7 @@
             this.btnLuu.Image = global::KhachSan.Properties.Resources._285657_floppy_guardar_save_icon;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(45, 61);
+            this.btnLuu.Size = new System.Drawing.Size(36, 51);
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -117,7 +117,7 @@
             this.btnBoQua.Image = global::KhachSan.Properties.Resources._3631016;
             this.btnBoQua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(72, 61);
+            this.btnBoQua.Size = new System.Drawing.Size(48, 51);
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
@@ -127,7 +127,7 @@
             this.btnThoat.Image = global::KhachSan.Properties.Resources._5235241;
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(61, 61);
+            this.btnThoat.Size = new System.Drawing.Size(42, 51);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -135,12 +135,10 @@
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gcDanhSach.Location = new System.Drawing.Point(0, 66);
+            this.gcDanhSach.Location = new System.Drawing.Point(0, 54);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(958, 500);
+            this.gcDanhSach.Size = new System.Drawing.Size(639, 342);
             this.gcDanhSach.TabIndex = 5;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -152,7 +150,6 @@
             this.IDTB,
             this.TENTB,
             this.DONGIA});
-            this.gvDanhSach.DetailHeight = 512;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
@@ -165,12 +162,12 @@
             this.DISABLED.AppearanceHeader.Options.UseFont = true;
             this.DISABLED.Caption = "DEL";
             this.DISABLED.FieldName = "DISABLED";
-            this.DISABLED.MaxWidth = 60;
-            this.DISABLED.MinWidth = 37;
+            this.DISABLED.MaxWidth = 40;
+            this.DISABLED.MinWidth = 25;
             this.DISABLED.Name = "DISABLED";
             this.DISABLED.Visible = true;
             this.DISABLED.VisibleIndex = 0;
-            this.DISABLED.Width = 52;
+            this.DISABLED.Width = 35;
             // 
             // IDTB
             // 
@@ -178,10 +175,10 @@
             this.IDTB.AppearanceHeader.Options.UseFont = true;
             this.IDTB.Caption = "IDTB";
             this.IDTB.FieldName = "IDTB";
-            this.IDTB.MaxWidth = 150;
-            this.IDTB.MinWidth = 75;
+            this.IDTB.MaxWidth = 100;
+            this.IDTB.MinWidth = 50;
             this.IDTB.Name = "IDTB";
-            this.IDTB.Width = 105;
+            this.IDTB.Width = 70;
             // 
             // TENTB
             // 
@@ -189,12 +186,10 @@
             this.TENTB.AppearanceHeader.Options.UseFont = true;
             this.TENTB.Caption = "TÊN THIẾT BỊ";
             this.TENTB.FieldName = "TENTB";
-            this.TENTB.MaxWidth = 450;
-            this.TENTB.MinWidth = 30;
+            this.TENTB.MaxWidth = 300;
             this.TENTB.Name = "TENTB";
             this.TENTB.Visible = true;
             this.TENTB.VisibleIndex = 1;
-            this.TENTB.Width = 112;
             // 
             // DONGIA
             // 
@@ -204,11 +199,9 @@
             this.DONGIA.DisplayFormat.FormatString = "N0";
             this.DONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.DONGIA.FieldName = "DONGIA";
-            this.DONGIA.MinWidth = 30;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.Visible = true;
             this.DONGIA.VisibleIndex = 2;
-            this.DONGIA.Width = 112;
             // 
             // groupControl1
             // 
@@ -222,20 +215,18 @@
             this.groupControl1.Controls.Add(this.label6);
             this.groupControl1.Controls.Add(this.chkDisabled);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(0, 566);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControl1.Location = new System.Drawing.Point(0, 396);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(958, 134);
+            this.groupControl1.Size = new System.Drawing.Size(639, 92);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin";
             // 
             // numDonGia
             // 
             this.numDonGia.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.numDonGia.Location = new System.Drawing.Point(480, 56);
-            this.numDonGia.Margin = new System.Windows.Forms.Padding(4);
+            this.numDonGia.Location = new System.Drawing.Point(320, 38);
             this.numDonGia.Name = "numDonGia";
-            this.numDonGia.Size = new System.Drawing.Size(216, 32);
+            this.numDonGia.Size = new System.Drawing.Size(144, 24);
             this.numDonGia.TabIndex = 14;
             this.numDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numDonGia.ThousandsSeparator = true;
@@ -244,30 +235,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(387, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(258, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 24);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 13;
             this.label1.Text = "Đơn giá";
             // 
             // txtTen
             // 
             this.txtTen.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtTen.Location = new System.Drawing.Point(105, 56);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTen.Location = new System.Drawing.Point(70, 38);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(228, 32);
+            this.txtTen.Size = new System.Drawing.Size(153, 24);
             this.txtTen.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(50, 61);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(33, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 24);
+            this.label6.Size = new System.Drawing.Size(29, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Tên";
             // 
@@ -275,29 +263,28 @@
             // 
             this.chkDisabled.AutoSize = true;
             this.chkDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDisabled.Location = new System.Drawing.Point(740, 58);
-            this.chkDisabled.Margin = new System.Windows.Forms.Padding(4);
+            this.chkDisabled.Location = new System.Drawing.Point(493, 40);
             this.chkDisabled.Name = "chkDisabled";
-            this.chkDisabled.Size = new System.Drawing.Size(142, 28);
+            this.chkDisabled.Size = new System.Drawing.Size(94, 20);
             this.chkDisabled.TabIndex = 10;
             this.chkDisabled.Text = "Vô hiệu hóa";
             this.chkDisabled.UseVisualStyleBackColor = true;
             // 
             // frmThietBi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 704);
+            this.ClientSize = new System.Drawing.Size(639, 482);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gcDanhSach);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::KhachSan.Properties.Resources.Hotel;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThietBi";
-            this.Text = "Quản lý thiết bị";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý cơ sở vật chất";
             this.Load += new System.EventHandler(this.frmThietBi_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

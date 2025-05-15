@@ -23,6 +23,12 @@ namespace KhachSan
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+        public frmPhong(int right)
+        {
+            InitializeComponent();
+            this._right = right;
+        }
+        int _right;
         PHONG _phong;
         LOAIPHONG _loaiphong;
         TANG _tang;
@@ -81,7 +87,7 @@ namespace KhachSan
         void LoadTang()
         {
             //cboTang.SelectedIndexChanged -= cboTang_SelectedIndexChanged;
-            cboTang.DataSource = _tang.getAll();
+            cboTang.DataSource = _tang.getAllActive();
             cboTang.DisplayMember = "TENTANG";
             cboTang.ValueMember = "IDTANG";
             //cboTang.SelectedIndexChanged += cboTang_SelectedIndexChanged;
@@ -89,7 +95,7 @@ namespace KhachSan
         void LoadLoaiPhong()
         {
             //cboLoaiPhong.SelectedIndexChanged -= cboLoaiPhong_SelectedIndexChanged;
-            cboLoaiPhong.DataSource = _loaiphong.getAll();
+            cboLoaiPhong.DataSource = _loaiphong.getAllActive();
             cboLoaiPhong.DisplayMember = "TENLOAIPHONG";
             cboLoaiPhong.ValueMember = "IDLOAIPHONG";
             //cboLoaiPhong.SelectedIndexChanged += cboLoaiPhong_SelectedIndexChanged;
@@ -164,6 +170,11 @@ namespace KhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             _them = true;
             showHideControl(false);
             _enable(true);
@@ -172,6 +183,11 @@ namespace KhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             _them = false;
             _enable(true);
 
@@ -180,6 +196,11 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

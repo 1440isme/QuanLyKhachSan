@@ -62,6 +62,10 @@ namespace BusinessLayer
         {
             return db.tb_Phong.ToList();
         }
+        public List<tb_Phong> getAllActive()
+        {
+            return db.tb_Phong.Where(s => s.DISABLED == false).ToList();
+        }
         public List<OBJ_PHONG> getPhongTrongFull()
         {
             var result = (from p in db.tb_Phong

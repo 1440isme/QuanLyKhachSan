@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using VietQRHelper;
 using QRCoder;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace KhachSan
 {
@@ -40,6 +41,8 @@ namespace KhachSan
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            gvSanPham.CustomDrawRowIndicator += gv_CustomDrawRowIndicator;
+
         }
 
         private void frmDatPhongDon_Load(object sender, EventArgs e)
@@ -173,8 +176,12 @@ namespace KhachSan
                 MessageBox.Show("Vui lòng chọn khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
-            int maxOccupancy = _phong.GetMaxOccupancyByRoom(_idPhong); // Lấy số người tối đa từ loại phòng
+            if (dtNgayDat.Value > dtNgayTra.Value)
+            {
+                MessageBox.Show("Ngày trả phòng phải lớn hơn ngày đặt phòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int maxOccupancy = _phong.GetMaxOccupancyByRoom(_idPhong); 
             if (numSoNguoi.Value > maxOccupancy)
             {
                 
@@ -185,7 +192,7 @@ namespace KhachSan
             SaveData();
             _them = false;
             UpdateTotalAmount();
-            MessageBox.Show("Lưu thành công! Bạn có thể tiếp tục in hoặc đóng form.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -497,6 +504,22 @@ namespace KhachSan
             {
                 MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void gv_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.ImageIndex = -1;
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+                SizeF _size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
+                int _Width = Convert.ToInt32(_size.Width) + 20;
+                BeginInvoke(new MethodInvoker(delegate { cal(_Width, sender as GridView); }));
+            }
+        }
+        bool cal(int _Width, GridView _View)
+        {
+            _View.IndicatorWidth = _View.IndicatorWidth < _Width ? _Width : _View.IndicatorWidth;
+            return true;
         }
 
     }

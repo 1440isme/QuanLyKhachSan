@@ -20,6 +20,10 @@ namespace BusinessLayer
         {
             return db.tb_Tang.ToList();
         }
+        public List<tb_Tang> getAllActive()
+        {
+            return db.tb_Tang.Where(s => s.DISABLED == false).ToList();
+        }
 
         public tb_Tang getItem(int idtang)
         {

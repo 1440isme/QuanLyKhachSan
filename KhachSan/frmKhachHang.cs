@@ -20,6 +20,12 @@ namespace KhachSan
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+        public frmKhachHang(int right)
+        {
+            InitializeComponent();
+            this._right = right;
+        }
+        int _right;
         frmDatPhong objDP = (frmDatPhong) Application.OpenForms["frmDatPhong"];
         frmDatPhongDon objDPDon = (frmDatPhongDon)Application.OpenForms["frmDatPhongDon"];
         KHACHHANG _khachhang;
@@ -80,6 +86,12 @@ namespace KhachSan
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             _them = true;
             showHideControl(false);
             _enable(true);
@@ -88,6 +100,12 @@ namespace KhachSan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             _them = false;
             _enable(true);
             showHideControl(false);
@@ -95,6 +113,12 @@ namespace KhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (_right == 1)
+            {
+                XtraMessageBox.Show("Không có quyền thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
             if (_idkh != 0 && MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
@@ -116,6 +140,7 @@ namespace KhachSan
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrWhiteSpace(txtTen.Text))
             {
                 MessageBox.Show("Tên khách hàng không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);

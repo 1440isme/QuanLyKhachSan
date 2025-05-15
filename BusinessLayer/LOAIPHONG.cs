@@ -22,6 +22,10 @@ namespace BusinessLayer
         {
             return db.tb_LoaiPhong.ToList();
         }
+        public List<tb_LoaiPhong> getAllActive()
+        {
+            return db.tb_LoaiPhong.Where(s => s.DISABLED == false).ToList();
+        }
         public void add(tb_LoaiPhong item)
         {
             try

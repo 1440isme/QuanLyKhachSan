@@ -32,7 +32,7 @@ namespace USERMANAGEMENT
             _donvi = new DONVI();
             _sysuser = new SYS_USER();
             loadTreeView();
-            loadUser("CTMT", "~");
+            loadUser("CTMT", "KSMT");
         }
         public void loadUser(string macty, string madvi)
         {

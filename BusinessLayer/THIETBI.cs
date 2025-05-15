@@ -18,6 +18,10 @@ namespace BusinessLayer
         {
             return db.tb_ThietBi.ToList();
         }
+        public List<tb_ThietBi> getAllActive()
+        {
+            return db.tb_ThietBi.Where(s => s.DISABLED == false).ToList();
+        }
         public tb_ThietBi getItem(int idtb)
         {
             return db.tb_ThietBi.FirstOrDefault(p => p.IDTB == idtb);
